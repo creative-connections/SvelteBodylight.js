@@ -20,7 +20,6 @@ Sestavit experiment nad hotovým modelem — bez instalace, bez serveru, bez př
 | Zásoba železa ve ferritinu (varianta) | `metadata/ferritin-variant.json` | 41 |
 | Hodgkin–Huxley — dráždivá membrána | `metadata/hodgkin-huxley.json` | 94 |
 | Metabolismus železa | `metadata/iron-metabolism.json` | 260 |
-| JWST — obrázek 3-5 (Dori, kapitola 3) | `metadata/jwst-fig35.json` | 77 |
 | Normální krevní oběh | `metadata/normal-circulation.json` | 579 |
 | Normální oběh (z OPM diagramu) | `metadata/normal-circulation-opm.json` | 225 |
 | Vytápění místnosti | `metadata/room-heating.json` | 9 |
