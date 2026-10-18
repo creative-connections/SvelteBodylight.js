@@ -1,0 +1,641 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "Cake_Providing",
+  "modelIdentifier": "Cake_Providing",
+  "guid": "{e250e752-0aa4-4288-a2f7-d226c7ca8b9f}",
+  "generationTool": "OpenModelica Compiler OpenModelica 1.27.0",
+  "variables": [
+    {
+      "name": "CakeProviding_Cake_Need.t",
+      "description": "Actual waiting time (transition will fire when t > waitTime)",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.t",
+      "description": "Actual waiting time (transition will fire when t > waitTime)",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.activeSteps",
+      "description": "Number of active steps in the CompositeStep",
+      "valueReference": 8,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.activeStepsDummy",
+      "description": "Dummy variable in order that connector fulfills restriction of connector",
+      "valueReference": 9,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "CakeProviding_Cake_Need.waitTime",
+      "description": "Wait time before transition fires",
+      "valueReference": 12,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.waitTime",
+      "description": "Wait time before transition fires",
+      "valueReference": 13,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "stateGraphRoot.activeSteps",
+      "description": "Number of active steps within the stategraph",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_met.nIn",
+      "description": "Number of input connections",
+      "valueReference": 1,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_met.nOut",
+      "description": "Number of output connections",
+      "valueReference": 2,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.nIn",
+      "description": "Number of input connections",
+      "valueReference": 3,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.nOut",
+      "description": "Number of output connections",
+      "valueReference": 4,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.nIn",
+      "description": "Number of input connections",
+      "valueReference": 5,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.nOut",
+      "description": "Number of output connections",
+      "valueReference": 6,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.nIn",
+      "description": "Number of input connections",
+      "valueReference": 7,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.nOut",
+      "description": "Number of output connections",
+      "valueReference": 8,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.enableFire",
+      "description": "= true, if all firing conditions are true",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.localCondition",
+      "description": "= true, if transition may fire",
+      "valueReference": 1,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.enableFire",
+      "description": "= true, if all firing conditions are true",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.localCondition",
+      "description": "= true, if transition may fire",
+      "valueReference": 3,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_go",
+      "description": "Customer initiates and handles Cake Providing",
+      "valueReference": 4,
+      "causality": "input",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "Cake_Need_met.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 5,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_met.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 6,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 9,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 10,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 13,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 14,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 17,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 18,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.resume",
+      "description": "= true, if resume transition of CompositeStep fires",
+      "valueReference": 21,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "stateGraphRoot.suspend",
+      "description": "= true, if suspend transition of CompositeStep fires",
+      "valueReference": 22,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "CakeProviding_Cake_Need.enableTimer",
+      "description": "= true, if timer is enabled",
+      "valueReference": 23,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.enableTimer",
+      "description": "= true, if timer is enabled",
+      "valueReference": 24,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.condition",
+      "description": "= true, if transition may fire (time varying expression)",
+      "valueReference": 1,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.fire",
+      "description": "= true, if transition fires",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.inPort.available",
+      "description": "= true, if step connected to the transition input is active",
+      "valueReference": 10,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.inPort.reset",
+      "description": "= true, if transition fires and the step connected to the transition input is deactivated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.outPort.occupied",
+      "description": "= true, if step connected to the transition output is active",
+      "valueReference": 6,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Cake_Need.outPort.set",
+      "description": "= true, if transition fires and step connected to the transition output becomes active",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.condition",
+      "description": "= true, if transition may fire (time varying expression)",
+      "valueReference": 3,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.fire",
+      "description": "= true, if transition fires",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.inPort.available",
+      "description": "= true, if step connected to the transition input is active",
+      "valueReference": 18,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.inPort.reset",
+      "description": "= true, if transition fires and the step connected to the transition input is deactivated",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.outPort.occupied",
+      "description": "= true, if step connected to the transition output is active",
+      "valueReference": 14,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CakeProviding_Financial_Reward.outPort.set",
+      "description": "= true, if transition fires and step connected to the transition output becomes active",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_met.inPort[1].occupied",
+      "description": "= true, if step is active",
+      "valueReference": 6,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_met.inPort[1].set",
+      "description": "= true, if transition fires and step is activated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.outPort[1].available",
+      "description": "= true, if step is active",
+      "valueReference": 10,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Cake_Need_unmet.outPort[1].reset",
+      "description": "= true, if transition fires and step is deactivated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.inPort[1].occupied",
+      "description": "= true, if step is active",
+      "valueReference": 14,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_paid.inPort[1].set",
+      "description": "= true, if transition fires and step is activated",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.outPort[1].available",
+      "description": "= true, if step is active",
+      "valueReference": 18,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Financial_Reward_unpaid.outPort[1].reset",
+      "description": "= true, if transition fires and step is deactivated",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.resume",
+      "description": "= true, if resume transition of CompositeStep fires",
+      "valueReference": 21,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.suspend",
+      "description": "= true, if suspend transition of CompositeStep fires",
+      "valueReference": 22,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    }
+  ]
+}

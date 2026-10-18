@@ -1,0 +1,1554 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "Membrane_Hodgkin_Huxley",
+  "modelIdentifier": "Membrane_Hodgkin_Huxley",
+  "guid": "{4e27fe50-9aad-4ee8-a286-3e1f66a0408e}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "capacitor.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "der(capacitor.v)",
+      "description": "der(Voltage drop between the two pins (= p.v - n.v))",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "capacitor.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "capacitor.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "capacitor.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "capacitor.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663296,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "capacitor.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405141,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "capacitor.C",
+      "description": "Capacitance",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mF/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mF/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1
+    },
+    {
+      "name": "K.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405143,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405143,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663297,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "K.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405144,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.gk",
+      "description": "base conductance",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 36
+    },
+    {
+      "name": "K.E_K",
+      "description": "Nernst potential for potassium",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": -87
+    },
+    {
+      "name": "K.V_an",
+      "description": "parameter for potassium channel particles opening on voltage curve",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 65
+    },
+    {
+      "name": "K.V_bn",
+      "description": "parameter for potassium channel particles closing on voltage curve",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 75
+    },
+    {
+      "name": "K.initial_nn",
+      "description": "initial probability, that potassium channel particle are in open state",
+      "valueReference": 100663298,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 32.5
+    },
+    {
+      "name": "K.V",
+      "description": "potassium gradient such as electical potential",
+      "valueReference": 1174405145,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "K.nn",
+      "description": "probability of potassium channel particles opening",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(K.nn)",
+      "description": "der(probability of potassium channel particles opening)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "K.an",
+      "description": "forward (opening) coeficient",
+      "valueReference": 1174405146,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "K.bn",
+      "description": "backward (closing) coeficient",
+      "valueReference": 1174405147,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "K.G",
+      "description": "conductance or potassium channels",
+      "valueReference": 1711276060,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "K.R",
+      "description": "resistance or potassium channels",
+      "valueReference": 1711276061,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405150,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405150,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663299,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "Na.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405151,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.gNa",
+      "description": "base conductance",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 120
+    },
+    {
+      "name": "Na.E_Na",
+      "description": "Nernst potential for sodium",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 40
+    },
+    {
+      "name": "Na.initial_m",
+      "description": "initial probability, that activation gate particle are in open state",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 5
+    },
+    {
+      "name": "Na.initial_h",
+      "description": "initial probability, that inactivation gate particle are in open state",
+      "valueReference": 100663301,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 60
+    },
+    {
+      "name": "Na.V_am",
+      "description": "parameter for activation gates opening on voltage curve",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 50
+    },
+    {
+      "name": "Na.V_bm",
+      "description": "parameter for activation gates closing on voltage curve",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 75
+    },
+    {
+      "name": "Na.V_ah",
+      "description": "parameter for inactivation gates opening on voltage curve",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 75
+    },
+    {
+      "name": "Na.V_bh",
+      "description": "parameter for inactivation gates closing on voltage curve",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 45
+    },
+    {
+      "name": "Na.V",
+      "description": "sodium gradient such as electical potential",
+      "valueReference": 1174405152,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Na.m",
+      "description": "probability, that activation gate particle are in open state",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(Na.m)",
+      "description": "der(probability, that activation gate particle are in open state)",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.am",
+      "description": "forward (opening) coeficient",
+      "valueReference": 1174405153,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.bm",
+      "description": "backward (closing) coeficient",
+      "valueReference": 1174405154,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.h",
+      "description": "probability, that inactivation gate particle are in open state",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(Na.h)",
+      "description": "der(probability, that inactivation gate particle are in open state)",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.ah",
+      "description": "forward (opening) coeficient",
+      "valueReference": 1174405155,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.bh",
+      "description": "backward (closing) coeficient",
+      "valueReference": 1174405156,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.G",
+      "description": "electrical conductance of sidium channels",
+      "valueReference": 1711276069,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Na.R",
+      "description": "electrical resistance of sodium channels",
+      "valueReference": 1711276070,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Leak.Leak_Conductance",
+      "description": "other electrolytes membrane conductance",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.3
+    },
+    {
+      "name": "Leak.E_Leak",
+      "description": "Nernst potencial of other electrolytes",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": -64.387
+    },
+    {
+      "name": "Leak.leak_resistor.R",
+      "description": "Resistance R_ref at temperature T_ref",
+      "valueReference": 100663305,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Leak.leak_resistor.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 1174405159,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_resistor.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_resistor.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_resistor.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_resistor.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_resistor.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405161,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.V",
+      "description": "Value of constant voltage",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.leak_Voltage.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663302,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "Leak.leak_Voltage.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405161,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "Leak.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405161,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Leak.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.V",
+      "description": "Amplitude of pulse",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 20
+    },
+    {
+      "name": "pulseVoltage.width",
+      "description": "Width of pulse in % of period",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 1e-60,
+      "max": 100,
+      "start": 1
+    },
+    {
+      "name": "pulseVoltage.period",
+      "description": "Time for one period",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ms",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 1e-60,
+      "start": 0.03
+    },
+    {
+      "name": "pulseVoltage.v",
+      "description": "Voltage drop between the two pins (= p.v - n.v)",
+      "valueReference": 1174405137,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.i",
+      "description": "Current flowing from pin p to pin n",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.n.v",
+      "description": "Potential at the pin",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.n.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1174405141,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.offset",
+      "description": "Voltage offset",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "pulseVoltage.startTime",
+      "description": "Time offset",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ms",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.02
+    },
+    {
+      "name": "pulseVoltage.signalSource.amplitude",
+      "description": "Amplitude of pulse",
+      "valueReference": 100663307,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "pulseVoltage.signalSource.width",
+      "description": "Width of pulse in % of period",
+      "valueReference": 100663308,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 1e-60,
+      "max": 100
+    },
+    {
+      "name": "pulseVoltage.signalSource.period",
+      "description": "Time for one period",
+      "valueReference": 100663309,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 1e-60
+    },
+    {
+      "name": "pulseVoltage.signalSource.nperiod",
+      "description": "Number of periods (< 0 means infinite number of periods)",
+      "valueReference": 16777234,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": -1
+    },
+    {
+      "name": "pulseVoltage.signalSource.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 1174405137,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "pulseVoltage.signalSource.offset",
+      "description": "Offset of output signal y",
+      "valueReference": 100663310,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "pulseVoltage.signalSource.startTime",
+      "description": "Output y = offset for time < startTime",
+      "valueReference": 100663311,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.signalSource.T_width",
+      "valueReference": 100663312,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.signalSource.T_start",
+      "description": "Start time of current period",
+      "valueReference": 1174405138,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ms",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pulseVoltage.signalSource.count",
+      "description": "Period count",
+      "valueReference": 1174405139,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ground.p.v",
+      "description": "Potential at the pin",
+      "valueReference": 100663304,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mV",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mV",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "ground.p.i",
+      "description": "Current flowing into the pin",
+      "valueReference": 1711276074,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mA/cm2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mA/cm2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    }
+  ]
+}

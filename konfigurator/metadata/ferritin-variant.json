@@ -1,0 +1,940 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "EnterocyteMucosalBlock.models.Test_FT_storage",
+  "modelIdentifier": "EnterocyteMucosalBlock_models_Test_0FT_0storage",
+  "guid": "{276b4d44-1ca6-4e9c-8187-cb6cfa277224}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "Fe_total.k",
+      "description": "Constant Concentration output value",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.06
+    },
+    {
+      "name": "Fe_total.y",
+      "description": "Concentration constant",
+      "valueReference": 234881024,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "FT_cage.k",
+      "description": "Constant Concentration output value",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.00003
+    },
+    {
+      "name": "FT_cage.y",
+      "description": "Concentration constant",
+      "valueReference": 234881025,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ferritinIronStorage.Fe_total_set",
+      "valueReference": 234881024,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ferritinIronStorage.Fe_in_FT",
+      "valueReference": 1174405121,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ferritinIronStorage.LIP",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.000615243
+    },
+    {
+      "name": "der(ferritinIronStorage.LIP)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.Fract_Fe_in_Ft",
+      "valueReference": 1174405122,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ferritinIronStorage.Fract_LIP",
+      "valueReference": 1174405123,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ferritinIronStorage.Fe_total",
+      "valueReference": 1174405124,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ferritinIronStorage.Fe_total_need",
+      "valueReference": 1174405125,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ferritinIronStorage.core",
+      "description": "core",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.007500000000000001
+    },
+    {
+      "name": "der(ferritinIronStorage.core)",
+      "description": "der(core)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.DFP",
+      "description": "diferric peroxo complex",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "der(ferritinIronStorage.DFP)",
+      "description": "der(diferric peroxo complex)",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.atoms_per_cage_transient",
+      "description": "Transient number of Fe atoms that are stored inside the core of a ferritin cage",
+      "valueReference": 1174405126,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.H",
+      "description": "H subunits",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "ferritinIronStorage.L",
+      "description": "L subunits",
+      "valueReference": 100663296,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ferritinIronStorage.rN",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "ferritinIronStorage.rO",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 2
+    },
+    {
+      "name": "ferritinIronStorage.k_FTlysis",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00001203
+    },
+    {
+      "name": "ferritinIronStorage.k_Fe_total_set_achieve_time",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.01
+    },
+    {
+      "name": "ferritinIronStorage.CoreRelease",
+      "valueReference": 1174405127,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.Oxidation",
+      "valueReference": 1174405128,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.k_cat_oxidation",
+      "description": "catalytic turnover number",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 591
+    },
+    {
+      "name": "ferritinIronStorage.K_m_oxidation",
+      "description": "Michaelis constant",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.35
+    },
+    {
+      "name": "ferritinIronStorage.n_oxidation",
+      "description": "Hill coefficient)",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1.3
+    },
+    {
+      "name": "ferritinIronStorage.Reduction",
+      "valueReference": 1174405129,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.k_deg",
+      "description": "rate constant",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.2605
+    },
+    {
+      "name": "ferritinIronStorage.Nucleation",
+      "valueReference": 1174405130,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.k_cat_nucleation",
+      "description": "catalytic turnover number",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "l2/(mol2.s)",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m6/(mol2.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l2/(mol2.s)",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 50
+    },
+    {
+      "name": "ferritinIronStorage.K_i_nucleation",
+      "description": "inhibition constant",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.461598
+    },
+    {
+      "name": "ferritinIronStorage.n_nucleation",
+      "description": "Hill coefficient",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "ferritinIronStorage.Mineralization",
+      "valueReference": 1174405131,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ferritinIronStorage.k_cat_mineralization",
+      "description": "catalytic turnover number",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.101564
+    },
+    {
+      "name": "ferritinIronStorage.K_m_mineralization",
+      "description": "Michaelis constant",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.005
+    },
+    {
+      "name": "ferritinIronStorage.K_i_mineralization",
+      "description": "inhibition constant",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 4.6458
+    },
+    {
+      "name": "ferritinIronStorage.n_mineralization",
+      "description": "Hill coefficient",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "ferritinIronStorage.m_mineralization",
+      "description": "Hill coefficient",
+      "valueReference": 16777234,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 8
+    },
+    {
+      "name": "ferritinIronStorage.FT_cage",
+      "valueReference": 234881025,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    }
+  ]
+}

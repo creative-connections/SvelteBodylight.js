@@ -1,0 +1,371 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "Coffee_Brewing",
+  "modelIdentifier": "Coffee_Brewing",
+  "guid": "{9ceeb36d-ea61-4bab-bd14-3431e0969dc4}",
+  "generationTool": "OpenModelica Compiler OpenModelica 1.27.0",
+  "variables": [
+    {
+      "name": "CoffeeBrewing_Thirst.t",
+      "description": "Actual waiting time (transition will fire when t > waitTime)",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.activeSteps",
+      "description": "Number of active steps in the CompositeStep",
+      "valueReference": 4,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.activeStepsDummy",
+      "description": "Dummy variable in order that connector fulfills restriction of connector",
+      "valueReference": 5,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.waitTime",
+      "description": "Wait time before transition fires",
+      "valueReference": 7,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "stateGraphRoot.activeSteps",
+      "description": "Number of active steps within the stategraph",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_satisfied.nIn",
+      "description": "Number of input connections",
+      "valueReference": 1,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_satisfied.nOut",
+      "description": "Number of output connections",
+      "valueReference": 2,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.nIn",
+      "description": "Number of input connections",
+      "valueReference": 3,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.nOut",
+      "description": "Number of output connections",
+      "valueReference": 4,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.enableFire",
+      "description": "= true, if all firing conditions are true",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_go",
+      "description": "Customer initiates and handles Coffee Brewing",
+      "valueReference": 1,
+      "causality": "input",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "Thirst_satisfied.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 2,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_satisfied.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 3,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.active",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 6,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.localActive",
+      "description": "= true, if step is active, otherwise the step is not active",
+      "valueReference": 7,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.resume",
+      "description": "= true, if resume transition of CompositeStep fires",
+      "valueReference": 10,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "stateGraphRoot.suspend",
+      "description": "= true, if suspend transition of CompositeStep fires",
+      "valueReference": 11,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.enableTimer",
+      "description": "= true, if timer is enabled",
+      "valueReference": 12,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.condition",
+      "description": "= true, if transition may fire (time varying expression)",
+      "valueReference": 1,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.fire",
+      "description": "= true, if transition fires",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.inPort.available",
+      "description": "= true, if step connected to the transition input is active",
+      "valueReference": 7,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.inPort.reset",
+      "description": "= true, if transition fires and the step connected to the transition input is deactivated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.localCondition",
+      "description": "= true, if transition may fire",
+      "valueReference": 1,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.outPort.occupied",
+      "description": "= true, if step connected to the transition output is active",
+      "valueReference": 3,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CoffeeBrewing_Thirst.outPort.set",
+      "description": "= true, if transition fires and step connected to the transition output becomes active",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_satisfied.inPort[1].occupied",
+      "description": "= true, if step is active",
+      "valueReference": 3,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_satisfied.inPort[1].set",
+      "description": "= true, if transition fires and step is activated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.outPort[1].available",
+      "description": "= true, if step is active",
+      "valueReference": 7,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "Thirst_unsatisfied.outPort[1].reset",
+      "description": "= true, if transition fires and step is deactivated",
+      "valueReference": 0,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.resume",
+      "description": "= true, if resume transition of CompositeStep fires",
+      "valueReference": 10,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "stateGraphRoot.subgraphStatePort.suspend",
+      "description": "= true, if suspend transition of CompositeStep fires",
+      "valueReference": 11,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    }
+  ]
+}

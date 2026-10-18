@@ -1,0 +1,162 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "RoomHeating",
+  "modelIdentifier": "RoomHeating",
+  "guid": "{77ad24b6-4ef5-4fb9-9a81-a6f2eda8c9f8}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "heaterPower",
+      "description": "heating power input",
+      "valueReference": 620756992,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "W",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "W",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 10
+    },
+    {
+      "name": "T_room",
+      "description": "room temperature",
+      "valueReference": 603979776,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "der(T_room)",
+      "description": "der(room temperature)",
+      "valueReference": 637534208,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "K/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "K/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "C",
+      "description": "thermal capacity of room [J/K]",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "J/K",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J/K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 2000
+    },
+    {
+      "name": "R",
+      "description": "thermal resistance [K/W]",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "S.A-2.K",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "S.A-2.K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.5
+    },
+    {
+      "name": "T_ambient",
+      "description": "ambient temperature [degC]",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 20
+    },
+    {
+      "name": "T_start",
+      "description": "initial room temperature [degC]",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 20
+    },
+    {
+      "name": "_StatesForOutputs.T_room",
+      "description": "T_room",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(_StatesForOutputs.T_room)",
+      "description": "der(T_room)",
+      "valueReference": 587202560,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    }
+  ]
+}

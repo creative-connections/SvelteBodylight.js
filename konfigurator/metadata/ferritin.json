@@ -1,0 +1,847 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "EnterocyteMucosalBlock.models.FerritinIronStorage",
+  "modelIdentifier": "EnterocyteMucosalBlock_models_FerritinIronStorage",
+  "guid": "{ad04c11d-5baf-437f-850c-9c35cf7f64a9}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "Fe_total_set",
+      "valueReference": 620756992,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "Fe_in_FT",
+      "valueReference": 603979776,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "LIP",
+      "valueReference": 603979777,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "der(LIP)",
+      "valueReference": 637534209,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Fract_Fe_in_Ft",
+      "valueReference": 603979778,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "Fract_LIP",
+      "valueReference": 603979779,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "Fe_total",
+      "valueReference": 637534210,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Fe_total_need",
+      "valueReference": 637534211,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "core",
+      "description": "core",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.007500000000000001
+    },
+    {
+      "name": "der(core)",
+      "description": "der(core)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "DFP",
+      "description": "diferric peroxo complex",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0
+    },
+    {
+      "name": "der(DFP)",
+      "description": "der(diferric peroxo complex)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m-3.s-1.mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m-3.s-1.mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "atoms_per_cage_transient",
+      "description": "Transient number of Fe atoms that are stored inside the core of a ferritin cage",
+      "valueReference": 1174405124,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "H",
+      "description": "H subunits",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "L",
+      "description": "L subunits",
+      "valueReference": 100663296,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "rN",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "rO",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 2
+    },
+    {
+      "name": "k_FTlysis",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00001203
+    },
+    {
+      "name": "k_Fe_total_set_achieve_time",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.01
+    },
+    {
+      "name": "CoreRelease",
+      "valueReference": 637534213,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Oxidation",
+      "valueReference": 637534214,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "k_cat_oxidation",
+      "description": "catalytic turnover number",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 591
+    },
+    {
+      "name": "K_m_oxidation",
+      "description": "Michaelis constant",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.35
+    },
+    {
+      "name": "n_oxidation",
+      "description": "Hill coefficient)",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1.3
+    },
+    {
+      "name": "Reduction",
+      "valueReference": 637534215,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "k_deg",
+      "description": "rate constant",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.2605
+    },
+    {
+      "name": "Nucleation",
+      "valueReference": 1174405128,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "k_cat_nucleation",
+      "description": "catalytic turnover number",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "l2/(mol2.s)",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m6/(mol2.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l2/(mol2.s)",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 50
+    },
+    {
+      "name": "K_i_nucleation",
+      "description": "inhibition constant",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.461598
+    },
+    {
+      "name": "n_nucleation",
+      "description": "Hill coefficient",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "Mineralization",
+      "valueReference": 1174405129,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/(l.s)",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/(m3.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/(l.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "k_cat_mineralization",
+      "description": "catalytic turnover number",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.101564
+    },
+    {
+      "name": "K_m_mineralization",
+      "description": "Michaelis constant",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.005
+    },
+    {
+      "name": "K_i_mineralization",
+      "description": "inhibition constant",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mol/L",
+      "displayFactor": 0.001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 4.6458
+    },
+    {
+      "name": "n_mineralization",
+      "description": "Hill coefficient",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 4
+    },
+    {
+      "name": "m_mineralization",
+      "description": "Hill coefficient",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "integer",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 8
+    },
+    {
+      "name": "FT_cage",
+      "valueReference": 620756993,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mol/L",
+          "displayFactor": 0.001,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.00003
+    },
+    {
+      "name": "_StatesForOutputs.LIP",
+      "description": "LIP",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "start": 0.000615243
+    },
+    {
+      "name": "der(_StatesForOutputs.LIP)",
+      "description": "der(LIP)",
+      "valueReference": 587202562,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    }
+  ]
+}

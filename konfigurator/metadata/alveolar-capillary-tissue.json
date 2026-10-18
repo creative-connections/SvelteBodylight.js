@@ -1,0 +1,6738 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "RespirationModeling.ChemicalsPokusy.Parts.AlveolarCapillaryUnitWithTissue_withShuntsandVentilation",
+  "modelIdentifier": "RespirationModeling_ChemicalsPokusy_Parts_AlveolarCapillaryUnitWithTissue_0withShuntsandVentilation",
+  "guid": "{bfedefe7-df34-41e4-ac95-128c7cb8f9a0}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "modelSettings.cAlb",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.66
+    },
+    {
+      "name": "modelSettings.ctHb",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 8.4
+    },
+    {
+      "name": "modelSettings.cPi",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 1.15
+    },
+    {
+      "name": "modelSettings.cDPG",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 5
+    },
+    {
+      "name": "modelSettings.FMetHb",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.FCOHb",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.FHbF",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.Temperature",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": -273.15,
+      "unitOptions": [
+        {
+          "unit": "K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": -273.15
+        }
+      ],
+      "min": 0,
+      "nominal": 1,
+      "start": 310.15
+    },
+    {
+      "name": "modelSettings.pressure",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 101325
+    },
+    {
+      "name": "modelSettings.FiO2d",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.2095
+    },
+    {
+      "name": "modelSettings.FiCO2d",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.0004
+    },
+    {
+      "name": "modelSettings.dAO2_pc",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "modelSettings.dACO2_pc",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "CO2alv.volume",
+      "description": "Solution volume",
+      "valueReference": 100663298,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "CO2alv.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(CO2alv.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "CO2alv.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663384,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2alv.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663385,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2alv.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "CO2alv.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2alv.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "CO2alv.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276152,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "VenousStream.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "VenousStream.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405241,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "VenousStream.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "VenousStream.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405243,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "VenousStream.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "VenousStream.solutionFlow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "VenousStream.q",
+      "description": "Current solution flow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "CO2c.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2c.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "CO2c.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePump.SoluteFlow",
+      "description": "Volumetric flow of solute if useSoluteFlowInput=false",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "unlimitedSolutePump.soluteFlow",
+      "valueReference": 234881044,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePump.q",
+      "description": "Current solute flow",
+      "valueReference": 234881044,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePump.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePump.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1711276156,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut.SoluteFlow",
+      "description": "Volumetric flow of solute if useSoluteFlowInput=false",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "unlimitedSolutePumpOut.soluteFlow",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut.q",
+      "description": "Current solute flow",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePumpOut.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "CO2ven.volume",
+      "description": "Solution volume",
+      "valueReference": 100663311,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "CO2ven.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(CO2ven.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "CO2ven.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663388,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2ven.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663389,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2ven.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "CO2ven.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2ven.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "CO2ven.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276158,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "MCO2.k",
+      "description": "Constant MolarFlowRate output value",
+      "valueReference": 16777236,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00015666666666667
+    },
+    {
+      "name": "MCO2.y",
+      "description": "MolarFlowRate constant",
+      "valueReference": 234881044,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "CO2v.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2v.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663318,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "CO2v.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "AlveolarStream.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "AlveolarStream.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405248,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "AlveolarStream.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "AlveolarStream.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405249,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "AlveolarStream.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777237,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "AlveolarStream.solutionFlow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "AlveolarStream.q",
+      "description": "Current solution flow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "O2alv.volume",
+      "description": "Solution volume",
+      "valueReference": 100663322,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "O2alv.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(O2alv.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "O2alv.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663391,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2alv.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663392,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2alv.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "O2alv.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2alv.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "O2alv.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276163,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "VenousStream1.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "VenousStream1.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405252,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "VenousStream1.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "VenousStream1.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405254,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "VenousStream1.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777240,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "VenousStream1.solutionFlow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "VenousStream1.q",
+      "description": "Current solution flow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "O2c.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2c.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663330,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "O2c.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePump1.SoluteFlow",
+      "description": "Volumetric flow of solute if useSoluteFlowInput=false",
+      "valueReference": 16777241,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "unlimitedSolutePump1.soluteFlow",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePump1.q",
+      "description": "Current solute flow",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePump1.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePump1.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405256,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut1.SoluteFlow",
+      "description": "Volumetric flow of solute if useSoluteFlowInput=false",
+      "valueReference": 16777242,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "unlimitedSolutePumpOut1.soluteFlow",
+      "valueReference": 234881054,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut1.q",
+      "description": "Current solute flow",
+      "valueReference": 234881054,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "unlimitedSolutePumpOut1.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "unlimitedSolutePumpOut1.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 234881054,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "O2ven.volume",
+      "description": "Solution volume",
+      "valueReference": 100663335,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "O2ven.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(O2ven.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "O2ven.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663394,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2ven.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663395,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2ven.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "O2ven.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2ven.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "O2ven.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276169,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "O2v.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2v.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663342,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "O2v.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialStream1.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialStream1.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405259,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ArterialStream1.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialStream1.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405260,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ArterialStream1.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777245,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "ArterialStream1.solutionFlow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "ArterialStream1.q",
+      "description": "Current solution flow",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "MO2.k",
+      "description": "Constant MolarFlowRate output value",
+      "valueReference": 16777246,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00018333333333333
+    },
+    {
+      "name": "MO2.y",
+      "description": "MolarFlowRate constant",
+      "valueReference": 234881054,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Shunts.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Shunts.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405261,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Shunts.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Shunts.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405262,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Shunts.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777247,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "Shunts.solutionFlow",
+      "valueReference": 100663396,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Shunts.q",
+      "description": "Current solution flow",
+      "valueReference": 100663396,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "CO.k",
+      "description": "Constant VolumeFlowRate output value",
+      "valueReference": 16777248,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000083333333333333
+    },
+    {
+      "name": "CO.y",
+      "description": "VolumeFlowRate constant",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Shunts1.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Shunts1.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405263,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Shunts1.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Shunts1.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405264,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Shunts1.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777249,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "Shunts1.solutionFlow",
+      "valueReference": 100663396,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Shunts1.q",
+      "description": "Current solution flow",
+      "valueReference": 100663396,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "shuntsPerfusion.QAlv",
+      "description": "alveolar perfusion",
+      "valueReference": 100663386,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "shuntsPerfusion.CardiacOutput",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "shuntsPerfusion.ShuntsFraction",
+      "valueReference": 234881058,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "shuntsPerfusion.Qsh",
+      "description": "shunts perfusion",
+      "valueReference": 100663396,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fraction.k",
+      "description": "Constant Fraction output value",
+      "valueReference": 16777250,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.02
+    },
+    {
+      "name": "fraction.y",
+      "description": "Fraction constant",
+      "valueReference": 234881058,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "CO2art.volume",
+      "description": "Solution volume",
+      "valueReference": 100663348,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "CO2art.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554436,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(CO2art.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073476,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "CO2art.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663398,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2art.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663399,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "CO2art.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554436,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "CO2art.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2art.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073476,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "CO2art.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276177,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "Qart.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Qart.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405266,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Qart.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Qart.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405267,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Qart.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777253,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "Qart.solutionFlow",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Qart.q",
+      "description": "Current solution flow",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "CO2a.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "CO2a.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663356,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "CO2a.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405247,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2art.volume",
+      "description": "Solution volume",
+      "valueReference": 100663359,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "O2art.state",
+      "description": "This state must be connected in inherited class definition",
+      "valueReference": 33554437,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(O2art.state)",
+      "description": "der(This state must be connected in inherited class definition)",
+      "valueReference": 1124073477,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "nominal": 0.000016666666666666667
+    },
+    {
+      "name": "O2art.defaultValue",
+      "description": "Default value of state.",
+      "valueReference": 100663401,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2art.initialValue",
+      "description": "Initial value of state.",
+      "valueReference": 100663402,
+      "causality": "calculatedParameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "O2art.solute",
+      "description": "Current amount of solute",
+      "valueReference": 33554437,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "O2art.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2art.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1124073477,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "O2art.internalHeat",
+      "description": "Internal heat energy = enthalpy*amountOfSubstance",
+      "valueReference": 1711276180,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kcal",
+      "displayFactor": 0.00023884589662749592,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "J",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "kcal",
+          "displayFactor": 0.00023884589662749592,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 4186.8
+    },
+    {
+      "name": "O2a.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "O2a.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 100663366,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "O2a.concentration",
+      "description": "Concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Qart1.q_out.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405253,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Qart1.q_out.q",
+      "description": "Solute flow",
+      "valueReference": 1174405269,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Qart1.q_in.conc",
+      "description": "Solute concentration",
+      "valueReference": 1174405258,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "Qart1.q_in.q",
+      "description": "Solute flow",
+      "valueReference": 1174405270,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Qart1.SolutionFlow",
+      "description": "Volumetric flow of solution if useSolutionFlowInput=false",
+      "valueReference": 16777256,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000016666666666667
+    },
+    {
+      "name": "Qart1.solutionFlow",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Qart1.q",
+      "description": "Current solution flow",
+      "valueReference": 234881056,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777257,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663370,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777258,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 40
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405271,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(o2CO2_by_integration.pCO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073478,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405275,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback.y",
+      "valueReference": 1174405271,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777259,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa.u",
+      "description": "Input signal connector",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa.y",
+      "description": "Output signal connector",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.pCO2",
+      "description": "pCO2 in Pa",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.pH",
+      "valueReference": 1174405273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.ctCO2",
+      "description": "total blood CO2 concentration (in mmol/l)",
+      "valueReference": 1174405275,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.cHCO3",
+      "description": "plasma HCO3 concentration (in mmol/l)",
+      "valueReference": 1174405276,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctCO2content.cdCO2p",
+      "description": "plasma CO2 dissolved concentration (in mmol/l)",
+      "valueReference": 1174405277,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.pH",
+      "valueReference": 1174405278,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.pCO2",
+      "valueReference": 1174405279,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.pO2",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.sO2",
+      "valueReference": 1174405281,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.totalO2",
+      "valueReference": 1174405282,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.cdO2p",
+      "description": "dissolved O2 concentration in plasma",
+      "valueReference": 1174405283,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bloodctO2content.ceHb",
+      "description": "effective concentration of hemoglobin",
+      "valueReference": 1174405284,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.pH",
+      "description": "plasma pH at given temperature",
+      "valueReference": 1174405273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.BEox",
+      "description": "BEox in mmol/l",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.vanSlykeEquation.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 1174405285,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.vanSlykeEquation.pH",
+      "description": "pH at given temperature",
+      "valueReference": 1174405286,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.vanSlykeEquation.BEox",
+      "description": "Base Excess (in fully oxygenated blood) in mmol/l",
+      "valueReference": 1174405287,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.vanSlykeEquation.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405288,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.integrator.k",
+      "description": "Integrator gain",
+      "valueReference": 16777260,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 10000
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.integrator.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663375,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.integrator.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777261,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 7.4
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.integrator.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405289,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.integrator.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554439,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(o2CO2_by_integration.bEINV_by_integration.integrator.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073479,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405287,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.bEINV_by_integration.feedback.y",
+      "valueReference": 1174405289,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.pO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777262,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "o2CO2_by_integration.pO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663380,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "o2CO2_by_integration.pO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777263,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "o2CO2_by_integration.pO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405290,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.pO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(o2CO2_by_integration.pO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073480,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback1.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback1.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405282,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.feedback1.y",
+      "valueReference": 1174405290,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa1.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777264,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa1.u",
+      "description": "Input signal connector",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.to_Pa1.y",
+      "description": "Output signal connector",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "o2CO2_by_integration.ctO2",
+      "valueReference": 1174405250,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.ctCO2",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.BEox",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.cdCO2",
+      "valueReference": 1174405277,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.cdO2",
+      "valueReference": 1174405283,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.ceHb",
+      "description": "effiective concentration of hemoglobin (mmol/l)",
+      "valueReference": 1174405284,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.sO2",
+      "valueReference": 1174405274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "o2CO2_by_integration.cHCO3",
+      "description": "outgoing concentration of HCO3",
+      "valueReference": 1174405276,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "o2CO2_by_integration.pH",
+      "valueReference": 1174405273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "o2CO2_by_integration.pCO2",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "o2CO2_by_integration.pO2",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "BEox1.k",
+      "description": "Constant output value",
+      "valueReference": 16777265,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "min": 0,
+      "start": 0.01
+    },
+    {
+      "name": "BEox1.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.dPacO2",
+      "description": "alveolo-capillary PO2 difference",
+      "valueReference": 16777266,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.dPacCO2",
+      "description": "alveolo-capillary PCO2 difference",
+      "valueReference": 1711276203,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VAi_BTPS",
+      "valueReference": 234881083,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.pressure",
+      "valueReference": 100663403,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.temperature",
+      "valueReference": 234881031,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": -273.15,
+      "unitOptions": [
+        {
+          "unit": "K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": -273.15
+        }
+      ],
+      "min": 0,
+      "nominal": 1
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.pAO2",
+      "valueReference": 1174405304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.pACO2",
+      "valueReference": 1174405305,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VAe_BTPS",
+      "valueReference": 1711276215,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.pH2O",
+      "valueReference": 100663404,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VO2_STPD",
+      "valueReference": 1174405292,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VCO2_STPD",
+      "valueReference": 1174405293,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VAi_STPD",
+      "valueReference": 100663405,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VO2i_STPD",
+      "valueReference": 100663406,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VCO2i_STPD",
+      "valueReference": 100663407,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VAe_STPD",
+      "valueReference": 1174405294,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VO2e_STPD",
+      "valueReference": 1174405295,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VCO2e_STPD",
+      "valueReference": 1174405296,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.FACO2dry",
+      "valueReference": 1174405297,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.FAO2dry",
+      "valueReference": 1174405298,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VmO2stand",
+      "description": "O2 molar volume at 0°C 760 mmHg",
+      "valueReference": 16777267,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "m3/mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.022392199999999998
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.VmCO2stand",
+      "description": "CO2 molar volume at 0°C 760 mmHg",
+      "valueReference": 16777268,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "m3/mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.0222629
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.Pstand",
+      "valueReference": 16777269,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "bar",
+      "displayFactor": 0.00001,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "start": 101325
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.STPD_to_BTPS",
+      "valueReference": 100663408,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.tempC",
+      "valueReference": 100663409,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.O2M",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.CO2M",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.FiO2d",
+      "valueReference": 100663410,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alveolarUnit.FiCO2d",
+      "valueReference": 100663411,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.dPacO2",
+      "description": "alveolo-capillary PO2 difference",
+      "valueReference": 16777270,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.dPacCO2",
+      "description": "alveolo-capillary PCO2 difference",
+      "valueReference": 16777271,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.PAO2",
+      "valueReference": 1174405304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.PACO2",
+      "valueReference": 1174405305,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.PcO2",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.PcCO2",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.VO2",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.VCO2",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.DLO2",
+      "description": "O2 apparent alveolcapillary diffusion coefficient  mol/s/Pa",
+      "valueReference": 16777272,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.DLCO2",
+      "description": "apparent O2 alveolcapillary diffusion coefficient  mol/s/Pa",
+      "valueReference": 16777273,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 20.68
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405305,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback.y",
+      "valueReference": 1174405299,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 100663412,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain.u",
+      "description": "Input signal connector",
+      "valueReference": 1174405300,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain.y",
+      "description": "Output signal connector",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback1.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback1.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback1.y",
+      "valueReference": 1174405301,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain1.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 100663413,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain1.u",
+      "description": "Input signal connector",
+      "valueReference": 1174405302,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.gain1.y",
+      "description": "Output signal connector",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.pressure.k",
+      "description": "Constant Pressure output value",
+      "valueReference": 100663414,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.pressure.y",
+      "description": "Pressure constant",
+      "valueReference": 100663414,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback2.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405301,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback2.u2",
+      "description": "Feedback input",
+      "valueReference": 100663414,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback2.y",
+      "valueReference": 1174405302,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.pressure1.k",
+      "description": "Constant Pressure output value",
+      "valueReference": 16777274,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.pressure1.y",
+      "description": "Pressure constant",
+      "valueReference": 234881082,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback3.u1",
+      "description": "Commanded input",
+      "valueReference": 1174405299,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback3.u2",
+      "description": "Feedback input",
+      "valueReference": 234881082,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.alvCapO2CO2flow.feedback3.y",
+      "valueReference": 1174405300,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.PO2c",
+      "description": "end capillary PO2",
+      "valueReference": 1174405280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.PCO2c",
+      "description": "end capillary PCO2",
+      "valueReference": 1174405272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.VAi_BTPS",
+      "valueReference": 234881083,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.VO2",
+      "valueReference": 1174405255,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.VCO2",
+      "valueReference": 1174405245,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.VAe_BTPS1",
+      "valueReference": 1711276215,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.PAO2",
+      "description": "alveolar PAO2",
+      "valueReference": 1174405304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "alveolarPart_AlveolarCapillary.PACO2",
+      "description": "Alveolar PACO2",
+      "valueReference": 1174405305,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "bar",
+          "displayFactor": 0.00001,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "VAi_BTPS.k",
+      "description": "Constant VolumeFlowRate output value",
+      "valueReference": 16777275,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000081
+    },
+    {
+      "name": "VAi_BTPS.y",
+      "description": "VolumeFlowRate constant",
+      "valueReference": 234881083,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    }
+  ]
+}

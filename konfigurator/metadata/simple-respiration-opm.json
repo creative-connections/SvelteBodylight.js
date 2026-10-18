@@ -1,0 +1,5816 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "SimpleRespirationOPM",
+  "modelIdentifier": "SimpleRespirationOPM",
+  "guid": "{6fc8ecb2-0949-4924-a7a5-7570c431cc26}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "modelSettings.cAlb",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 0.66
+    },
+    {
+      "name": "modelSettings.ctHb",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 8.4
+    },
+    {
+      "name": "modelSettings.cPi",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 1.15
+    },
+    {
+      "name": "modelSettings.cDPG",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "start": 5
+    },
+    {
+      "name": "modelSettings.FMetHb",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.FCOHb",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.FHbF",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.005
+    },
+    {
+      "name": "modelSettings.Temperature",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "degC",
+      "displayFactor": 1,
+      "displayOffset": -273.15,
+      "unitOptions": [
+        {
+          "unit": "K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": -273.15
+        }
+      ],
+      "min": 0,
+      "nominal": 1,
+      "start": 310.15
+    },
+    {
+      "name": "modelSettings.pressure",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 101325
+    },
+    {
+      "name": "modelSettings.FiO2d",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.2095
+    },
+    {
+      "name": "modelSettings.FiCO2d",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.0004
+    },
+    {
+      "name": "modelSettings.dAO2_pc",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "modelSettings.dACO2_pc",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": 0
+    },
+    {
+      "name": "CardiacOutput",
+      "description": "Cardiac output",
+      "valueReference": 620756992,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000083333333333333
+    },
+    {
+      "name": "ShuntsFraction",
+      "description": "Shunt fraction of cardiac output",
+      "valueReference": 620756993,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01,
+      "start": 0.02
+    },
+    {
+      "name": "VO2",
+      "description": "Metabolic oxygen consumption",
+      "valueReference": 620756994,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00018333333333333
+    },
+    {
+      "name": "VCO2",
+      "description": "Metabolic carbon dioxide production",
+      "valueReference": 620756995,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/min",
+      "displayFactor": 60000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00015666666666667
+    },
+    {
+      "name": "VAi_BTPS",
+      "description": "Inspired alveolar ventilation, BTPS",
+      "valueReference": 620756996,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0.000081
+    },
+    {
+      "name": "BEox",
+      "description": "Base excess in fully oxygenated blood",
+      "valueReference": 620756997,
+      "causality": "input",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "nO2v",
+      "description": "Amount of Mixed Venous O2",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.006056
+    },
+    {
+      "name": "der(nO2v)",
+      "description": "der(Amount of Mixed Venous O2)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "nO2c",
+      "description": "Amount of End-Capillary O2",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.008301
+    },
+    {
+      "name": "der(nO2c)",
+      "description": "der(Amount of End-Capillary O2)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "nO2a",
+      "description": "Amount of Arterial O2",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.008256
+    },
+    {
+      "name": "der(nO2a)",
+      "description": "der(Amount of Arterial O2)",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "nCO2v",
+      "description": "Amount of Mixed Venous CO2",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.023101
+    },
+    {
+      "name": "der(nCO2v)",
+      "description": "der(Amount of Mixed Venous CO2)",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "nCO2c",
+      "description": "Amount of End-Capillary CO2",
+      "valueReference": 33554436,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.021183
+    },
+    {
+      "name": "der(nCO2c)",
+      "description": "der(Amount of End-Capillary CO2)",
+      "valueReference": 1124073476,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "nCO2a",
+      "description": "Amount of Arterial CO2",
+      "valueReference": 33554437,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.021221
+    },
+    {
+      "name": "der(nCO2a)",
+      "description": "der(Amount of Arterial CO2)",
+      "valueReference": 1124073477,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ctO2v",
+      "description": "Mixed venous O2 concentration",
+      "valueReference": 603979776,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ctO2c",
+      "description": "O2 concentration at the end of the alveolar capillary",
+      "valueReference": 603979777,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ctO2a",
+      "description": "Arterial O2 concentration",
+      "valueReference": 603979778,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ctCO2v",
+      "description": "Mixed venous CO2 concentration",
+      "valueReference": 603979779,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ctCO2c",
+      "description": "CO2 concentration at the end of the alveolar capillary",
+      "valueReference": 603979780,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ctCO2a",
+      "description": "Arterial CO2 concentration",
+      "valueReference": 603979781,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "fAlveolarPerfusingO2",
+      "description": "Rate of Alveolar Perfusing of O2",
+      "valueReference": 1174405167,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fCapillaryDrainingO2",
+      "description": "Rate of Capillary Draining of O2",
+      "valueReference": 1174405168,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fShuntingO2",
+      "description": "Rate of Shunting of O2",
+      "valueReference": 1174405169,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fSystemicCirculatingO2",
+      "description": "Rate of Systemic Circulating of O2",
+      "valueReference": 1174405170,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fMetabolicO2Consuming",
+      "description": "Rate of Metabolic O2 Consuming",
+      "valueReference": 1711276083,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fAlveolarPerfusingCO2",
+      "description": "Rate of Alveolar Perfusing of CO2",
+      "valueReference": 1174405172,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fCapillaryDrainingCO2",
+      "description": "Rate of Capillary Draining of CO2",
+      "valueReference": 1174405173,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fShuntingCO2",
+      "description": "Rate of Shunting of CO2",
+      "valueReference": 1174405174,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fSystemicCirculatingCO2",
+      "description": "Rate of Systemic Circulating of CO2",
+      "valueReference": 1174405175,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fMetabolicCO2Producing",
+      "description": "Rate of Metabolic CO2 Producing",
+      "valueReference": 1711276088,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fO2Diffusing",
+      "description": "Rate of Alveolo-Capillary O2 Diffusing",
+      "valueReference": 637534265,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00018333333333333
+    },
+    {
+      "name": "fCO2Diffusing",
+      "description": "Rate of Alveolo-Capillary CO2 Diffusing",
+      "valueReference": 637534266,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mol/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00016666666666667
+    },
+    {
+      "name": "QAlv",
+      "description": "Alveolar perfusion",
+      "valueReference": 1174405179,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "Qsh",
+      "description": "Shunt perfusion",
+      "valueReference": 1174405180,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "pH2O",
+      "description": "Water vapour pressure",
+      "valueReference": 100663341,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "STPD_to_BTPS",
+      "description": "Conversion coefficient",
+      "valueReference": 100663342,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "VAi_STPD",
+      "valueReference": 637534269,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "VAe_STPD",
+      "valueReference": 637534270,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "SolutionVolume",
+      "description": "Normalized solution volume, 1 litre",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.001
+    },
+    {
+      "name": "Pressure",
+      "description": "Ambient pressure",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "start": 101325
+    },
+    {
+      "name": "FiO2d",
+      "description": "Inspired dry O2 fraction",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.2095
+    },
+    {
+      "name": "FiCO2d",
+      "description": "Inspired dry CO2 fraction",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.0004
+    },
+    {
+      "name": "Temperature",
+      "description": "Body temperature",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "K",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "K",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "degC",
+          "displayFactor": 1,
+          "displayOffset": -273.15
+        }
+      ],
+      "start": 310.15
+    },
+    {
+      "name": "VmO2stand",
+      "description": "O2 molar volume at 0 degC, 760 mmHg",
+      "valueReference": 16777234,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "m3/mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.022392199999999998
+    },
+    {
+      "name": "VmCO2stand",
+      "description": "CO2 molar volume at 0 degC, 760 mmHg",
+      "valueReference": 16777235,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "m3/mol",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/mol",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0222629
+    },
+    {
+      "name": "Pstand",
+      "valueReference": 16777236,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "start": 101325
+    },
+    {
+      "name": "DLO2",
+      "description": "O2 apparent alveolo-capillary diffusion coefficient",
+      "valueReference": 16777237,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "DLCO2",
+      "description": "CO2 apparent alveolo-capillary diffusion coefficient",
+      "valueReference": 16777238,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 20.68
+    },
+    {
+      "name": "dPacO2",
+      "description": "Alveolo-capillary PO2 difference",
+      "valueReference": 16777239,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "dPacCO2",
+      "description": "Alveolo-capillary PCO2 difference",
+      "valueReference": 16777240,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "VAe_BTPS",
+      "description": "Expired alveolar ventilation, BTPS",
+      "valueReference": 603979782,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "RER",
+      "description": "Respiratory exchange ratio",
+      "valueReference": 603979783,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "PAO2",
+      "description": "Alveolar PO2",
+      "valueReference": 603979784,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "PACO2",
+      "description": "Alveolar PCO2",
+      "valueReference": 603979785,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "PO2c",
+      "description": "PO2 at the end of the alveolar capillary",
+      "valueReference": 603979786,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "PCO2c",
+      "description": "PCO2 at the end of the alveolar capillary",
+      "valueReference": 603979787,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "sO2c",
+      "description": "Hemoglobin oxygen saturation at the end of the alveolar capillary",
+      "valueReference": 603979788,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "pHc",
+      "description": "pH at the end of the alveolar capillary",
+      "valueReference": 603979789,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "HCO3c",
+      "description": "Bicarbonate at the end of the alveolar capillary",
+      "valueReference": 603979790,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "PO2a",
+      "description": "Arterial PO2",
+      "valueReference": 603979791,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "PCO2a",
+      "description": "Arterial PCO2",
+      "valueReference": 603979792,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "sO2a",
+      "description": "Arterial hemoglobin oxygen saturation",
+      "valueReference": 603979793,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "pHa",
+      "description": "Arterial pH",
+      "valueReference": 603979794,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "HCO3a",
+      "description": "Arterial bicarbonate",
+      "valueReference": 603979795,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "PO2v",
+      "description": "Mixed venous PO2",
+      "valueReference": 603979796,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "PCOv",
+      "description": "Mixed venous PCO2",
+      "valueReference": 603979797,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "sO2v",
+      "description": "Mixed venous hemoglobin oxygen saturation",
+      "valueReference": 603979798,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "pHv",
+      "description": "Mixed venous pH",
+      "valueReference": 603979799,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "HCO3v",
+      "description": "Mixed venous bicarbonate",
+      "valueReference": 603979800,
+      "causality": "output",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777241,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663298,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777242,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 40
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(EndCapillaryEquilibrating.pCO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073478,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 603979780,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 637534275,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback.y",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777243,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa.u",
+      "description": "Input signal connector",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa.y",
+      "description": "Output signal connector",
+      "valueReference": 637534272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.pCO2",
+      "description": "pCO2 in Pa",
+      "valueReference": 637534272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.pH",
+      "valueReference": 637534273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.ctCO2",
+      "description": "total blood CO2 concentration (in mmol/l)",
+      "valueReference": 637534275,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.cHCO3",
+      "description": "plasma HCO3 concentration (in mmol/l)",
+      "valueReference": 637534276,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctCO2content.cdCO2p",
+      "description": "plasma CO2 dissolved concentration (in mmol/l)",
+      "valueReference": 637534277,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.pH",
+      "valueReference": 637534278,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.pCO2",
+      "valueReference": 637534279,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.pO2",
+      "valueReference": 637534280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.sO2",
+      "valueReference": 637534281,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.totalO2",
+      "valueReference": 637534282,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.cdO2p",
+      "description": "dissolved O2 concentration in plasma",
+      "valueReference": 637534283,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bloodctO2content.ceHb",
+      "description": "effective concentration of hemoglobin",
+      "valueReference": 637534284,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 637534272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.pH",
+      "description": "plasma pH at given temperature",
+      "valueReference": 637534273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.BEox",
+      "description": "BEox in mmol/l",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.vanSlykeEquation.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 1174405197,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.vanSlykeEquation.pH",
+      "description": "pH at given temperature",
+      "valueReference": 1174405198,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.vanSlykeEquation.BEox",
+      "description": "Base Excess (in fully oxygenated blood) in mmol/l",
+      "valueReference": 1174405199,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.vanSlykeEquation.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405200,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.integrator.k",
+      "description": "Integrator gain",
+      "valueReference": 16777244,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 10000
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.integrator.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.integrator.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777245,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 7.4
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.integrator.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405201,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.integrator.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554439,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(EndCapillaryEquilibrating.bEINV_by_integration.integrator.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073479,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405199,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.bEINV_by_integration.feedback.y",
+      "valueReference": 1174405201,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777246,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663308,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777247,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405202,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(EndCapillaryEquilibrating.pO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073480,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback1.u1",
+      "description": "Commanded input",
+      "valueReference": 603979777,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback1.u2",
+      "description": "Feedback input",
+      "valueReference": 637534282,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.feedback1.y",
+      "valueReference": 1174405202,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa1.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777248,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa1.u",
+      "description": "Input signal connector",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.to_Pa1.y",
+      "description": "Output signal connector",
+      "valueReference": 637534280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "EndCapillaryEquilibrating.ctO2",
+      "valueReference": 603979777,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.ctCO2",
+      "valueReference": 603979780,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.BEox",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "EndCapillaryEquilibrating.cdCO2",
+      "valueReference": 637534277,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.cdO2",
+      "valueReference": 637534283,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.ceHb",
+      "description": "effiective concentration of hemoglobin (mmol/l)",
+      "valueReference": 637534284,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.sO2",
+      "valueReference": 637534274,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "EndCapillaryEquilibrating.cHCO3",
+      "description": "outgoing concentration of HCO3",
+      "valueReference": 637534276,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pH",
+      "valueReference": 637534273,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pCO2",
+      "valueReference": 637534272,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "EndCapillaryEquilibrating.pO2",
+      "valueReference": 637534280,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777249,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663313,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777250,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 40
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405203,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554441,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(ArterialEquilibrating.pCO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073481,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 603979781,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 637534295,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback.y",
+      "valueReference": 1174405203,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777251,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa.u",
+      "description": "Input signal connector",
+      "valueReference": 33554441,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa.y",
+      "description": "Output signal connector",
+      "valueReference": 637534292,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.pCO2",
+      "description": "pCO2 in Pa",
+      "valueReference": 637534292,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.pH",
+      "valueReference": 637534293,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534294,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.ctCO2",
+      "description": "total blood CO2 concentration (in mmol/l)",
+      "valueReference": 637534295,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.cHCO3",
+      "description": "plasma HCO3 concentration (in mmol/l)",
+      "valueReference": 637534296,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctCO2content.cdCO2p",
+      "description": "plasma CO2 dissolved concentration (in mmol/l)",
+      "valueReference": 637534297,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.pH",
+      "valueReference": 637534298,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.pCO2",
+      "valueReference": 637534299,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.pO2",
+      "valueReference": 637534300,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.sO2",
+      "valueReference": 637534301,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.totalO2",
+      "valueReference": 637534302,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.cdO2p",
+      "description": "dissolved O2 concentration in plasma",
+      "valueReference": 637534303,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bloodctO2content.ceHb",
+      "description": "effective concentration of hemoglobin",
+      "valueReference": 637534304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 637534292,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.pH",
+      "description": "plasma pH at given temperature",
+      "valueReference": 637534293,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.BEox",
+      "description": "BEox in mmol/l",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.vanSlykeEquation.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 1174405217,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.vanSlykeEquation.pH",
+      "description": "pH at given temperature",
+      "valueReference": 1174405218,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.vanSlykeEquation.BEox",
+      "description": "Base Excess (in fully oxygenated blood) in mmol/l",
+      "valueReference": 1174405219,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.vanSlykeEquation.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405220,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534294,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.integrator.k",
+      "description": "Integrator gain",
+      "valueReference": 16777252,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 10000
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.integrator.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663318,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.integrator.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777253,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 7.4
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.integrator.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405221,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.integrator.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554442,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(ArterialEquilibrating.bEINV_by_integration.integrator.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073482,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405219,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.bEINV_by_integration.feedback.y",
+      "valueReference": 1174405221,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.pO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777254,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "ArterialEquilibrating.pO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663323,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "ArterialEquilibrating.pO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777255,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "ArterialEquilibrating.pO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405222,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.pO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554443,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(ArterialEquilibrating.pO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073483,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback1.u1",
+      "description": "Commanded input",
+      "valueReference": 603979778,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback1.u2",
+      "description": "Feedback input",
+      "valueReference": 637534302,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.feedback1.y",
+      "valueReference": 1174405222,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa1.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777256,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa1.u",
+      "description": "Input signal connector",
+      "valueReference": 33554443,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.to_Pa1.y",
+      "description": "Output signal connector",
+      "valueReference": 637534300,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "ArterialEquilibrating.ctO2",
+      "valueReference": 603979778,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.ctCO2",
+      "valueReference": 603979781,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.BEox",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "ArterialEquilibrating.cdCO2",
+      "valueReference": 637534297,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.cdO2",
+      "valueReference": 637534303,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.ceHb",
+      "description": "effiective concentration of hemoglobin (mmol/l)",
+      "valueReference": 637534304,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.sO2",
+      "valueReference": 637534294,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "ArterialEquilibrating.cHCO3",
+      "description": "outgoing concentration of HCO3",
+      "valueReference": 637534296,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "ArterialEquilibrating.pH",
+      "valueReference": 637534293,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "ArterialEquilibrating.pCO2",
+      "valueReference": 637534292,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "ArterialEquilibrating.pO2",
+      "valueReference": 637534300,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777257,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663328,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777258,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 40
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405224,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554444,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(MixedVenousEquilibrating.pCO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073484,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 603979779,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 637534316,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback.y",
+      "valueReference": 1174405224,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777259,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa.u",
+      "description": "Input signal connector",
+      "valueReference": 33554444,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa.y",
+      "description": "Output signal connector",
+      "valueReference": 637534313,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.pCO2",
+      "description": "pCO2 in Pa",
+      "valueReference": 637534313,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.pH",
+      "valueReference": 637534314,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534315,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.ctCO2",
+      "description": "total blood CO2 concentration (in mmol/l)",
+      "valueReference": 637534316,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.cHCO3",
+      "description": "plasma HCO3 concentration (in mmol/l)",
+      "valueReference": 637534317,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctCO2content.cdCO2p",
+      "description": "plasma CO2 dissolved concentration (in mmol/l)",
+      "valueReference": 637534318,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.pH",
+      "valueReference": 637534319,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.pCO2",
+      "valueReference": 637534320,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.pO2",
+      "valueReference": 637534321,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.sO2",
+      "valueReference": 637534322,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.totalO2",
+      "valueReference": 637534323,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.cdO2p",
+      "description": "dissolved O2 concentration in plasma",
+      "valueReference": 637534324,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bloodctO2content.ceHb",
+      "description": "effective concentration of hemoglobin",
+      "valueReference": 637534325,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 637534313,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.pH",
+      "description": "plasma pH at given temperature",
+      "valueReference": 637534314,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.BEox",
+      "description": "BEox in mmol/l",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.vanSlykeEquation.pCO2",
+      "description": "pCO2 at given temperature in Pa",
+      "valueReference": 1174405238,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.vanSlykeEquation.pH",
+      "description": "pH at given temperature",
+      "valueReference": 1174405239,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.vanSlykeEquation.BEox",
+      "description": "Base Excess (in fully oxygenated blood) in mmol/l",
+      "valueReference": 1174405240,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.vanSlykeEquation.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 1174405241,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.sO2",
+      "description": "O2 hemoglobin saturation",
+      "valueReference": 637534315,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.integrator.k",
+      "description": "Integrator gain",
+      "valueReference": 16777260,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 10000
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.integrator.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663333,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.integrator.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777261,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 7.4
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.integrator.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.integrator.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554445,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(MixedVenousEquilibrating.bEINV_by_integration.integrator.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073485,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.feedback.u1",
+      "description": "Commanded input",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.feedback.u2",
+      "description": "Feedback input",
+      "valueReference": 1174405240,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.bEINV_by_integration.feedback.y",
+      "valueReference": 1174405242,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2input_mmHg.k",
+      "description": "Integrator gain",
+      "valueReference": 16777262,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2input_mmHg.initType",
+      "description": "Type of initialization (1: no init, 2: steady state, 3,4: initial output)",
+      "valueReference": 100663338,
+      "causality": "local",
+      "variability": "constant",
+      "type": "enumeration",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 3
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2input_mmHg.y_start",
+      "description": "Initial or guess value of output (= state)",
+      "valueReference": 16777263,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 50
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2input_mmHg.u",
+      "description": "Connector of Real input signal",
+      "valueReference": 1174405243,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2input_mmHg.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 33554446,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(MixedVenousEquilibrating.pO2input_mmHg.y)",
+      "description": "der(Connector of Real output signal)",
+      "valueReference": 1124073486,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback1.u1",
+      "description": "Commanded input",
+      "valueReference": 603979776,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback1.u2",
+      "description": "Feedback input",
+      "valueReference": 637534323,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.feedback1.y",
+      "valueReference": 1174405243,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa1.k",
+      "description": "Gain value multiplied with input signal",
+      "valueReference": 16777264,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 133.322365
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa1.u",
+      "description": "Input signal connector",
+      "valueReference": 33554446,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.to_Pa1.y",
+      "description": "Output signal connector",
+      "valueReference": 637534321,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "MixedVenousEquilibrating.ctO2",
+      "valueReference": 603979776,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.ctCO2",
+      "valueReference": 603979779,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.BEox",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "MixedVenousEquilibrating.cdCO2",
+      "valueReference": 637534318,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.cdO2",
+      "valueReference": 637534324,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.ceHb",
+      "description": "effiective concentration of hemoglobin (mmol/l)",
+      "valueReference": 637534325,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.sO2",
+      "valueReference": 637534315,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "%",
+      "displayFactor": 100,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 0.01
+    },
+    {
+      "name": "MixedVenousEquilibrating.cHCO3",
+      "description": "outgoing concentration of HCO3",
+      "valueReference": 637534317,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmol/l",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "mol/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmol/l",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0
+    },
+    {
+      "name": "MixedVenousEquilibrating.pH",
+      "valueReference": 637534314,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "%",
+          "displayFactor": 100,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "max": 14,
+      "nominal": 7
+    },
+    {
+      "name": "MixedVenousEquilibrating.pCO2",
+      "valueReference": 637534313,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "MixedVenousEquilibrating.pO2",
+      "valueReference": 637534321,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    }
+  ]
+}

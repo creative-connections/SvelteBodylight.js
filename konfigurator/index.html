@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Konfigurátor FMU Lab</title>
+<style>
+  :root { color-scheme: light dark; --ink:#19332f; --muted:#5f716b; --rule:#d7e0da; --paper:#fff; --sunk:#f1f4f2; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#e3ece7; --muted:#9fb3ac; --rule:#2b3a35; --paper:#111917; --sunk:#182320; } }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 Georgia,serif; }
+  .page { max-width:760px; margin:0 auto; padding:48px 16px 80px; }
+  h1 { font-size:clamp(28px,5vw,40px); line-height:1.1; margin:0 0 8px; }
+  p { max-width:62ch; }
+  .lead { color:var(--muted); }
+  ol { padding-left:20px; } li { margin:6px 0; }
+  a.start { display:inline-block; margin:18px 0 8px; padding:12px 20px; background:var(--ink);
+    color:var(--paper); text-decoration:none; border-radius:6px; font:600 15px system-ui,sans-serif; }
+  table { border-collapse:collapse; width:100%; margin-top:10px; font:14px system-ui,sans-serif; }
+  th,td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule); }
+  th { background:var(--sunk); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+  .num { font-variant-numeric:tabular-nums; color:var(--muted); }
+  .note { background:var(--sunk); border-left:3px solid var(--muted); padding:14px 18px; margin-top:28px; }
+</style></head><body><div class="page">
+<h1>Konfigurátor FMU Lab</h1>
+<p class="lead">Sestavte experiment nad hotovým modelem — co bude posuvník, co se bude kreslit
+a jaký bude scénář. Nic se neinstaluje.</p>
+<ol>
+  <li>Stáhněte si níže metadata modelu, se kterým chcete pracovat.</li>
+  <li>Otevřete konfigurátor a v sekci 1 ten stažený soubor vyberte.</li>
+  <li>Projděte sekce 2 až 3C a v sekci 4 klikněte <strong>Download experiment JSON</strong>.</li>
+  <li>Stažený soubor pošlete kurátorovi; ten experiment zařadí do katalogu.</li>
+</ol>
+<a class="start" href="konfigurator.html">Otevřít konfigurátor</a>
+<h2>Modely</h2>
+<table><thead><tr><th>Model</th><th>Proměnných</th><th>Metadata</th></tr></thead>
+<tbody>
+<tr><td>Alveolo-kapilární jednotka (s tkání)</td><td class="num">310</td><td><a href="metadata/alveolar-capillary-tissue.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Dodání dortu (OPM, kvalitativní)</td><td class="num">54</td><td><a href="metadata/cake-providing.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Kávovar (OPM, kvalitativní)</td><td class="num">31</td><td><a href="metadata/coffee-brewing.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Zásoba železa ve ferritinu</td><td class="num">39</td><td><a href="metadata/ferritin.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Zásoba železa ve ferritinu (varianta)</td><td class="num">41</td><td><a href="metadata/ferritin-variant.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Hodgkin–Huxley — dráždivá membrána</td><td class="num">94</td><td><a href="metadata/hodgkin-huxley.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Metabolismus železa</td><td class="num">260</td><td><a href="metadata/iron-metabolism.json" download>stáhnout metadata</a></td></tr>
+<tr><td>JWST — obrázek 3-5 (Dori, kapitola 3)</td><td class="num">77</td><td><a href="metadata/jwst-fig35.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Normální krevní oběh</td><td class="num">579</td><td><a href="metadata/normal-circulation.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Normální oběh (z OPM diagramu)</td><td class="num">225</td><td><a href="metadata/normal-circulation-opm.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Vytápění místnosti</td><td class="num">9</td><td><a href="metadata/room-heating.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Vytápění místnosti (varianta)</td><td class="num">9</td><td><a href="metadata/room-heating-variant.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Samoobslužná myčka (OPM, kvalitativní)</td><td class="num">54</td><td><a href="metadata/self-service-car-wash.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Jednoduchá respirace</td><td class="num">527</td><td><a href="metadata/simple-respiration.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Jednoduchá respirace (z OPM diagramu)</td><td class="num">281</td><td><a href="metadata/simple-respiration-opm.json" download>stáhnout metadata</a></td></tr>
+<tr><td>Aktivace uživatele (OPM, kvalitativní)</td><td class="num">31</td><td><a href="metadata/user-activation-process.json" download>stáhnout metadata</a></td></tr>
+</tbody></table>
+<div class="note">
+<p><strong>Tempo simulace tady neověříte.</strong> Tlačítka <em>Test run</em> a <em>Open in
+simulator</em> potřebují běžící aplikaci na téže adrese; změří je kurátor, až experiment
+zařazuje. Ostatní kontroly si konfigurátor dělá sám.</p>
+</div>
+</div></body></html>

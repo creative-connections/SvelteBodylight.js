@@ -1,0 +1,1708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FMU Experiment Setup</title>
+<style>
+  :root { color-scheme: light; font-family: ui-sans-serif, system-ui, sans-serif; }
+  body { margin: 0; background: #eef1ec; color: #19332f; }
+  header { padding: 20px 24px; background: #19332f; color: #f4f0e4; display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; }
+  header h1 { font-size: 20px; margin: 0; font-weight: 600; }
+  header p { margin: 0; color: #b9c7c1; font-size: 13px; }
+  main { padding: 20px 24px 60px; max-width: 1400px; margin: 0 auto; }
+  .panel { background: #fff; border: 1px solid #cdd6d1; border-radius: 10px; padding: 16px 18px; margin-bottom: 18px; }
+  .panel h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: #4c635c; margin: 0 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+  .field { display: flex; flex-direction: column; gap: 4px; min-width: 160px; flex: 1; }
+  .field.wide { flex: 3; min-width: 260px; }
+  label { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #687873; }
+  input[type="text"], input[type="number"], select, textarea { font: inherit; padding: 7px 9px; border: 1px solid #bcc7c2; border-radius: 6px; background: #fbfcfb; }
+  input[type="file"] { font-size: 13px; }
+  button { border: 0; background: #19332f; color: #f4f0e4; padding: 9px 16px; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: #19332f; border: 1px solid #19332f; }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  .status { font-size: 13px; color: #687873; }
+  .status.error { color: #b14d32; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid #e2e7e4; text-align: left; vertical-align: middle; }
+  th { position: sticky; top: 0; background: #f4f6f3; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #4c635c; }
+  tbody tr:hover { background: #f7f9f7; }
+  .name-cell { max-width: 340px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: ui-monospace, monospace; font-size: 12px; }
+  .table-wrap { max-height: 60vh; overflow: auto; border: 1px solid #e2e7e4; border-radius: 8px; }
+  select.role { min-width: 90px; }
+  .tunable-hint { display: inline-block; padding: 1px 5px; border-radius: 4px; background: #e7f1ec; color: #2f6b52; font-size: 11px; }
+  .section-note { margin: 0 0 12px; font-size: 13px; line-height: 1.5; color: #4a544e; max-width: 78ch; }
+  .bulk-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+  .bulk-actions button { padding: 6px 10px; font-size: 13px; }
+  input.compact { width: 90px; }
+  .count-badge { font: 11px ui-monospace, monospace; background: #eef1ec; border-radius: 999px; padding: 3px 10px; color: #4c635c; }
+  .json-preview { width: 100%; min-height: 220px; font: 12px ui-monospace, monospace; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .axes-list { display: flex; flex-direction: column; gap: 8px; }
+  .axis-row { display: flex; align-items: center; gap: 12px; }
+  .axis-name { flex: 0 0 auto; font-family: var(--mono, ui-monospace, monospace); font-size: 12px;
+               color: #687873; min-width: 200px; }
+  .axis-title { flex: 1; min-width: 180px; }
+  .axis-row select { min-width: 260px; }
+  .axis-frame { display: flex; align-items: center; gap: 8px; margin: 4px 0 14px 0; padding-left: 12px; font-size: 12px; color: #555; }
+  .axis-frame input { width: 84px; }
+  .axis-frame label { display: flex; align-items: center; gap: 4px; }
+  .axis-frame .axis-hint { color: #888; }
+</style>
+</head>
+<body>
+<header>
+  <h1>FMU Experiment Setup</h1>
+  <p>Pick which variables of a converted FMU become interactive inputs, fixed parameters, or displayed outputs for a specific downstream app — export the result as an experiment JSON file.</p>
+</header>
+<main>
+  <section class="panel">
+    <h2>1. Load model metadata</h2>
+    <div class="row">
+      <div class="field wide">
+        <label for="metadata-file">model-metadata.json (from web/static/models/&lt;model-id&gt;/)</label>
+        <input id="metadata-file" type="file" accept="application/json" />
+      </div>
+      <div class="field wide">
+        <label for="experiment-file">Optional: re-open an existing experiment JSON to keep editing</label>
+        <input id="experiment-file" type="file" accept="application/json" />
+      </div>
+    </div>
+    <p id="metadata-status" class="status">No model loaded yet.</p>
+    <div class="row" style="margin-top:12px;">
+      <div class="field wide">
+        <label for="reference-file">Optional: test-model metadata — its constant blocks are the known-good operating point</label>
+        <input id="reference-file" type="file" accept="application/json" />
+      </div>
+    </div>
+    <div id="reference-constants"></div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Experiment details</h2>
+    <div class="row">
+      <div class="field">
+        <label for="model-id">Model id (catalog folder, e.g. simple-respiration)</label>
+        <input id="model-id" type="text" placeholder="simple-respiration" />
+      </div>
+      <div class="field">
+        <label for="experiment-id">Experiment id (URL-safe, e.g. studenti-a)</label>
+        <input id="experiment-id" type="text" placeholder="studenti-a" />
+      </div>
+      <div class="field wide">
+        <label for="experiment-name">Display name</label>
+        <input id="experiment-name" type="text" placeholder="Studentská verze A" />
+      </div>
+      <div class="field wide">
+        <label for="experiment-description">Description</label>
+        <input id="experiment-description" type="text" placeholder="Krátký popis pro studenty" />
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>2b. Timing — simulation time vs. real time</h2>
+    <p class="status">Simulation time is the model's own <code>time</code>. Real time is how long the student waits. They are independent: what sets the pace is how many intervals get displayed per real second, not how large the stop time is.</p>
+    <div class="row">
+      <div class="field">
+        <label for="stop-time">Stop time (simulation seconds)</label>
+        <input id="stop-time" type="number" step="any" min="0" placeholder="20000" />
+      </div>
+      <div class="field">
+        <label for="step-size">Simulation time per interval</label>
+        <input id="step-size" type="number" step="any" min="0" placeholder="10" />
+      </div>
+      <div class="field">
+        <label for="intervals-per-second">Intervals per real second (0 = max)</label>
+        <input id="intervals-per-second" type="number" step="1" min="0" placeholder="20" />
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px;">
+      <div class="field">
+        <label for="time-unit">Time axis label (what the model's seconds stand for)</label>
+        <input id="time-unit" type="text" placeholder="s" />
+      </div>
+      <div class="field">
+        <label for="time-factor">Time factor (displayed = model seconds &times; factor)</label>
+        <input id="time-factor" type="number" step="any" placeholder="1" />
+      </div>
+    </div>
+    <p id="timing-summary" class="status"></p>
+    <p id="chart-warnings" class="status"></p>
+    <div class="actions" style="margin-top:12px;">
+      <button id="test-run-button" type="button">Test run — measure the real pace</button>
+      <span id="test-run-status" class="status">Needs a model id that exists under /models/, so run this page from the app server.</span>
+    </div>
+    <p id="test-run-result" class="status"></p>
+
+  </section>
+
+  <section class="panel">
+    <h2>3. Assign roles to variables <span id="variable-count" class="count-badge"></span></h2>
+    <p class="section-note"><strong>Causality</strong> is what the FMU declares and cannot be edited. The choice is <strong>Role</strong>, five columns along. A variable marked <span class="tunable-hint">tunable</span> can take the input role even though its causality says <em>parameter</em> — many models from Dymola declare no inputs at all and expose block constants as tunable parameters instead.</p>
+    <div class="row">
+      <div class="field wide">
+        <label for="search">Search by name</label>
+        <input id="search" type="text" placeholder="Type to filter..." />
+      </div>
+      <div class="field">
+        <label for="role-filter">Show only role</label>
+        <select id="role-filter">
+          <option value="">All</option>
+          <option value="input">Input</option>
+          <option value="parameter">Parameter</option>
+          <option value="output">Output</option>
+          <option value="none">Unassigned</option>
+        </select>
+      </div>
+      <div class="field wide">
+        <label>Apply a role to every row shown</label>
+        <div class="bulk-actions">
+          <button type="button" id="bulk-input">Make inputs</button>
+          <button type="button" id="bulk-parameter">Make parameters</button>
+          <button type="button" id="bulk-output">Make outputs</button>
+          <button type="button" id="bulk-clear">Unassign</button>
+        </div>
+      </div>
+    </div>
+    <p id="bulk-status" class="section-note" hidden></p>
+    <div class="table-wrap">
+      <table id="variables-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Causality</th>
+            <th>Declared range</th>
+            <th>Start</th>
+            <th>Role</th>
+            <th>Value / Min</th>
+            <th>Max</th>
+            <th>Step</th>
+            <th>Unit</th>
+            <th>Label</th>
+            <th>Chart</th>
+            <th>Primary</th>
+          </tr>
+        </thead>
+        <tbody id="variables-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3b. Guided steps <span class="count-badge" id="step-count"></span></h2>
+    <p class="status">Optional. Each step tells the student what to try; the values it carries are applied by a button in the simulator, never behind their back. Set the inputs above to the operating point you want, then capture it here.</p>
+    <div id="steps-list"></div>
+    <div class="actions" style="margin-top:12px;">
+      <button id="add-step" type="button">Add step</button>
+    </div>
+  </section>
+
+  <section class="panel" id="axes-panel" hidden>
+    <h2>3c. Charts &mdash; titles and axes <span class="count-badge" id="axis-count"></span></h2>
+    <p class="hint">
+      The chart id comes from the Chart column above, where one output may name several charts
+      separated by commas; the title is what a student reads, so it may
+      differ &mdash; accents and all. A chart is drawn against time unless you say otherwise:
+      choosing another declared output draws value against value instead, a pressure&ndash;volume
+      loop rather than a trend. A chart cannot be drawn against one of its own curves, so those are
+      not offered &mdash; a quantity against itself is the diagonal.
+    </p>
+    <p class="hint">
+      <strong>Window</strong> is how many seconds of history that one chart draws: on a loop it
+      keeps the last beats so successive cycles do not stack into a fan, and on a chart drawn
+      against time it turns the plot into a monitor that fills once and then scrolls. Leave it empty
+      to draw the whole run; the student can switch it from the panel either way.
+      <strong>Fixed axes</strong> stop the plot rescaling itself to its own data &mdash; without
+      them a change of contractility or afterload draws the same picture with different numbers on
+      the axis, and nobody reads axis numbers. Get the numbers from
+      <code>npm run measure:frame</code>, which runs the curated point and every guided step and
+      reports how far each curve actually travels; a frame that clips its own scenario is refused by
+      the checks.
+    </p>
+    <div id="axes-list" class="axes-list"></div>
+  </section>
+
+  <section class="panel">
+    <h2>4. Export</h2>
+    <div class="actions">
+      <button id="export-button" disabled>Download experiment JSON</button>
+      <button id="open-button" class="secondary" disabled>Open in simulator</button>
+      <button id="page-button" class="secondary" disabled>Download page HTML</button>
+      <span id="export-status" class="status"></span>
+    </div>
+    <label for="json-preview">Live preview</label>
+    <textarea id="json-preview" class="json-preview" readonly></textarea>
+  </section>
+</main>
+
+<script>
+  // --- state ---
+  let metadata = null;          // parsed model-metadata.json
+  /** @type {Map<string, {role: 'none'|'input'|'parameter'|'output', value: number, min: number, max: number, step: number, unit: string, primary: boolean}>} */
+  const roleByName = new Map();
+
+  const el = (id) => document.getElementById(id);
+  const metadataFileInput = el('metadata-file');
+  const experimentFileInput = el('experiment-file');
+  const metadataStatus = el('metadata-status');
+  const modelIdInput = el('model-id');
+  const experimentIdInput = el('experiment-id');
+  // A string a student reads may be one language or several. This tool edits one of them -- the
+  // experiment's own -- and hands the rest back untouched. Without this, loading a bilingual
+  // experiment put [object Object] in every field and exporting wrote that back over the
+  // translations: the sixth time this tool would have destroyed something a curator made.
+  let homeLanguage = 'cs';
+  const translationsAt = new Map();
+
+  function readText(key, value) {
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      translationsAt.set(key, value);
+      return value[homeLanguage] ?? Object.values(value)[0] ?? '';
+    }
+    translationsAt.delete(key);
+    return value ?? '';
+  }
+
+  /** The edited text back in its set of translations, or a plain string when there never was one. */
+  function writeText(key, edited) {
+    const original = translationsAt.get(key);
+    if (!original) return edited || undefined;
+    if (!edited) return original;
+    return { ...original, [homeLanguage]: edited };
+  }
+
+  const experimentNameInput = el('experiment-name');
+  const experimentDescriptionInput = el('experiment-description');
+  const stopTimeInput = el('stop-time');
+  const stepSizeInput = el('step-size');
+  const intervalsPerSecondInput = el('intervals-per-second');
+  const timingSummary = el('timing-summary');
+  const referenceFileInput = el('reference-file');
+  const referenceConstants = el('reference-constants');
+  const chartWarnings = el('chart-warnings');
+  const timeUnitInput = el('time-unit');
+  const timeFactorInput = el('time-factor');
+  const testRunButton = el('test-run-button');
+  const testRunStatus = el('test-run-status');
+  const testRunResult = el('test-run-result');
+  const stepsList = el('steps-list');
+  const stepCount = el('step-count');
+  const addStepButton = el('add-step');
+  // A guided scenario: [{ title, text, set: { inputName: displayValue } }]
+  let scenarioSteps = [];
+
+  const searchInput = el('search');
+  const roleFilterSelect = el('role-filter');
+  const variablesBody = el('variables-body');
+  const variableCountBadge = el('variable-count');
+  const exportButton = el('export-button');
+  const pageButton = el('page-button');
+  const openButton = el('open-button');
+  // Handed to the simulator so a draft can be seen running before it is saved anywhere.
+  const PREVIEW_KEY = 'fmu-to-wasm:preview-experiment';
+  const exportStatus = el('export-status');
+  const jsonPreview = el('json-preview');
+
+  // --- metric prefixes ------------------------------------------------------
+  // An FMU only lists the display units Dymola happened to declare, which is why a concentration
+  // can end up offered as 3.2e-5 mmol/l. Deriving the prefix ladder lets the curator pick the
+  // scale that reads as a plain number instead.
+  const PREFIXES = [
+    { symbol: 'p', factor: 1e-12 }, { symbol: 'n', factor: 1e-9 }, { symbol: 'u', factor: 1e-6 },
+    { symbol: 'm', factor: 1e-3 }, { symbol: '', factor: 1 }, { symbol: 'k', factor: 1e3 }
+  ];
+  // Bases worth prefixing. Deliberately excludes mmHg, %, and anything dimensionless, and
+  // excludes powers like m3 (which would be misread as a prefixed metre).
+  const PREFIXABLE_BASES = ['mol', 'g', 'l', 'L', 'Pa', 'J', 'W', 'V', 'A', 'm', 's'];
+
+  function splitPrefix(unitPart) {
+    for (const base of PREFIXABLE_BASES) {
+      if (unitPart === base) return { prefix: '', base };
+      if (unitPart.endsWith(base)) {
+        const prefix = unitPart.slice(0, -base.length);
+        const known = PREFIXES.find((p) => p.symbol === prefix);
+        if (known) return { prefix, base };
+      }
+    }
+    return null;
+  }
+
+  // Rescales the numerator of `unit` (or the whole unit when there is no denominator) across the
+  // prefix ladder. A display factor converts SI -> display, so a 1000x smaller unit means a
+  // 1000x larger factor.
+  function metricVariants(option) {
+    if (!option.unit || (option.displayOffset ?? 0) !== 0) return [];
+    const slash = option.unit.indexOf('/');
+    const numerator = slash < 0 ? option.unit : option.unit.slice(0, slash);
+    const denominator = slash < 0 ? '' : option.unit.slice(slash);
+    const split = splitPrefix(numerator);
+    if (!split) return [];
+    const current = PREFIXES.find((p) => p.symbol === split.prefix);
+    if (!current) return [];
+
+    return PREFIXES.map((prefix) => ({
+      unit: `${prefix.symbol}${split.base}${denominator}`,
+      displayFactor: (option.displayFactor ?? 1) * (current.factor / prefix.factor),
+      displayOffset: 0
+    }));
+  }
+
+  // `native` marks the ladder grown from the unit the model itself declared for display. Both
+  // 30 umol/m3 and 30 nmol/l are the same concentration, but a model that says "mmol/l" means
+  // the per-litre family, so that one wins a tie.
+  function expandUnitOptions(variable) {
+    const declared = unitOptionsFor(variable);
+    const all = declared.map((option) => ({ ...option, native: option.unit === variable.unit }));
+    for (const option of declared) {
+      const native = option.unit === variable.unit;
+      for (const variant of metricVariants(option)) {
+        const existing = all.find((e) => e.unit === variant.unit);
+        if (existing) existing.native = existing.native || native;
+        else all.push({ ...variant, native });
+      }
+    }
+    return all;
+  }
+
+  // The unit a loaded experiment chose, kept even where the model's own ladder does not offer it.
+  // K/min for a rate of warming is no metric variant of the model's K/s, and matching the saved
+  // unit against the ladder fell back to its first rung: a load and an export turned K/min x 60
+  // into K/s x 1 without a word -- the way this tool once lost labels, steps and charts.
+  function optionsForEntry(variable, entry) {
+    const options = expandUnitOptions(variable);
+    const curated = entry?.curatedUnit;
+    if (curated && !options.some((option) => option.unit === curated.unit)) options.push({ ...curated, native: false });
+    return options;
+  }
+
+  /** The unit an experiment item declares, with the factors that go with it. */
+  function curatedUnitOf(item) {
+    return typeof item.unit === 'string'
+      ? { unit: item.unit, displayFactor: Number(item.displayFactor ?? 1), displayOffset: Number(item.displayOffset ?? 0) }
+      : undefined;
+  }
+
+  // Picks the unit that shows the value as a plain number rather than an exponent.
+  function readableUnit(options, siValue, preferredName) {
+    const preferred = options.find((option) => option.unit === preferredName) ?? options[0];
+    const magnitude = Math.abs(Number(siValue) || 0);
+    if (magnitude === 0) return preferred;
+
+    const score = (option) => {
+      const shown = Math.abs(magnitude * (option.displayFactor ?? 1));
+      const distance = shown > 0 && Number.isFinite(shown)
+        ? (shown >= 1 && shown < 1000 ? Math.abs(Math.log10(shown) - 1)
+          : shown >= 0.1 && shown < 1 ? 2
+          : 10 + Math.abs(Math.log10(shown) - 1))
+        : 100;
+      return distance + (option.native ? 0 : 0.5);
+    };
+    return options.reduce((best, option) => (score(option) < score(best) ? option : best), preferred);
+  }
+
+  // Slider defaults for a variable. Physiological quantities span many orders of magnitude, so
+  // the scale comes from the start value, or from the FMU's `nominal` when the start is 0, and
+  // the range is then clipped to the declared min/max (a concentration may not go negative).
+  function defaultRangeFor(displayStart, bounds) {
+    const base = Number(displayStart ?? 0);
+    const nominal = Number.isFinite(bounds?.nominal) ? Math.abs(bounds.nominal) : 0;
+    const scale = Math.abs(base) > 0 ? Math.abs(base) : (nominal > 0 ? nominal : 1);
+
+    let min = base - scale * 2;
+    let max = base + scale * 2;
+    if (Number.isFinite(bounds?.min)) min = Math.max(min, bounds.min);
+    if (Number.isFinite(bounds?.max)) max = Math.min(max, bounds.max);
+    if (!(max > min)) max = min + (scale > 0 ? scale : 1);
+
+    const span = max - min;
+    const step = Number((span / 200).toPrecision(2));
+    return { min, max, step: step > 0 ? step : span / 200 };
+  }
+
+  // min/max/nominal live in SI units, like `start`; the sliders work in display units.
+  function boundsInDisplayUnits(variable, option) {
+    const factor = option.displayFactor ?? 1;
+    const offset = option.displayOffset ?? 0;
+    const convert = (v) => (Number.isFinite(v) ? v * factor + offset : undefined);
+    const low = convert(variable.min);
+    const high = convert(variable.max);
+    // A negative factor would flip the ends.
+    return factor < 0 ? { min: high, max: low, nominal: convert(variable.nominal) }
+                      : { min: low, max: high, nominal: Number.isFinite(variable.nominal) ? variable.nominal * factor : undefined };
+  }
+
+  function toDisplay(siValue, factor, offset) {
+    return siValue * (factor ?? 1) + (offset ?? 0);
+  }
+
+  /**
+   * Dymola does not always declare a unit. Models written against non-SI conventions carry it in
+   * the description instead -- "resistance in mmHg s/ml", "volume in ml" -- and normal-circulation
+   * is 48 out of 49 tunable parameters like that, every one of them with an empty unitOptions.
+   * Without this the curator can only pick "(none)" and the slider is a bare number.
+   *
+   * Reading it back out is safe because it is a LABEL and nothing else: displayFactor stays 1, so
+   * the value written to the FMU is untouched whether the guess is right or wrong. A wrong guess
+   * is a wrong caption, visible at a glance, never a wrong number.
+   */
+  function unitFromDescription(description) {
+    if (!description) return '';
+    if (/\bbeats\s+per\s+min\b/i.test(description)) return '1/min';
+    const match = /\bin\s+([^\s,;.]+(?:\s+[^\s,;.]+)?)\s*$/.exec(description.trim());
+    if (!match) return '';
+    const candidate = match[1].trim();
+    // A unit is short and made of symbols, not prose. Anything wordier is a sentence that
+    // happens to end in "in ...", so leave it alone.
+    if (candidate.length > 12) return '';
+    if (!/^[A-Za-z0-9]+([\/.*^][A-Za-z0-9]+|\s[A-Za-z0-9]+)*$/.test(candidate)) return '';
+    return candidate;
+  }
+
+  function unitOptionsFor(variable) {
+    if (variable.unitOptions && variable.unitOptions.length > 0) return variable.unitOptions;
+    if (variable.unit) return [{ unit: variable.unit, displayFactor: variable.displayFactor ?? 1, displayOffset: variable.displayOffset ?? 0 }];
+    const described = unitFromDescription(variable.description);
+    if (described) {
+      // The described unit first so it is what a fresh row starts with, "(none)" kept as the way
+      // out when the guess reads wrong.
+      return [
+        { unit: described, displayFactor: 1, displayOffset: 0, fromDescription: true },
+        { unit: '', displayFactor: 1, displayOffset: 0 }
+      ];
+    }
+    return [{ unit: '', displayFactor: 1, displayOffset: 0 }];
+  }
+
+  function readNumeric(value, fallback) {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : fallback;
+  }
+
+  function ensureRoleEntry(variable) {
+    if (roleByName.has(variable.name)) return roleByName.get(variable.name);
+    // Start from the unit that makes the value readable rather than whatever the FMU declared
+    // first -- that is what keeps a concentration off 3.2e-5 mmol/l.
+    const options = expandUnitOptions(variable);
+    const preferred = readableUnit(options, Number(variable.start ?? 0), variable.unit);
+    const displayStart = toDisplay(Number(variable.start ?? 0), preferred.displayFactor, preferred.displayOffset);
+    const range = defaultRangeFor(displayStart, boundsInDisplayUnits(variable, preferred));
+    const entry = {
+      role: 'none',
+      value: displayStart,
+      min: range.min,
+      max: range.max,
+      step: range.step,
+      unit: preferred.unit,
+      label: '',
+      chart: '',
+      primary: false
+    };
+    roleByName.set(variable.name, entry);
+    return entry;
+  }
+
+  function isWritable(variable) {
+    return variable.causality === 'input' || variable.variability === 'tunable';
+  }
+
+  /** The rows the filters currently show -- what the bulk buttons act on. */
+  function visibleVariables() {
+    if (!metadata) return { visible: [], total: 0 };
+    const query = searchInput.value.trim().toLowerCase();
+    const roleFilter = roleFilterSelect.value;
+    const variables = metadata.variables.filter((variable) => variable.type === 'real');
+    const visible = variables.filter((variable) => {
+      if (query && !variable.name.toLowerCase().includes(query)) return false;
+      const entry = ensureRoleEntry(variable);
+      if (roleFilter && entry.role !== roleFilter) return false;
+      return true;
+    });
+    return { visible, total: variables.length };
+  }
+
+  function renderTable() {
+    if (!metadata) return;
+    const { visible, total } = visibleVariables();
+    variableCountBadge.textContent = `${visible.length} / ${total} real variables`;
+
+    variablesBody.innerHTML = '';
+    for (const variable of visible) {
+      const entry = ensureRoleEntry(variable);
+      const options = optionsForEntry(variable, entry);
+      const row = document.createElement('tr');
+
+      const nameCell = document.createElement('td');
+      nameCell.className = 'name-cell';
+      nameCell.title = variable.name;
+      nameCell.textContent = variable.name;
+      row.appendChild(nameCell);
+
+      // Causality is what the FMU declares, not something to choose -- Role is the choice. But
+      // "parameter" on its own reads as "cannot be an interactive input", which is wrong: a
+      // tunable parameter is writable, and models exported from Dymola routinely declare no
+      // inputs at all and leave the block constants tunable instead (normal-circulation,
+      // alveolar-capillary-tissue, ferritin-variant all work that way). Say so here, or the
+      // curator has no way to know the Role dropdown will accept it.
+      const causalityCell = document.createElement('td');
+      const writable = variable.causality === 'input' || variable.variability === 'tunable';
+      causalityCell.textContent = variable.causality;
+      if (variable.variability === 'tunable') {
+        const hint = document.createElement('span');
+        hint.className = 'tunable-hint';
+        hint.textContent = 'tunable';
+        hint.title = 'Writable while the simulation runs, so this can take the input role even though it is declared a parameter.';
+        causalityCell.appendChild(document.createTextNode(' '));
+        causalityCell.appendChild(hint);
+      }
+      causalityCell.title = writable
+        ? 'Writable: can be given the input role.'
+        : 'Not writable: usable as an output or left unassigned.';
+      row.appendChild(causalityCell);
+
+      const boundsCell = document.createElement('td');
+      const declared = boundsInDisplayUnits(variable, options.find((o) => o.unit === entry.unit) ?? options[0]);
+      const low = Number.isFinite(declared.min) ? String(Number(declared.min.toPrecision(4))) : '';
+      const high = Number.isFinite(declared.max) ? String(Number(declared.max.toPrecision(4))) : '';
+      boundsCell.textContent = low === '' && high === '' ? '—' : `${low === '' ? '−∞' : low} … ${high === '' ? '∞' : high}`;
+      boundsCell.style.whiteSpace = 'nowrap';
+      row.appendChild(boundsCell);
+
+      const startCell = document.createElement('td');
+      const startInput = document.createElement('input');
+      startInput.type = 'number';
+      startInput.className = 'compact';
+      startInput.step = 'any';
+      startInput.value = String(entry.value);
+      startInput.disabled = entry.role === 'none' || entry.role === 'output';
+      startInput.addEventListener('input', () => {
+        entry.value = readNumeric(startInput.value, entry.value);
+        updatePreview();
+      });
+      startCell.appendChild(startInput);
+      row.appendChild(startCell);
+
+      const roleCell = document.createElement('td');
+      const roleSelect = document.createElement('select');
+      roleSelect.className = 'role';
+      for (const value of ['none', 'input', 'parameter', 'output']) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        if (value === entry.role) option.selected = true;
+        roleSelect.appendChild(option);
+      }
+      roleSelect.addEventListener('change', () => {
+        entry.role = roleSelect.value;
+        renderTable();
+        updatePreview();
+      });
+      roleCell.appendChild(roleSelect);
+      row.appendChild(roleCell);
+
+      const valueCell = document.createElement('td');
+      const valueInput = document.createElement('input');
+      valueInput.type = 'number';
+      valueInput.className = 'compact';
+      valueInput.step = 'any';
+      valueInput.value = String(entry.role === 'input' ? entry.min : entry.value);
+      valueInput.disabled = entry.role === 'none' || entry.role === 'output';
+      valueInput.addEventListener('input', () => {
+        const parsed = readNumeric(valueInput.value, entry.role === 'input' ? entry.min : entry.value);
+        if (entry.role === 'input') entry.min = parsed; else entry.value = parsed;
+        updatePreview();
+      });
+      valueCell.appendChild(valueInput);
+      row.appendChild(valueCell);
+
+      const maxCell = document.createElement('td');
+      const maxInput = document.createElement('input');
+      maxInput.type = 'number';
+      maxInput.className = 'compact';
+      maxInput.step = 'any';
+      maxInput.value = String(entry.max);
+      maxInput.disabled = entry.role !== 'input';
+      maxInput.addEventListener('input', () => { entry.max = readNumeric(maxInput.value, entry.max); updatePreview(); });
+      maxCell.appendChild(maxInput);
+      row.appendChild(maxCell);
+
+      const stepCell = document.createElement('td');
+      const stepInput = document.createElement('input');
+      stepInput.type = 'number';
+      stepInput.className = 'compact';
+      stepInput.step = 'any';
+      stepInput.value = String(entry.step);
+      stepInput.disabled = entry.role !== 'input';
+      stepInput.addEventListener('input', () => { entry.step = readNumeric(stepInput.value, entry.step); updatePreview(); });
+      stepCell.appendChild(stepInput);
+      row.appendChild(stepCell);
+
+      const unitCell = document.createElement('td');
+      const unitSelect = document.createElement('select');
+      unitSelect.disabled = entry.role === 'none';
+      for (const option of options) {
+        const optionEl = document.createElement('option');
+        optionEl.value = option.unit;
+        optionEl.textContent = option.unit || '(none)';
+        if (option.unit === entry.unit) optionEl.selected = true;
+        unitSelect.appendChild(optionEl);
+      }
+      unitSelect.addEventListener('change', () => {
+        const chosen = options.find((option) => option.unit === unitSelect.value) ?? options[0];
+        // Re-express the current value/range in the newly chosen unit so numbers stay meaningful.
+        const previous = options.find((option) => option.unit === entry.unit) ?? options[0];
+        const toSi = (displayValue) => (displayValue - (previous.displayOffset ?? 0)) / (previous.displayFactor ?? 1);
+        const toNew = (siValue) => siValue * (chosen.displayFactor ?? 1) + (chosen.displayOffset ?? 0);
+        entry.value = toNew(toSi(entry.value));
+        entry.min = toNew(toSi(entry.min));
+        entry.max = toNew(toSi(entry.max));
+        entry.step = Math.abs(toNew(toSi(entry.step)) - toNew(0));
+        entry.unit = chosen.unit;
+        renderTable();
+        updatePreview();
+      });
+      unitCell.appendChild(unitSelect);
+      row.appendChild(unitCell);
+
+      // What a student reads instead of the identifier. The model's own description is the
+      // placeholder, so this only needs filling where that is missing or generic -- a block
+      // constant says "Constant VolumeFlowRate output value", which tells a student nothing.
+      const labelCell = document.createElement('td');
+      const labelInput = document.createElement('input');
+      labelInput.type = 'text';
+      labelInput.className = 'compact';
+      labelInput.placeholder = variable.description || variable.name;
+      labelInput.value = entry.label ?? '';
+      labelInput.addEventListener('input', () => { entry.label = labelInput.value.trim(); updatePreview(); });
+      labelCell.appendChild(labelInput);
+      row.appendChild(labelCell);
+
+      // Outputs sharing a chart name are drawn as one multi-series plot; blank means the value is
+      // shown only as a readout. This grouping is the layout skeleton a page designer builds on.
+      const chartCell = document.createElement('td');
+      const chartInput = document.createElement('input');
+      chartInput.type = 'text';
+      chartInput.className = 'compact';
+      chartInput.placeholder = 'readout';
+      chartInput.title = 'One chart, or several separated by commas. A curve may belong to more than one plot -- a ventricular pressure appears both as a trend and as the pressure axis of a PV loop.';
+      chartInput.value = entry.chart ?? '';
+      chartInput.disabled = entry.role !== 'output';
+      chartInput.addEventListener('input', () => { entry.chart = chartInput.value.trim(); updatePreview(); });
+      chartCell.appendChild(chartInput);
+      row.appendChild(chartCell);
+
+      const primaryCell = document.createElement('td');
+      const primaryCheckbox = document.createElement('input');
+      primaryCheckbox.type = 'checkbox';
+      primaryCheckbox.checked = entry.primary;
+      primaryCheckbox.disabled = entry.role !== 'output';
+      primaryCheckbox.addEventListener('change', () => { entry.primary = primaryCheckbox.checked; updatePreview(); });
+      primaryCell.appendChild(primaryCheckbox);
+      row.appendChild(primaryCell);
+
+      variablesBody.appendChild(row);
+    }
+  }
+
+  /**
+   * The charts one output belongs to.
+   *
+   * Several, separated by commas, because one curve can sit on more than one plot: in
+   * normal-circulation the left ventricular pressure is both a trend against time and the pressure
+   * axis of the PV loop. A cell that held only one chart could not say that, so loading that
+   * experiment and exporting it again dropped the loop entirely -- silently, which is the failure
+   * this project keeps finding in itself.
+   */
+  function chartIdsOf(entry) {
+    return String(entry?.chart ?? '')
+      .split(',')
+      .map((id) => id.trim())
+      .filter(Boolean);
+  }
+
+  function buildExperimentJson() {
+    const inputs = [];
+    const parameters = [];
+    const outputs = [];
+    for (const variable of metadata?.variables ?? []) {
+      const entry = roleByName.get(variable.name);
+      if (!entry || entry.role === 'none') continue;
+      const options = optionsForEntry(variable, entry);
+      const chosen = options.find((option) => option.unit === entry.unit) ?? options[0];
+      const base = {
+        name: variable.name,
+        label: writeText('label:' + variable.name, entry.label),
+        unit: chosen.unit,
+        displayFactor: chosen.displayFactor,
+        displayOffset: chosen.displayOffset
+      };
+      const extras = extrasByVariable.get(entry.role + ':' + variable.name) ?? {};
+      if (entry.role === 'input') {
+        inputs.push({ ...base, value: entry.value, min: entry.min, max: entry.max, step: entry.step, ...extras });
+      } else if (entry.role === 'parameter') {
+        parameters.push({ ...base, value: entry.value, ...extras });
+      } else if (entry.role === 'output') {
+        // `chart` stays a single id in the output row for compatibility; `charts` below carries
+        // the whole truth, because a curve may sit on more than one plot.
+        outputs.push({ ...base, primary: entry.primary, chart: chartIdsOf(entry)[0], ...extras });
+      }
+    }
+    // The curator's order, not the model's: it is the order of the controls on the page.
+    for (const [role, list] of [['input', inputs], ['parameter', parameters], ['output', outputs]]) {
+      list.splice(0, list.length, ...inCuratedOrder(role, list));
+    }
+    const experiment = {
+      id: experimentIdInput.value.trim() || 'untitled',
+      modelId: modelIdInput.value.trim(),
+      name: writeText('name', experimentNameInput.value.trim()) ?? experimentIdInput.value.trim() ?? 'Untitled experiment',
+      description: writeText('description', experimentDescriptionInput.value.trim())
+    };
+
+    const stopTime = Number(stopTimeInput.value);
+    const stepSize = Number(stepSizeInput.value);
+    const intervalsPerSecond = Number(intervalsPerSecondInput.value);
+    if (Number.isFinite(stopTime) && stopTime > 0) experiment.stopTime = stopTime;
+    if (Number.isFinite(stepSize) && stepSize > 0) experiment.stepSize = stepSize;
+    if (Number.isFinite(intervalsPerSecond) && intervalsPerSecond > 0) experiment.intervalsPerSecond = intervalsPerSecond;
+
+    const timeUnit = timeUnitInput.value.trim();
+    const timeFactor = Number(timeFactorInput.value);
+    if (timeUnit && timeUnit !== 's') experiment.timeUnit = timeUnit;
+    if (Number.isFinite(timeFactor) && timeFactor > 0 && timeFactor !== 1) experiment.timeFactor = timeFactor;
+
+    const steps = scenarioSteps
+      .filter((step) => (step.text ?? '').trim())
+      .map((step) => {
+        const entry = { text: writeText(step.key + ':text', step.text.trim()) };
+        if (step.title) entry.title = writeText(step.key + ':title', step.title);
+        Object.assign(entry, step.extras ?? {});
+        if (step.set && Object.keys(step.set).length > 0) entry.set = step.set;
+        return entry;
+      });
+    if (steps.length > 0) experiment.steps = steps;
+
+    // The chart list is the layout skeleton: which curves belong on one plot, in curator order.
+    // Outputs with no chart stay readout-only, so `charts` never has to list everything.
+    const charts = [];
+    for (const output of outputs) {
+      for (const id of chartIdsOf(roleByName.get(output.name))) {
+        const existing = charts.find((chart) => chart.id === id);
+        if (existing) existing.series.push(output.name);
+        else charts.push({ id, title: writeText('chart:' + id, titleByChart.get(id)) ?? id, series: [output.name] });
+      }
+    }
+    for (const chart of charts) {
+      const x = xByChart.get(chart.id);
+      // A curve cannot be its own axis, so a stale choice is dropped rather than exported.
+      if (x && !chart.series.includes(x)) chart.x = x;
+      const window = windowByChart.get(chart.id);
+      if (window) chart.window = window;
+      // Only a loop carries an x frame; on a trend the x axis is the run itself.
+      const xRange = chart.x ? xRangeByChart.get(chart.id) : undefined;
+      if (xRange) chart.xRange = xRange;
+      const yRange = yRangeByChart.get(chart.id);
+      if (yRange) chart.yRange = yRange;
+      Object.assign(chart, extrasByChart.get(chart.id) ?? {});
+    }
+    // The curator's order of the charts too: built from the outputs, they would follow the order of
+    // the outputs, and the IL-6 output, added last, moved its chart below the flows on every export.
+    const rankChart = (chart) => curatedOrder.get('chart:' + chart.id) ?? Infinity;
+    charts.splice(0, charts.length, ...charts.map((chart, index) => [chart, index]).sort((a, b) => rankChart(a[0]) - rankChart(b[0]) || a[1] - b[1]).map(([chart]) => chart));
+    if (charts.length > 0) experiment.charts = charts;
+
+    return { ...experiment, ...experimentExtras, inputs, parameters, outputs };
+  }
+
+  function updateTimingSummary() {
+    const stopTime = Number(stopTimeInput.value);
+    const stepSize = Number(stepSizeInput.value);
+    const perSecond = Number(intervalsPerSecondInput.value);
+    if (!(stopTime > 0) || !(stepSize > 0)) {
+      timingSummary.textContent = 'Set a stop time and a simulation time per interval to see how long the run will take.';
+      return;
+    }
+    const intervals = Math.ceil(stopTime / stepSize);
+    if (!(perSecond > 0)) {
+      timingSummary.textContent = `${intervals} displayed intervals, unpaced — runs as fast as the machine manages.`;
+      return;
+    }
+    const realSeconds = intervals / perSecond;
+    const unit = timeUnitInput.value.trim() || 's';
+    const factor = Number(timeFactorInput.value) > 0 ? Number(timeFactorInput.value) : 1;
+    const scaled = unit === 's' && factor === 1
+      ? ''
+      : ` The run covers ${(stopTime * factor).toPrecision(4)} ${unit} on the model's own time axis.`;
+    timingSummary.textContent =
+      `${intervals} displayed intervals at ${perSecond}/s → about ${realSeconds.toFixed(1)} s of real time, ` +
+      `playing back ${(stepSize * perSecond * factor).toPrecision(3)} ${unit} per real second.${scaled}`;
+  }
+
+  // Curves on one plot share a y-scale. Mixing units means mixing magnitudes, and the smaller
+  // series flattens into the axis -- the fix is another chart, never a second axis.
+  function updateChartWarnings(experiment) {
+    const problems = [];
+    for (const chart of experiment.charts ?? []) {
+      const units = [...new Set(chart.series.map((name) => experiment.outputs.find((o) => o.name === name)?.unit || '(none)'))];
+      if (units.length > 1) problems.push(`"${chart.id}" mixes ${units.join(' and ')} — split it, one chart per unit.`);
+      if (chart.series.length > 8) problems.push(`"${chart.id}" has ${chart.series.length} curves; beyond 8 they stop being tellable apart.`);
+    }
+    chartWarnings.textContent = problems.join(' ');
+    chartWarnings.classList.toggle('error', problems.length > 0);
+  }
+
+  /**
+   * Which quantity each chart is drawn against. Empty means time, which is what a chart is
+   * unless the curator says otherwise.
+   *
+   * Keyed by chart id and kept across re-renders, so renaming one chart does not silently reset
+   * another. An entry whose chart is gone is dropped on the next render rather than exported.
+   */
+  const xByChart = new Map();
+
+  /**
+   * Everything else a chart carries that this tool does not edit -- a retention window, fixed axes,
+   * whatever comes next.
+   *
+   * Kept whole rather than field by field, because the failure this guards against has happened
+   * four times already: the tool rebuilds `charts` from the table on export, so anything it does
+   * not know about is dropped in silence. Curated labels went that way, then guided steps, then
+   * the chart title, then the PV loop itself. A map of leftovers cannot forget the fifth.
+   */
+  const extrasByChart = new Map();
+  const CHART_FIELDS_THIS_TOOL_EDITS = new Set(['id', 'title', 'series', 'x', 'window', 'xRange', 'yRange']);
+
+  /**
+   * A variable keeps what this editor does not edit, by role.
+   *
+   * The table edits a label, a unit, a value and a range; a switch's `choices` and a slider's
+   * `visibleWhen` are not in it, and rebuilding each variable from the table alone would drop them
+   * on the first export -- the way `restart` was nearly dropped from steps, and the PV loop's axis
+   * from charts. Keyed by role as well as name: a switch turned into an output has no use for its
+   * positions.
+   */
+  const VARIABLE_FIELDS_THIS_TOOL_EDITS = new Set(['name', 'label', 'unit', 'displayFactor', 'displayOffset', 'value', 'min', 'max', 'step', 'primary', 'chart']);
+  const extrasByVariable = new Map();
+  /**
+   * Experiment-level fields this editor does not edit -- the views switch, the language its plain
+   * strings are in, sub-steps -- kept from the loaded file and put back on export.
+   */
+  const EXPERIMENT_FIELDS_THIS_TOOL_EDITS = new Set(['id', 'modelId', 'name', 'description', 'stopTime', 'stepSize', 'intervalsPerSecond', 'timeUnit', 'timeFactor', 'steps', 'charts', 'inputs', 'parameters', 'outputs']);
+  let experimentExtras = {};
+  /**
+   * The curator's order of each role, from the loaded experiment.
+   *
+   * The table lists variables in the model's order, and the export used to follow it -- which
+   * reorders the controls on the page: the iron model declares the hepcidin knockout before the
+   * regulation switch, so a load and an export put the gene's box above the switch it depends on.
+   * Variables the experiment did not have come after, in the model's order. Charts are kept by
+   * the same map, under 'chart:' + id.
+   */
+  const curatedOrder = new Map();
+  const inCuratedOrder = (role, list) => {
+    const rank = (item) => curatedOrder.get(role + ':' + item.name) ?? Infinity;
+    return list.map((item, index) => [item, index]).sort((a, b) => rank(a[0]) - rank(b[0]) || a[1] - b[1]).map(([item]) => item);
+  };
+  const variableExtras = (role, item) => {
+    const extras = Object.fromEntries(Object.entries(item).filter(([key]) => !VARIABLE_FIELDS_THIS_TOOL_EDITS.has(key)));
+    if (Object.keys(extras).length > 0) extrasByVariable.set(role + ':' + item.name, extras);
+  };
+
+  /**
+   * The title a student reads, when it differs from the chart id.
+   *
+   * It has to be kept, not re-derived: the id is written in the Chart column and is therefore
+   * plain, while the curated title carries accents -- "PV smycka leve komory" against
+   * "PV smycka leve komory" with them. Exporting the id as the title turned one into the other,
+   * which is the same silent loss that once ate curated labels, guided steps and the loop axis.
+   */
+  const titleByChart = new Map();
+
+  /**
+   * A chart's window and its fixed axes, by chart id.
+   *
+   * They were hand-written into the JSON until this existed, which is the state the chart's own
+   * x axis was in until 15 September -- and giving that one a control immediately turned up two
+   * things the tool had been dropping in silence.
+   */
+  const windowByChart = new Map();
+  const xRangeByChart = new Map();
+  const yRangeByChart = new Map();
+
+  /** A pair of numbers, or nothing: a half-filled range is not a frame and is not exported. */
+  function rangeOf(minInput, maxInput) {
+    const min = Number(minInput.value);
+    const max = Number(maxInput.value);
+    if (minInput.value.trim() === '' || maxInput.value.trim() === '') return null;
+    if (!Number.isFinite(min) || !Number.isFinite(max) || max <= min) return null;
+    return [min, max];
+  }
+
+  function numberField(value, placeholder, width) {
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.step = 'any';
+    input.placeholder = placeholder;
+    input.value = value === undefined || value === null ? '' : String(value);
+    if (width) input.style.width = width;
+    return input;
+  }
+
+  function renderChartAxes(experiment) {
+    const charts = experiment.charts ?? [];
+    const panel = el('axes-panel');
+    panel.hidden = charts.length === 0;
+    el('axis-count').textContent = charts.length ? String(charts.length) : '';
+    const host = el('axes-list');
+    host.innerHTML = '';
+    for (const chart of charts) {
+      const row = document.createElement('div');
+      row.className = 'axis-row';
+
+      const name = document.createElement('span');
+      name.className = 'axis-name';
+      name.textContent = chart.id;
+
+      const title = document.createElement('input');
+      title.type = 'text';
+      title.className = 'axis-title';
+      title.value = titleByChart.get(chart.id) ?? chart.id;
+      title.placeholder = chart.id;
+      title.addEventListener('input', () => {
+        const value = title.value.trim();
+        if (value && value !== chart.id) titleByChart.set(chart.id, value);
+        else titleByChart.delete(chart.id);
+        // Re-rendering here would take the caret out of the field mid-word.
+        jsonPreview.value = JSON.stringify(buildExperimentJson(), null, 2);
+      });
+
+      const select = document.createElement('select');
+      const time = document.createElement('option');
+      time.value = '';
+      time.textContent = 'time (default)';
+      select.appendChild(time);
+      for (const output of experiment.outputs) {
+        // Its own series are not offered -- a quantity against itself is the diagonal, and
+        // check:experiments refuses it anyway.
+        if ((chart.series ?? []).includes(output.name)) continue;
+        const option = document.createElement('option');
+        option.value = output.name;
+        option.textContent = output.label || output.description || output.name;
+        select.appendChild(option);
+      }
+      const current = xByChart.get(chart.id) ?? '';
+      select.value = [...select.options].some((o) => o.value === current) ? current : '';
+      if (select.value !== current) xByChart.delete(chart.id);
+      select.addEventListener('change', () => {
+        if (select.value) xByChart.set(chart.id, select.value);
+        else xByChart.delete(chart.id);
+        updatePreview();
+      });
+
+      row.appendChild(name);
+      row.appendChild(title);
+      row.appendChild(select);
+      host.appendChild(row);
+
+      // Second line: how much of the run this chart draws, and whether its axes are held.
+      const frame = document.createElement('div');
+      frame.className = 'axis-frame';
+      // Addressable by chart, so a test names the chart rather than counting rows.
+      frame.dataset.chart = chart.id;
+
+      const windowInput = numberField(windowByChart.get(chart.id), 'whole run', '96px');
+      windowInput.min = '0';
+      const windowLabel = document.createElement('label');
+      windowLabel.append('window', windowInput, 's');
+
+      const yMin = numberField(yRangeByChart.get(chart.id)?.[0], 'auto');
+      const yMax = numberField(yRangeByChart.get(chart.id)?.[1], 'auto');
+      const yLabel = document.createElement('label');
+      yLabel.append('y axis', yMin, '..', yMax);
+
+      const xMin = numberField(xRangeByChart.get(chart.id)?.[0], 'auto');
+      const xMax = numberField(xRangeByChart.get(chart.id)?.[1], 'auto');
+      const xLabel = document.createElement('label');
+      xLabel.append('x axis', xMin, '..', xMax);
+
+      const apply = () => {
+        const seconds = Number(windowInput.value);
+        if (windowInput.value.trim() !== '' && Number.isFinite(seconds) && seconds > 0) {
+          windowByChart.set(chart.id, seconds);
+        } else {
+          windowByChart.delete(chart.id);
+        }
+        const y = rangeOf(yMin, yMax);
+        if (y) yRangeByChart.set(chart.id, y); else yRangeByChart.delete(chart.id);
+        const x = rangeOf(xMin, xMax);
+        if (x) xRangeByChart.set(chart.id, x); else xRangeByChart.delete(chart.id);
+        // Not a re-render: that would take the caret out of the field mid-number.
+        jsonPreview.value = JSON.stringify(buildExperimentJson(), null, 2);
+      };
+      for (const input of [windowInput, yMin, yMax, xMin, xMax]) input.addEventListener('input', apply);
+
+      frame.appendChild(windowLabel);
+      frame.appendChild(yLabel);
+      // A time axis is the run, and a chart drawn against time has no x frame to fix.
+      const drawnAgainstValue = Boolean(select.value);
+      if (drawnAgainstValue) {
+        frame.appendChild(xLabel);
+      } else {
+        xRangeByChart.delete(chart.id);
+        const hint = document.createElement('span');
+        hint.className = 'axis-hint';
+        hint.textContent = 'x is time, so its span is the run';
+        frame.appendChild(hint);
+      }
+      host.appendChild(frame);
+    }
+  }
+
+  function updatePreview() {
+    updateTimingSummary();
+    if (!metadata) { jsonPreview.value = ''; exportButton.disabled = true; openButton.disabled = true; pageButton.disabled = true; chartWarnings.textContent = ''; return; }
+    const experiment = buildExperimentJson();
+    renderChartAxes(experiment);
+    updateChartWarnings(experiment);
+    jsonPreview.value = JSON.stringify(experiment, null, 2);
+    exportButton.disabled = experiment.inputs.length === 0 && experiment.parameters.length === 0 && experiment.outputs.length === 0;
+    // The simulator needs a model to load and something to plot.
+    openButton.disabled = !experiment.modelId || experiment.outputs.length === 0;
+    // A page is worth writing as soon as there is anything on it -- a qualitative model has
+    // no outputs at all, only lamps and an agent.
+    pageButton.disabled =
+      !experiment.modelId ||
+      (experiment.outputs.length === 0 &&
+        experiment.inputs.length === 0 &&
+        (experiment.states ?? []).length === 0);
+  }
+
+  metadataFileInput.addEventListener('change', async () => {
+    const file = metadataFileInput.files?.[0];
+    if (!file) return;
+    try {
+      metadata = JSON.parse(await file.text());
+      roleByName.clear();
+      metadataStatus.textContent = `Loaded "${metadata.modelName}" — ${metadata.variables.length} variables.`;
+      metadataStatus.classList.remove('error');
+      if (!modelIdInput.value) {
+        // Best-effort guess: web/static/models/<id>/model-metadata.json — the browser only
+        // gives us the bare filename, so leave this for the user unless already filled in.
+      }
+      renderTable();
+      updatePreview();
+    } catch (caught) {
+      metadataStatus.textContent = `Failed to load metadata: ${caught instanceof Error ? caught.message : String(caught)}`;
+      metadataStatus.classList.add('error');
+    }
+  });
+
+  experimentFileInput.addEventListener('change', async () => {
+    const file = experimentFileInput.files?.[0];
+    if (!file) return;
+    if (!metadata) {
+      // Said out loud: returning quietly left the scenario unloaded with nothing on the page
+      // to say why, and an e2e run on a busy machine picked the experiment before the metadata
+      // had finished reading.
+      metadataStatus.textContent = 'Load model-metadata.json first, then the experiment again.';
+      metadataStatus.classList.add('error');
+      experimentFileInput.value = '';
+      return;
+    }
+    try {
+      const experiment = JSON.parse(await file.text());
+      modelIdInput.value = experiment.modelId ?? '';
+      experimentIdInput.value = experiment.id ?? '';
+      homeLanguage = experiment.language ?? 'cs';
+      translationsAt.clear();
+      experimentNameInput.value = readText('name', experiment.name);
+      experimentDescriptionInput.value = readText('description', experiment.description);
+      stopTimeInput.value = experiment.stopTime ?? '';
+      stepSizeInput.value = experiment.stepSize ?? '';
+      intervalsPerSecondInput.value = experiment.intervalsPerSecond ?? '';
+      timeUnitInput.value = experiment.timeUnit ?? '';
+      timeFactorInput.value = experiment.timeFactor ?? '';
+      roleByName.clear();
+      extrasByVariable.clear();
+      curatedOrder.clear();
+      experimentExtras = Object.fromEntries(Object.entries(experiment).filter(([key]) => !EXPERIMENT_FIELDS_THIS_TOOL_EDITS.has(key)));
+      for (const [role, key] of [['input', 'inputs'], ['parameter', 'parameters'], ['output', 'outputs']]) {
+        (experiment[key] ?? []).forEach((item, index) => curatedOrder.set(role + ':' + item.name, index));
+      }
+      (experiment.charts ?? []).forEach((chart, index) => curatedOrder.set('chart:' + chart.id, index));
+      for (const variable of metadata.variables) ensureRoleEntry(variable);
+      for (const item of experiment.inputs ?? []) variableExtras('input', item);
+      for (const item of experiment.parameters ?? []) variableExtras('parameter', item);
+      for (const item of experiment.outputs ?? []) variableExtras('output', item);
+      for (const item of experiment.inputs ?? []) {
+        const entry = roleByName.get(item.name);
+        if (!entry) continue;
+        Object.assign(entry, {
+          role: 'input',
+          value: Number.isFinite(item.value) ? item.value : entry.value,
+          min: Number.isFinite(item.min) ? item.min : entry.min,
+          max: Number.isFinite(item.max) ? item.max : entry.max,
+          step: Number.isFinite(item.step) ? item.step : entry.step,
+          unit: item.unit,
+          curatedUnit: curatedUnitOf(item),
+          label: readText('label:' + item.name, item.label)
+        });
+      }
+      for (const item of experiment.parameters ?? []) {
+        const entry = roleByName.get(item.name);
+        if (!entry) continue;
+        Object.assign(entry, { role: 'parameter', value: Number.isFinite(item.value) ? item.value : entry.value, unit: item.unit, curatedUnit: curatedUnitOf(item), label: readText('label:' + item.name, item.label) });
+      }
+      for (const item of experiment.outputs ?? []) {
+        const entry = roleByName.get(item.name);
+        if (!entry) continue;
+        // Every chart this output appears on, in the experiment's own order, so a curve that sits
+        // on two plots comes back on both.
+        const declared = (experiment.charts ?? [])
+          .filter((c) => (c.series ?? []).includes(item.name))
+          .map((c) => c.id);
+        if (item.chart && !declared.includes(item.chart)) declared.unshift(item.chart);
+        const chart = declared.join(', ');
+        Object.assign(entry, { role: 'output', unit: item.unit, curatedUnit: curatedUnitOf(item), primary: Boolean(item.primary), chart, label: readText('label:' + item.name, item.label) });
+      }
+      // The axis a chart is drawn against comes back too. Without this, loading an experiment
+      // and exporting it again would silently drop the PV loop -- the same trap that once ate
+      // curated labels and guided steps.
+      xByChart.clear();
+      titleByChart.clear();
+      extrasByChart.clear();
+      windowByChart.clear();
+      xRangeByChart.clear();
+      yRangeByChart.clear();
+      for (const chart of experiment.charts ?? []) {
+        if (chart.x) xByChart.set(chart.id, chart.x);
+        const title = readText('chart:' + chart.id, chart.title);
+        if (title && title !== chart.id) titleByChart.set(chart.id, title);
+        if (Number(chart.window) > 0) windowByChart.set(chart.id, Number(chart.window));
+        if (Array.isArray(chart.xRange) && chart.xRange.length === 2) xRangeByChart.set(chart.id, chart.xRange.map(Number));
+        if (Array.isArray(chart.yRange) && chart.yRange.length === 2) yRangeByChart.set(chart.id, chart.yRange.map(Number));
+        const extras = Object.fromEntries(
+          Object.entries(chart).filter(([key]) => !CHART_FIELDS_THIS_TOOL_EDITS.has(key))
+        );
+        if (Object.keys(extras).length > 0) extrasByChart.set(chart.id, extras);
+      }
+      // Each step carries its own key, not its position: the export filters empty steps out, so
+      // an index would point at a different step by the time the translations are put back.
+      // A step keeps what this editor does not edit (restart, and whatever comes next): rebuilding
+      // steps from title/text/set alone was about to drop `restart` in silence, the sixth time a
+      // curated field would have gone that way.
+      scenarioSteps = (experiment.steps ?? []).map((step, index) => ({
+        key: 'step:' + index,
+        title: readText('step:' + index + ':title', step.title),
+        text: readText('step:' + index + ':text', step.text),
+        set: step.set ? { ...step.set } : undefined,
+        extras: Object.fromEntries(Object.entries(step).filter(([name]) => !['title', 'text', 'set'].includes(name)))
+      }));
+      renderSteps();
+      renderTable();
+      updatePreview();
+    } catch (caught) {
+      metadataStatus.textContent = `Failed to load experiment: ${caught instanceof Error ? caught.message : String(caught)}`;
+      metadataStatus.classList.add('error');
+    }
+  });
+
+  // A test model wires constant blocks onto the component's inputs; those `<block>.k` parameters
+  // are the operating point the model was actually tested at, so surface them for the curator to
+  // apply. Which constant feeds which input is a wiring fact the metadata does not carry, so the
+  // tool offers rather than guesses.
+  referenceFileInput.addEventListener('change', async () => {
+    const file = referenceFileInput.files?.[0];
+    if (!file) return;
+    referenceConstants.innerHTML = '';
+    try {
+      const reference = JSON.parse(await file.text());
+      const constants = (reference.variables ?? []).filter(
+        (variable) => variable.causality === 'parameter' && variable.type === 'real' && /\.k$/.test(variable.name)
+      );
+      if (constants.length === 0) {
+        referenceConstants.innerHTML = '<p class="status">No constant blocks (parameters named &lt;block&gt;.k) in that file.</p>';
+        return;
+      }
+      const heading = document.createElement('p');
+      heading.className = 'status';
+      heading.textContent = `Operating point from "${reference.modelName}" — apply a value to one of the variables you assigned:`;
+      referenceConstants.appendChild(heading);
+
+      const list = document.createElement('div');
+      for (const constant of constants) {
+        const options = expandUnitOptions(constant);
+        const chosen = readableUnit(options, Number(constant.start ?? 0), constant.unit);
+        const shown = toDisplay(Number(constant.start ?? 0), chosen.displayFactor, chosen.displayOffset);
+        const blockName = constant.name.replace(/\.k$/, '');
+
+        const line = document.createElement('div');
+        line.className = 'row';
+        line.style.marginTop = '8px';
+
+        const label = document.createElement('span');
+        label.className = 'status';
+        label.style.minWidth = '220px';
+        label.textContent = `${blockName} = ${Number(shown.toPrecision(6))} ${chosen.unit || ''}`.trim();
+        line.appendChild(label);
+
+        // Which constant drives which input is a wiring fact the metadata does not carry, so the
+        // target is picked here rather than guessed; the name-based match is only preselected.
+        const target = document.createElement('select');
+        target.dataset.role = 'constant-target';
+        const assigned = [...roleByName.entries()].filter(([, e]) => e.role === 'input' || e.role === 'parameter');
+        for (const [name] of assigned) {
+          const option = document.createElement('option');
+          option.value = name;
+          option.textContent = name;
+          if (name === blockName || name.startsWith(blockName) || blockName.startsWith(name)) option.selected = true;
+          target.appendChild(option);
+        }
+        line.appendChild(target);
+
+        const apply = document.createElement('button');
+        apply.type = 'button';
+        apply.className = 'secondary';
+        apply.textContent = 'Apply';
+        apply.disabled = assigned.length === 0;
+        apply.addEventListener('click', () => {
+          const entry = roleByName.get(target.value);
+          if (!entry) return;
+          entry.value = shown;
+          renderTable();
+          updatePreview();
+        });
+        line.appendChild(apply);
+
+        list.appendChild(line);
+      }
+      referenceConstants.appendChild(list);
+      if ([...roleByName.values()].every((e) => e.role !== 'input' && e.role !== 'parameter')) {
+        const note = document.createElement('p');
+        note.className = 'status error';
+        note.textContent = 'Assign variables as input or parameter first, then re-pick this file to apply constants to them.';
+        referenceConstants.appendChild(note);
+      }
+    } catch (caught) {
+      referenceConstants.innerHTML = `<p class="status error">Failed to read: ${caught instanceof Error ? caught.message : String(caught)}</p>`;
+    }
+  });
+
+  // --- guided steps ---------------------------------------------------------
+  // The scenario lives in the experiment, so it has to be editable here: an export built from the
+  // table alone would silently drop it, the same trap as hand-written labels.
+  function currentInputValues() {
+    const values = {};
+    for (const variable of metadata?.variables ?? []) {
+      const entry = roleByName.get(variable.name);
+      if (entry?.role === 'input') values[variable.name] = entry.value;
+    }
+    return values;
+  }
+
+  function describeStepValues(step) {
+    const entries = Object.entries(step.set ?? {});
+    if (entries.length === 0) return 'no values — this step only describes what to watch';
+    return entries.map(([name, value]) => `${name} = ${value}`).join(' · ');
+  }
+
+  function renderSteps() {
+    stepsList.innerHTML = '';
+    stepCount.textContent = scenarioSteps.length === 0 ? '' : `${scenarioSteps.length} steps`;
+    scenarioSteps.forEach((step, index) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'field';
+      wrap.style.borderTop = '1px solid #d2d9d3';
+      wrap.style.paddingTop = '14px';
+      wrap.style.marginTop = '14px';
+
+      const head = document.createElement('label');
+      head.textContent = `Step ${index + 1}`;
+      wrap.appendChild(head);
+
+      const title = document.createElement('input');
+      title.type = 'text';
+      title.placeholder = 'Short title, e.g. "Hypoventilation"';
+      title.value = step.title ?? '';
+      title.addEventListener('input', () => { step.title = title.value.trim(); updatePreview(); });
+      wrap.appendChild(title);
+
+      const body = document.createElement('textarea');
+      body.rows = 3;
+      body.style.width = '100%';
+      body.placeholder = 'What should the student do, and what should they watch?';
+      body.value = step.text ?? '';
+      body.addEventListener('input', () => { step.text = body.value; updatePreview(); });
+      wrap.appendChild(body);
+
+      const summary = document.createElement('p');
+      summary.className = 'status';
+      summary.textContent = describeStepValues(step);
+      wrap.appendChild(summary);
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const capture = document.createElement('button');
+      capture.type = 'button';
+      capture.textContent = 'Capture current input values';
+      capture.addEventListener('click', () => { step.set = currentInputValues(); renderSteps(); updatePreview(); });
+      actions.appendChild(capture);
+
+      const clear = document.createElement('button');
+      clear.type = 'button';
+      clear.className = 'quiet';
+      clear.textContent = 'Clear values';
+      clear.addEventListener('click', () => { delete step.set; renderSteps(); updatePreview(); });
+      actions.appendChild(clear);
+
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'quiet';
+      remove.textContent = 'Remove step';
+      remove.addEventListener('click', () => { scenarioSteps.splice(index, 1); renderSteps(); updatePreview(); });
+      actions.appendChild(remove);
+
+      wrap.appendChild(actions);
+      stepsList.appendChild(wrap);
+    });
+  }
+
+  addStepButton.addEventListener('click', () => {
+    scenarioSteps.push({ title: '', text: '', set: currentInputValues() });
+    renderSteps();
+    updatePreview();
+  });
+
+  // --- test run -------------------------------------------------------------
+  // The point of this run is the pace a STUDENT gets, so it drives the real simulator in its own
+  // window rather than stepping the FMU here. The old version called _fmi2StepSession directly --
+  // no Worker, no rendering -- and therefore reported "achieved 100.0/s" while the app was
+  // managing eight. A harness that takes a different path than the app cannot vouch for the app;
+  // that is the same mistake as the tStop freeze and the discarded pre-init writes.
+  //
+  // It has to be a window, not a frame: a run embedded in this page also pays for compositing this
+  // page, which measured 47/s where the same experiment holds 92/s on its own. A student uses a
+  // window, so that is what gets measured.
+  const HOST = 'fmu-lab-host';
+
+  function runInSimulator(experiment, { readyTimeoutMs = 90000, runTimeoutMs = 600000 } = {}) {
+    return new Promise((resolve, reject) => {
+      let settled = false;
+      let timer;
+      let opened = null;
+
+      const finish = (fn, argument) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        window.removeEventListener('message', onMessage);
+        fn(argument);
+      };
+
+      const arm = (ms, message) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => finish(reject, new Error(message)), ms);
+      };
+
+      function onMessage(event) {
+        if (event.origin !== window.location.origin) return;
+        if (event.source !== opened) return;
+        const data = event.data;
+        if (data?.source !== 'fmu-lab') return;
+        if (data.type === 'ready') {
+          arm(runTimeoutMs, 'The simulator never finished the run.');
+          testRunStatus.textContent = 'Running in the simulator…';
+          opened.postMessage({ source: HOST, type: 'run' }, window.location.origin);
+        } else if (data.type === 'finished') {
+          finish(resolve, data);
+        } else if (data.type === 'failed') {
+          finish(reject, new Error(data.message || 'The simulator reported an error.'));
+        }
+      }
+
+      window.addEventListener('message', onMessage);
+      arm(readyTimeoutMs, 'The simulator did not open. Allow pop-ups for this page, and serve it from the app rather than from a file.');
+      // The draft travels through localStorage, the same way "Open in simulator" hands it over.
+      // The cache buster forces a reload even when the window is reused, so a re-run picks up edits.
+      opened = window.open(
+        `./?model=${encodeURIComponent(experiment.modelId)}&experiment=preview&_=${Date.now()}`,
+        'fmu-preview'
+      );
+      if (!opened) finish(reject, new Error('The browser blocked the simulator window. Allow pop-ups for this page.'));
+    });
+  }
+
+  testRunButton.addEventListener('click', async () => {
+    const modelId = modelIdInput.value.trim();
+    const stopTime = Number(stopTimeInput.value);
+    const stepSize = Number(stepSizeInput.value);
+    const perSecond = Number(intervalsPerSecondInput.value);
+    if (!modelId) { testRunStatus.textContent = 'Set a model id first.'; testRunStatus.classList.add('error'); return; }
+    if (!(stopTime > 0) || !(stepSize > 0)) { testRunStatus.textContent = 'Set a stop time and a simulation time per interval.'; testRunStatus.classList.add('error'); return; }
+
+    testRunStatus.classList.remove('error');
+    testRunButton.disabled = true;
+    testRunResult.textContent = '';
+    try {
+      const experiment = buildExperimentJson();
+      localStorage.setItem(PREVIEW_KEY, JSON.stringify(experiment));
+      testRunStatus.textContent = `Loading ${modelId} in the simulator…`;
+
+      const report = await runInSimulator(experiment);
+      const elapsed = report.elapsedMs / 1000;
+      const intervals = Math.max(1, Math.round((report.to - report.from) / (report.stepSize || stepSize)));
+      const achieved = intervals / elapsed;
+
+      if (report.status !== 'Complete') {
+        testRunStatus.textContent = `The run stopped at t=${report.to} with status "${report.status}" — check the input values.`;
+        testRunStatus.classList.add('error');
+        return;
+      }
+
+      const paceNote = perSecond > 0
+        ? `requested ${perSecond}/s, achieved ${achieved.toFixed(1)}/s`
+        : `unpaced: ${achieved.toFixed(0)} intervals/s is the machine's ceiling for this model`;
+
+      // The verdict a page designer needs before building on this skeleton: the named variables
+      // resolve, the charts are declared, and the simulation really ran end to end -- measured
+      // through the app, so the pace is the one the student will see.
+      const blockers = [
+        ...(report.missingOutputs ?? []).map((name) => `output "${name}" is not in the model`),
+        ...(report.nonFiniteOutputs ?? []).map((name) => `output "${name}" went non-finite`)
+      ];
+      testRunStatus.textContent = blockers.length === 0 ? 'Ready to design against.' : 'Not ready.';
+      testRunStatus.classList.toggle('error', blockers.length > 0);
+      testRunResult.textContent =
+        (blockers.length ? `Blockers: ${blockers.join('; ')}. ` : '') +
+        `${experiment.inputs.length} inputs, ${experiment.parameters.length} parameters, ` +
+        `${experiment.outputs.length} outputs, ${(experiment.charts ?? []).length} charts. ` +
+        `${intervals} intervals covering ${stopTime} s of simulation took ${elapsed.toFixed(2)} s of real time — ${paceNote}. ` +
+        'Measured with this page open, so a student running the simulator alone gets a little more. ' +
+        (perSecond > 0 && achieved < perSecond * 0.9
+          ? 'That is short of the rate you asked for; lower the intervals per second or raise the simulation time per interval.'
+          : '');
+    } catch (caught) {
+      testRunStatus.textContent = caught instanceof Error ? caught.message : String(caught);
+      testRunStatus.classList.add('error');
+    } finally {
+      testRunButton.disabled = false;
+    }
+  });
+
+  // Bulk role assignment. A model that declares no inputs at all -- normal-circulation has 49
+  // tunable parameters and not one declared input -- otherwise means picking a role 49 times
+  // from a dropdown. The buttons act on exactly what the filters show, so the curator narrows
+  // with the search box first ("modelSettings.") and then assigns in one click.
+  const bulkStatus = el('bulk-status');
+
+  function applyRoleToVisible(role) {
+    const { visible } = visibleVariables();
+    if (!visible.length) {
+      bulkStatus.hidden = false;
+      bulkStatus.textContent = 'Nothing to apply to: no rows match the current filters.';
+      return;
+    }
+    let applied = 0;
+    const skipped = [];
+    for (const variable of visible) {
+      // Clause of the experiment contract: an input has to be writable. Refusing here beats
+      // exporting something check:experiments will reject later.
+      if (role === 'input' && !isWritable(variable)) {
+        skipped.push(variable.name);
+        continue;
+      }
+      ensureRoleEntry(variable).role = role;
+      applied += 1;
+    }
+    bulkStatus.hidden = false;
+    const label = role === 'none' ? 'unassigned' : role;
+    bulkStatus.textContent = skipped.length
+      ? `${applied} of ${visible.length} rows set to ${label}. ${skipped.length} skipped as not writable` +
+        ` (neither an input nor tunable): ${skipped.slice(0, 3).join(', ')}${skipped.length > 3 ? ', …' : ''}.`
+      : `${applied} row${applied === 1 ? '' : 's'} set to ${label}.`;
+    renderTable();
+    updatePreview();
+  }
+
+  el('bulk-input').addEventListener('click', () => applyRoleToVisible('input'));
+  el('bulk-parameter').addEventListener('click', () => applyRoleToVisible('parameter'));
+  el('bulk-output').addEventListener('click', () => applyRoleToVisible('output'));
+  el('bulk-clear').addEventListener('click', () => applyRoleToVisible('none'));
+
+  searchInput.addEventListener('input', renderTable);
+  roleFilterSelect.addEventListener('change', renderTable);
+  for (const input of [modelIdInput, experimentIdInput, experimentNameInput, experimentDescriptionInput,
+                       stopTimeInput, stepSizeInput, intervalsPerSecondInput, timeUnitInput, timeFactorInput]) {
+    input.addEventListener('input', updatePreview);
+  }
+  updateTimingSummary();
+
+  // Runs the draft in the real simulator page. The experiment is handed over through
+  // localStorage rather than the URL so a large configuration cannot overflow it, and so the
+  // draft never has to be written to disk just to be looked at.
+  openButton.addEventListener('click', () => {
+    const experiment = buildExperimentJson();
+    if (!experiment.modelId) {
+      exportStatus.textContent = 'Set a model id before opening the simulator.';
+      exportStatus.classList.add('error');
+      return;
+    }
+    try {
+      localStorage.setItem(PREVIEW_KEY, JSON.stringify(experiment));
+    } catch (caught) {
+      exportStatus.textContent = `Could not hand the draft over: ${caught instanceof Error ? caught.message : String(caught)}`;
+      exportStatus.classList.add('error');
+      return;
+    }
+    exportStatus.classList.remove('error');
+    exportStatus.textContent = 'Opened the draft in the simulator — re-click after changes to refresh it.';
+    window.open(`./?model=${encodeURIComponent(experiment.modelId)}&experiment=preview`, 'fmu-preview');
+  });
+
+  /**
+   * The experiment as a page, written with the web components.
+   *
+   * The markup comes from renderExperimentMarkup in the element bundle -- the same function the
+   * shared single-file page uses -- so the configurator never invents a second layout. That is the
+   * rule this project keeps relearning: a second description of the interface is what shipped four
+   * qualitative models as blank windows.
+   *
+   * The stylesheet is deliberately small. It is a starting point for a designer, not a design:
+   * the elements render into the light DOM precisely so this can be thrown away and replaced
+   * without touching the simulator.
+   */
+  const PAGE_STYLE = `
+  /* A starting point, not a design. Restyle freely: the elements render into the light DOM,
+     so every selector below reaches them. */
+  body { margin: 0; padding: 28px 5vw; background: #f7f7f1; color: #19332f;
+         font: 15px/1.55 system-ui, sans-serif; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .lede { color: #4c635c; margin: 0 0 18px; max-width: 68ch; }
+  .provenance { font: 11px ui-monospace, monospace; color: #8a9a94; margin: 0 0 20px; }
+  .title-row { display: flex; gap: 16px; align-items: baseline; justify-content: space-between; }
+  fmu-status { font: 11px ui-monospace, monospace; letter-spacing: .12em;
+               text-transform: uppercase; color: #687873; }
+  fmu-status[data-fmu-status="Running"] { color: #4e996c; }
+  fmu-status[data-fmu-status="Error"] { color: #bd5238; }
+  .workbench { display: grid; grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+               gap: 26px; align-items: start; }
+  @media (max-width: 940px) { .workbench { grid-template-columns: 1fr; } }
+  .rail { display: flex; flex-direction: column; gap: 18px; }
+  .stage { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+  .block { border: 1px solid #d2d9d3; border-radius: 4px; background: #fffffb; }
+  .block > h2 { margin: 0; padding: 10px 13px; font: 11px ui-monospace, monospace;
+                letter-spacing: .14em; text-transform: uppercase; color: #687873;
+                border-bottom: 1px solid #e8eee9; }
+  .block > .body { padding: 13px; display: flex; flex-direction: column; gap: 15px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .clock { font: 13px ui-monospace, monospace; }
+  fmu-action, fmu-trigger { display: contents; }
+  button { font: 500 13.5px system-ui, sans-serif; padding: 8px 14px; cursor: pointer;
+           border: 1px solid #d2d9d3; border-radius: 3px; background: #fffffb; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  fmu-slider { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; }
+  fmu-slider label { grid-column: 1 / -1; font-size: 13.5px; font-weight: 500; }
+  fmu-slider input[type="range"] { grid-column: 1; min-width: 0; accent-color: #bd5238; }
+  fmu-slider .fmu-slider-value { grid-column: 2; width: 86px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 1px; background: #d2d9d3; border: 1px solid #d2d9d3; border-radius: 4px;
+           overflow: hidden; }
+  .tiles fmu-readout { background: #fffffb; padding: 11px 13px; display: flex;
+                       flex-direction: column; gap: 3px; }
+  .tiles .fmu-readout-label { font-size: 11.5px; color: #687873; }
+  .tiles .fmu-readout-value { font: 17px ui-monospace, monospace;
+                              font-variant-numeric: tabular-nums; }
+  .tiles .fmu-readout-unit { font: 11px ui-monospace, monospace; color: #8a9a94; }
+  .fixed-list fmu-readout { display: flex; gap: 8px; font-size: 13px; }
+  .fixed-list .fmu-readout-label { flex: 1; }
+  .charts { display: grid; gap: 18px; }
+  .charts.two-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .charts.two-column { grid-template-columns: 1fr; } }
+  .lamps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+  fmu-state { display: block; border: 1px solid #d2d9d3; border-radius: 4px; padding: 12px 14px;
+              background: #fffffb; color: #8a9a94; font-size: 13px; }
+  fmu-state[data-fmu-active] { background: #19332f; border-color: #19332f; color: #f7f7f1; }
+  .fmu-state-of { display: block; font-size: 11px; opacity: .65; }
+  .agent-note { margin: 0; font-size: 11.5px; color: #687873; }
+  fmu-step { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+`;
+
+  const escapeHtml = (value) =>
+    String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  function pageHtml(experiment, markup) {
+    const title = escapeHtml(experiment.name || experiment.id);
+    return [
+      '<!doctype html>',
+      '<html lang="cs">',
+      '<head>',
+      '<meta charset="utf-8">',
+      '<meta name="viewport" content="width=device-width,initial-scale=1">',
+      '<title>' + title + '</title>',
+      '',
+      '<!-- One module script is the whole installation. Serve this page from the app, or put it',
+      '     where /elements/fmu-elements.js resolves. -->',
+      '<script type="module" src="/elements/fmu-elements.js"></' + 'script>',
+      '',
+      '<style>' + PAGE_STYLE + '</style>',
+      '</head>',
+      '<body>',
+      markup,
+      '</body>',
+      '</html>',
+      ''
+    ].join('\n');
+  }
+
+  pageButton.addEventListener('click', async () => {
+    const experiment = buildExperimentJson();
+    if (!experiment.modelId) {
+      exportStatus.textContent = 'Set a model id before exporting.';
+      exportStatus.classList.add('error');
+      return;
+    }
+    try {
+      // The bundle the app serves, so the page is written by the very code that will run it.
+      // Imported on demand: the configurator itself needs none of it.
+      const { renderExperimentMarkup } = await import('/elements/fmu-elements.js');
+      const markup = renderExperimentMarkup(experiment.modelId, experiment, {
+        provenance: experiment.inputs.length + ' inputs · ' + experiment.outputs.length + ' outputs'
+      });
+      const blob = new Blob([pageHtml(experiment, markup)], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = (experiment.id || 'experiment') + '.html';
+      link.click();
+      URL.revokeObjectURL(url);
+      exportStatus.textContent =
+        'Wrote a page built from <fmu-experiment>. Serve it from the app so /elements/fmu-elements.js resolves.';
+      exportStatus.classList.remove('error');
+    } catch (caught) {
+      exportStatus.textContent =
+        'Could not build the page: ' + (caught instanceof Error ? caught.message : String(caught));
+      exportStatus.classList.add('error');
+    }
+  });
+
+  exportButton.addEventListener('click', () => {
+    const experiment = buildExperimentJson();
+    if (!experiment.modelId) {
+      exportStatus.textContent = 'Set a model id before exporting.';
+      exportStatus.classList.add('error');
+      return;
+    }
+    const blob = new Blob([JSON.stringify(experiment, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${experiment.id || 'experiment'}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+    exportStatus.textContent = `Exported ${experiment.inputs.length} input(s), ${experiment.parameters.length} parameter(s), ${experiment.outputs.length} output(s). Save this file as web/static/models/${experiment.modelId || '<model-id>'}/experiments/${experiment.id}.json`;
+    exportStatus.classList.remove('error');
+  });
+</script>
+</body>
+</html>

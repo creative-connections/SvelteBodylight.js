@@ -1,0 +1,7311 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "EnterocyteMucosalBlock.FeMetabolism.Test_Full",
+  "modelIdentifier": "EnterocyteMucosalBlock_FeMetabolism_Test_0Full",
+  "guid": "{1d15a35b-651d-405a-9abb-d666fd48e57d}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "solverTolerance": 1e-8,
+  "variables": [
+    {
+      "name": "TfR_regulation",
+      "description": "Uptake from transferrin follows TfR1 in liver and other organs: 1 - yes, 0 - no (Enculescu)",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "local_gain",
+      "description": "Strength of the cell&#39;s own iron regulation in every organ: 1 - Enculescu, more - a steeper ferroportin and TfR1 response",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "serum.Liver_in",
+      "description": "Fe input from liver",
+      "valueReference": 1174405135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Spleen_in",
+      "description": "Fe input from spleen",
+      "valueReference": 1174405136,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Duodenum_in",
+      "description": "Fe input from duodenum",
+      "valueReference": 1174405137,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.OtherOrgans_in",
+      "description": "Fe input from other organs",
+      "valueReference": 1174405138,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Infusion",
+      "description": "Fe infusion rate",
+      "valueReference": 234881125,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.TfR_liver",
+      "description": "Transferrin receptors in the liver, relative: 1 = normal",
+      "valueReference": 1174405139,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "serum.TfR_otherOrgans",
+      "description": "Transferrin receptors in the other organs, relative: 1 = normal",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "serum.EPO",
+      "description": "Erythropoietin, relative: 1 = normal",
+      "valueReference": 1174405141,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "serum.Liver_out",
+      "description": "Fe output to liver",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.BoneMarrow_out",
+      "description": "Fe output to bone marrow",
+      "valueReference": 1174405143,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Duodenum_out",
+      "description": "Fe output to bone duodenum",
+      "valueReference": 1174405144,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.OtherOrgans_out",
+      "description": "Fe output to other organs",
+      "valueReference": 1174405145,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Fe",
+      "description": "Fe amount in serum",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.51304e-9
+    },
+    {
+      "name": "der(serum.Fe)",
+      "description": "der(Fe amount in serum)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "serum.Fe_input",
+      "description": "Fe ammount in serum: input",
+      "valueReference": 1174405146,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "serum.Fe_output",
+      "description": "Fe ammount in serum: output",
+      "valueReference": 1174405147,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "serum.Tf_saturation",
+      "description": "Transferrin saturation: serum iron against the capacity th, 1 = full",
+      "valueReference": 1711276060,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "serum.th",
+      "description": "Threshold serum iron value (k26), 2.08/3.00",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 2.687e-9
+    },
+    {
+      "name": "serum.v_liv_1",
+      "description": "Low liver iron uptake (k4), 2.78/9.81",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0011001944444444444
+    },
+    {
+      "name": "serum.v_liv_2",
+      "description": "High liver iron uptake (k45)",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.003994722222222222
+    },
+    {
+      "name": "serum.v_bm",
+      "description": "Bone marrow uptake rate (k5), 2.66/4.16",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0007848888888888889
+    },
+    {
+      "name": "serum.EPO_regulation",
+      "description": "Erythropoiesis regulated by erythropoietin: 1 - yes, 0 - no (Enculescu)",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1
+    },
+    {
+      "name": "serum.K_bm",
+      "description": "Half-saturation of the marrow&#39;s iron uptake, in units of the normal serum iron",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.5
+    },
+    {
+      "name": "serum.Fe_normal",
+      "description": "Normal (steady-state) serum iron",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.5130432000000002e-9
+    },
+    {
+      "name": "serum.v_duo",
+      "description": "Duodenal uptake rate from blood (k6), 0.6/1.3",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00019579166666666665
+    },
+    {
+      "name": "serum.v_res",
+      "description": "Other organs uptake rate (k34), 5.4/10.0",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.001755722222222222
+    },
+    {
+      "name": "serum.Fe_regulation",
+      "description": "Fe regulation: 1 - auto, 0 - manual",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "serum.Fe_manual",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.51304e-9
+    },
+    {
+      "name": "serum.Fe_regulation_switcher",
+      "valueReference": 100663296,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "serum.tau_manual",
+      "description": "How fast serum iron reaches the hand-set level in manual mode",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "min",
+      "displayFactor": 0.016666666666666666,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 60,
+      "start": 600
+    },
+    {
+      "name": "liver.Serum_in",
+      "description": "Fe input from serum",
+      "valueReference": 1174405142,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.Serum_out",
+      "description": "Fe output to serum",
+      "valueReference": 1174405135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.hep",
+      "description": "Hepcidin",
+      "valueReference": 33554449,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "liver.il6",
+      "description": "IL6",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "liver.Fe",
+      "description": "Fe amount in liver",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(liver.Fe)",
+      "description": "der(Fe amount in liver)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "liver.FPN",
+      "description": "FPN amount in liver (s12)",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.00036e-9
+    },
+    {
+      "name": "der(liver.FPN)",
+      "description": "der(FPN amount in liver (s12))",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "liver.FPN_mRNA",
+      "description": "FPN mRNA amount in liver (s7)",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(liver.FPN_mRNA)",
+      "description": "der(FPN mRNA amount in liver (s7))",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "liver.Fe_max",
+      "description": "Threshold value liver iron export (k43), 100.0/159.0",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.1955e-7
+    },
+    {
+      "name": "liver.u",
+      "description": "Liver iron export rate (k1), 0.05/0.19",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/(ug.h)",
+      "displayFactor": 0.0000036000000000000003,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/(kg.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/(ug.h)",
+          "displayFactor": 0.0000036000000000000003,
+          "displayOffset": 0
+        }
+      ],
+      "start": 21623.333333333332
+    },
+    {
+      "name": "liver.FPN_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405149,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.FPN_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405150,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.k_synth",
+      "description": "Fpnliv synthesis rate (k28), 0.07/0.14",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00003602777777777778
+    },
+    {
+      "name": "liver.k_deg",
+      "description": "Fpnliv degradation rate (k12), 0.01/0.06",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00001537861111111111
+    },
+    {
+      "name": "liver.k_Fe",
+      "description": "Constant Fpn_liv production (k17), 0.002/0.006",
+      "valueReference": 16777234,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 3317700
+    },
+    {
+      "name": "liver.local_gain",
+      "description": "Strength of the cell&#39;s own iron regulation (IRP/IRE), both ferroportin and TfR1: 1 - Enculescu",
+      "valueReference": 100663297,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "liver.k_hep",
+      "description": "Constant Fpnliv degradation (k13), 2.11/12.93",
+      "valueReference": 16777235,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 2574300000
+    },
+    {
+      "name": "liver.FPN_mRNA_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405151,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.FPN_mRNA_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405152,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "liver.K_mRNA",
+      "valueReference": 16777236,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 2.777777777777778e-13
+    },
+    {
+      "name": "liver.K1_mRNA",
+      "description": "Constant Fpn_liv_mRNA production (k24), 28.0/32.5",
+      "valueReference": 16777237,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 30.66
+    },
+    {
+      "name": "liver.K2_mRNA",
+      "description": "Constant FpnmRNA production (k41), 3.0e-4/2.0e-3",
+      "valueReference": 16777238,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.2836000000000001e-12
+    },
+    {
+      "name": "liver.k_mRNA_deg",
+      "description": "FpnmRNA degradation rate (k25), 1.02/1.20",
+      "valueReference": 16777239,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00030113888888888893
+    },
+    {
+      "name": "liver.TfR",
+      "description": "Transferrin receptors (TfR1), relative: 1 = normal",
+      "valueReference": 1174405139,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "liver.TfR_regulation",
+      "description": "Uptake from transferrin follows TfR1: 1 - yes, 0 - no (Enculescu)",
+      "valueReference": 100663298,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "liver.tau_TfR",
+      "description": "Time constant of TfR1",
+      "valueReference": 16777240,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "min",
+      "displayFactor": 0.016666666666666666,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 60,
+      "start": 43200
+    },
+    {
+      "name": "liver.TfR_max",
+      "description": "Upper limit of TfR1, relative; only the rise above 1 saturates towards it",
+      "valueReference": 16777241,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 2
+    },
+    {
+      "name": "liver.Fe_start",
+      "description": "Iron at the start (steady state), where TfR1 = 1",
+      "valueReference": 100663299,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 7.69562e-8
+    },
+    {
+      "name": "liver.TfR_target",
+      "description": "TfR1 the cell&#39;s iron asks for (IRP/IRE): the inverse of ferroportin&#39;s (1 + k_Fe*Fe), 1 = normal",
+      "valueReference": 1174405153,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "liver.TfR_cell",
+      "description": "TfR1 the cell has, relative; with TfR_regulation = 0 it is kept but does not act",
+      "valueReference": 33554436,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(liver.TfR_cell)",
+      "description": "der(TfR1 the cell has, relative; with TfR_regulation = 0 it is kept but does not act)",
+      "valueReference": 1124073476,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "spleen.BoneMarrow_in",
+      "description": "Fe input from bone marrow",
+      "valueReference": 1174405154,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.RBC_in",
+      "description": "Fe input from RBC",
+      "valueReference": 1174405155,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.Serum_out",
+      "description": "Fe output to serum",
+      "valueReference": 1174405136,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.hep",
+      "description": "Hepcidin",
+      "valueReference": 33554449,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "spleen.il6",
+      "description": "IL6",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "spleen.Fe",
+      "description": "Fe amount in spleen (s5)",
+      "valueReference": 33554437,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(spleen.Fe)",
+      "description": "der(Fe amount in spleen (s5))",
+      "valueReference": 1124073477,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "spleen.FPN",
+      "description": "FPN amount in spleen (s14)",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.0004900000000001e-9
+    },
+    {
+      "name": "der(spleen.FPN)",
+      "description": "der(FPN amount in spleen (s14))",
+      "valueReference": 1124073478,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "spleen.FPN_mRNA",
+      "description": "FPN mRNA amount in spleen (s9)",
+      "valueReference": 33554439,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(spleen.FPN_mRNA)",
+      "description": "der(FPN mRNA amount in spleen (s9))",
+      "valueReference": 1124073479,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "spleen.Fe_max",
+      "description": "Threshold value spleen iron export (k44), 57.0/95.0",
+      "valueReference": 16777242,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 8.8216e-8
+    },
+    {
+      "name": "spleen.u",
+      "description": "Spleen export rate (k3), 0.21/0.36",
+      "valueReference": 16777243,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/(ug.h)",
+      "displayFactor": 0.0000036000000000000003,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/(kg.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/(ug.h)",
+          "displayFactor": 0.0000036000000000000003,
+          "displayOffset": 0
+        }
+      ],
+      "start": 66950
+    },
+    {
+      "name": "spleen.Fe_input",
+      "description": "Fe amount in spleen: total input",
+      "valueReference": 1711276068,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.Fe_output",
+      "description": "Fe amount in spleen: total output",
+      "valueReference": 1174405136,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.FPN_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405157,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.FPN_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405158,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.k_synth",
+      "description": "Fpnspl synthesis rate (k30), 0.015/0.027",
+      "valueReference": 16777244,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000006311666666666667
+    },
+    {
+      "name": "spleen.k_deg",
+      "description": "Fpnspl degradation rate (k12*k18, k18 = 0.054621), 0.0007/0.0038",
+      "valueReference": 16777245,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 8.399951175e-7
+    },
+    {
+      "name": "spleen.k_Fe",
+      "description": "Constant Fpn_spl production (k27), 0.005/0.028",
+      "valueReference": 16777246,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 14027000
+    },
+    {
+      "name": "spleen.local_gain",
+      "description": "Strength of the cell&#39;s own iron regulation (IRP/IRE), both ferroportin and TfR1: 1 - Enculescu",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "spleen.Fe_start",
+      "description": "Iron at the start (steady state), the point local_gain turns the response about",
+      "valueReference": 100663301,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.7729500000000003e-8
+    },
+    {
+      "name": "spleen.k_hep",
+      "description": "Constant Fpnspl degradation (k13*k19, k19 = 4.4694), 9.2/73.7",
+      "valueReference": 16777247,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 11505576420
+    },
+    {
+      "name": "spleen.FPN_mRNA_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405159,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.FPN_mRNA_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405160,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "spleen.K_mRNA",
+      "valueReference": 16777248,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 2.777777777777778e-13
+    },
+    {
+      "name": "spleen.K1_mRNA",
+      "description": "Constant Fpn_spl_mRNA production (k36*K_liv_1, k36 = 1.086700), 33.1/34.5",
+      "valueReference": 16777249,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 33.318222
+    },
+    {
+      "name": "spleen.K2_mRNA",
+      "description": "Constant FpnmRNA production (k41), 3.0e-4/2.0e-3",
+      "valueReference": 16777250,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.2836000000000001e-12
+    },
+    {
+      "name": "spleen.k_mRNA_deg",
+      "description": "FpnmRNA degradation rate (k25), 1.02/1.20",
+      "valueReference": 16777251,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00030113888888888893
+    },
+    {
+      "name": "duodenum.Serum_in",
+      "description": "Fe input from serum",
+      "valueReference": 1174405144,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.Food_in",
+      "description": "Fe input from food",
+      "valueReference": 234881124,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.Serum_out",
+      "description": "Fe output to serum",
+      "valueReference": 1174405137,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.FeGrowthRate",
+      "valueReference": 1711276073,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "duodenum.hep",
+      "description": "Hepcidin",
+      "valueReference": 33554449,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "duodenum.il6",
+      "description": "IL6",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "duodenum.Fe",
+      "description": "Fe amount in duodenum (s4)",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 2.97118e-9
+    },
+    {
+      "name": "der(duodenum.Fe)",
+      "description": "der(Fe amount in duodenum (s4))",
+      "valueReference": 1124073480,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "duodenum.FPN",
+      "description": "Fpn amount in duodenum (s13)",
+      "valueReference": 33554441,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.00017e-9
+    },
+    {
+      "name": "der(duodenum.FPN)",
+      "description": "der(Fpn amount in duodenum (s13))",
+      "valueReference": 1124073481,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "duodenum.FPN_mRNA",
+      "description": "Fpn mRNA amount in duodenum (s8)",
+      "valueReference": 33554442,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 9.22424e-10
+    },
+    {
+      "name": "der(duodenum.FPN_mRNA)",
+      "description": "der(Fpn mRNA amount in duodenum (s8))",
+      "valueReference": 1124073482,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "duodenum.u",
+      "description": "Duodenal export rate (k2), 0.66/1.38",
+      "valueReference": 16777252,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/(ug.h)",
+      "displayFactor": 0.0000036000000000000003,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/(kg.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/(ug.h)",
+          "displayFactor": 0.0000036000000000000003,
+          "displayOffset": 0
+        }
+      ],
+      "start": 245433.33333333334
+    },
+    {
+      "name": "duodenum.Fe_intake",
+      "description": "Fe intake from food",
+      "valueReference": 100663302,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.v_max",
+      "description": "Maximal duodenal uptake from food (SI. Eq.14)",
+      "valueReference": 16777253,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 2.7388888888888888e-12
+    },
+    {
+      "name": "duodenum.K_sat",
+      "description": "Saturation parameter duodenal uptake, corresponds to k11",
+      "valueReference": 16777254,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 4.9261111111111115e-11
+    },
+    {
+      "name": "duodenum.Fe_absorption",
+      "description": "Fe input to duodenum from intestines, prev:in_1",
+      "valueReference": 1174405162,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.unregulated_absorption",
+      "valueReference": 16777255,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": null
+    },
+    {
+      "name": "duodenum.malabsorption",
+      "description": "iron malabsorption coefficient: <0;1>; 0 = no absorption, 1 = physiologic",
+      "valueReference": 16777256,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1
+    },
+    {
+      "name": "duodenum.K_absorption",
+      "valueReference": 16777257,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1e-9
+    },
+    {
+      "name": "duodenum.Fe_loss",
+      "description": "Fe output from duodenum to intestines (Fe loss), prev:out_2",
+      "valueReference": 1174405163,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.v_lost",
+      "description": "Iron lost rate duodenum (k48), 0.001/0.320",
+      "valueReference": 16777258,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000025533055555555556
+    },
+    {
+      "name": "duodenum.Fe_input",
+      "description": "Fe amount in duodenum: total input",
+      "valueReference": 1711276076,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.Fe_output",
+      "description": "Fe amount in duodenum: total output",
+      "valueReference": 1711276077,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.Fe_stool",
+      "description": "Fe leaving with the stool: food iron not absorbed plus shed enterocytes",
+      "valueReference": 1711276078,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.FPN_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405167,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.FPN_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405168,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.k_synth",
+      "description": "Fpnduo synthesis rate (k29), 0.01/0.25",
+      "valueReference": 16777259,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000008416388888888889
+    },
+    {
+      "name": "duodenum.k_deg",
+      "description": "Fpnduo degradation rate (k12*k15, k15 = 0.3815), 0.0056/0.147",
+      "valueReference": 16777260,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000005866940138888889
+    },
+    {
+      "name": "duodenum.k_Fe",
+      "description": "Constant Fpn_duo production (k46), 0.06/0.49",
+      "valueReference": 16777261,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 160070000
+    },
+    {
+      "name": "duodenum.local_gain",
+      "description": "Strength of the cell&#39;s own iron regulation (IRP/IRE), both ferroportin and TfR1: 1 - Enculescu",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "duodenum.Fe_start",
+      "description": "Iron at the start; fixed, because the duodenum has no steady-state initial equations",
+      "valueReference": 16777262,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 2.97118e-9
+    },
+    {
+      "name": "duodenum.k_hep",
+      "description": "Constant Fpnduo degradation (k13*k16, k16 = 0.55631), 0.78/4.16",
+      "valueReference": 16777263,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1432108833
+    },
+    {
+      "name": "duodenum.FPN_mRNA_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405169,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.FPN_mRNA_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405170,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "duodenum.K_mRNA",
+      "valueReference": 16777264,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 2.777777777777778e-13
+    },
+    {
+      "name": "duodenum.K1_mRNA",
+      "description": "Constant Fpn_duo_mRNA production (k35*K_liv_1, k35 = 0.020001), 0.56/0.79",
+      "valueReference": 16777265,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.61323066
+    },
+    {
+      "name": "duodenum.K2_mRNA",
+      "description": "Constant FpnmRNA production (k41), 3.0e-4/2.0e-3",
+      "valueReference": 16777266,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.2836000000000001e-12
+    },
+    {
+      "name": "duodenum.k_mRNA_deg",
+      "description": "FpnmRNA degradation rate (k25), 1.02/1.20",
+      "valueReference": 16777267,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00030113888888888893
+    },
+    {
+      "name": "otherOrgans.Serum_in",
+      "description": "Fe input from serum",
+      "valueReference": 1174405145,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.Serum_out",
+      "description": "Fe output to serum",
+      "valueReference": 1174405138,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.hep",
+      "description": "Hepcidin",
+      "valueReference": 33554449,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "otherOrgans.il6",
+      "description": "IL6",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "otherOrgans.Fe",
+      "description": "Fe amount in other organs (s10)",
+      "valueReference": 33554443,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(otherOrgans.Fe)",
+      "description": "der(Fe amount in other organs (s10))",
+      "valueReference": 1124073483,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "otherOrgans.FPN",
+      "description": "Fpn amount in other organs (s15)",
+      "valueReference": 33554444,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.0002000000000001e-9
+    },
+    {
+      "name": "der(otherOrgans.FPN)",
+      "description": "der(Fpn amount in other organs (s15))",
+      "valueReference": 1124073484,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "otherOrgans.FPN_mRNA",
+      "description": "Fpn mRNA amount in other organs (s11)",
+      "valueReference": 33554445,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "der(otherOrgans.FPN_mRNA)",
+      "description": "der(Fpn mRNA amount in other organs (s11))",
+      "valueReference": 1124073485,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "otherOrgans.Fe_max",
+      "description": "Limit value, iron lost rest (k49), 510/947",
+      "valueReference": 16777268,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 5.1068e-7
+    },
+    {
+      "name": "otherOrgans.u",
+      "description": "Other organs export rate (k33), 0.014/0.030",
+      "valueReference": 16777269,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/(ug.h)",
+      "displayFactor": 0.0000036000000000000003,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/(kg.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/(ug.h)",
+          "displayFactor": 0.0000036000000000000003,
+          "displayOffset": 0
+        }
+      ],
+      "start": 4761.944444444444
+    },
+    {
+      "name": "otherOrgans.Fe_loss",
+      "valueReference": 1174405171,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.loss_factor",
+      "description": "iron loss factor, 1 = physiologic, >1 enhanced loss",
+      "valueReference": 16777270,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1
+    },
+    {
+      "name": "otherOrgans.u_lost",
+      "description": "Iron lost rate rest (k9), 0.002/0.004",
+      "valueReference": 16777271,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 9.278055555555555e-7
+    },
+    {
+      "name": "otherOrgans.Fe_input",
+      "description": "Fe amount in other organs: total input",
+      "valueReference": 1174405145,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.Fe_output",
+      "description": "Fe amount in other organs: total output",
+      "valueReference": 1711276084,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.FPN_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405173,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.FPN_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405174,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.k_synth",
+      "description": "Fpnres synthesis rate (k40), 0.004/0.108",
+      "valueReference": 16777272,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0000014055
+    },
+    {
+      "name": "otherOrgans.k_deg",
+      "description": "Fpnres degradation rate (k12*k38, k38 = 0.52232), 0.025/0.129",
+      "valueReference": 16777273,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000008032556155555556
+    },
+    {
+      "name": "otherOrgans.k_Fe",
+      "description": "Constant Fpn_res production (k47), 0.004/0.152",
+      "valueReference": 16777274,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 113760000
+    },
+    {
+      "name": "otherOrgans.local_gain",
+      "description": "Strength of the cell&#39;s own iron regulation (IRP/IRE), both ferroportin and TfR1: 1 - Enculescu",
+      "valueReference": 100663304,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "otherOrgans.k_hep",
+      "description": "Constant Fpnres degradation (k13*k39, k39 = 4.5163), 3.7/38.1",
+      "valueReference": 16777275,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 11626311090.000002
+    },
+    {
+      "name": "otherOrgans.FPN_mRNA_synthesis",
+      "description": "FPN synthesis",
+      "valueReference": 1174405175,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.FPN_mRNA_degradation",
+      "description": "FPN degradation",
+      "valueReference": 1174405176,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "otherOrgans.K_mRNA",
+      "valueReference": 16777276,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 2.777777777777778e-13
+    },
+    {
+      "name": "otherOrgans.K1_mRNA",
+      "description": "Constant Fpn_res_mRNA production (k42*K_liv_1, k42 = 0.366290), 7.80/43.7",
+      "valueReference": 16777277,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 11.2304514
+    },
+    {
+      "name": "otherOrgans.K2_mRNA",
+      "description": "Constant FpnmRNA production (k41), 3.0e-4/2.0e-3",
+      "valueReference": 16777278,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.2836000000000001e-12
+    },
+    {
+      "name": "otherOrgans.k_mRNA_deg",
+      "description": "FpnmRNA degradation rate (k25), 1.02/1.20",
+      "valueReference": 16777279,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00030113888888888893
+    },
+    {
+      "name": "otherOrgans.TfR",
+      "description": "Transferrin receptors (TfR1), relative: 1 = normal",
+      "valueReference": 1174405140,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "otherOrgans.TfR_regulation",
+      "description": "Uptake from transferrin follows TfR1: 1 - yes, 0 - no (Enculescu)",
+      "valueReference": 100663305,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "otherOrgans.tau_TfR",
+      "description": "Time constant of TfR1",
+      "valueReference": 16777280,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "min",
+      "displayFactor": 0.016666666666666666,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 60,
+      "start": 43200
+    },
+    {
+      "name": "otherOrgans.TfR_max",
+      "description": "Upper limit of TfR1, relative; only the rise above 1 saturates towards it",
+      "valueReference": 16777281,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 2
+    },
+    {
+      "name": "otherOrgans.Fe_start",
+      "description": "Iron at the start (steady state), where TfR1 = 1",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 4.66811e-7
+    },
+    {
+      "name": "otherOrgans.TfR_target",
+      "description": "TfR1 the cell&#39;s iron asks for (IRP/IRE): the inverse of ferroportin&#39;s (1 + k_Fe*Fe), 1 = normal",
+      "valueReference": 1174405177,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "otherOrgans.TfR_cell",
+      "description": "TfR1 the cell has, relative; with TfR_regulation = 0 it is kept but does not act",
+      "valueReference": 33554446,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(otherOrgans.TfR_cell)",
+      "description": "der(TfR1 the cell has, relative; with TfR_regulation = 0 it is kept but does not act)",
+      "valueReference": 1124073486,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "boneMarrow.Serum_in",
+      "description": "Fe input from serum",
+      "valueReference": 1174405143,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "boneMarrow.RBC_out",
+      "description": "Fe output to RBC",
+      "valueReference": 1174405178,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "boneMarrow.Spleen_out",
+      "description": "Fe output to spleen",
+      "valueReference": 1174405154,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "boneMarrow.Fe",
+      "description": "Fe ammount in bones (s3)",
+      "valueReference": 33554447,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 6.31596e-8
+    },
+    {
+      "name": "der(boneMarrow.Fe)",
+      "description": "der(Fe ammount in bones (s3))",
+      "valueReference": 1124073487,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "boneMarrow.Fe_input",
+      "description": "Fe ammount in bones: input",
+      "valueReference": 1174405143,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "boneMarrow.Fe_output",
+      "description": "Fe ammount in bones: output",
+      "valueReference": 1174405179,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "boneMarrow.v_RBC",
+      "description": "RBC uptake rate (k8), 0.055/0.075",
+      "valueReference": 16777282,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000016113333333333334
+    },
+    {
+      "name": "boneMarrow.v_spl_2",
+      "description": "Spleen iron uptake rate from bones (k7), 0.008/0.019",
+      "valueReference": 16777283,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000002689361111111111
+    },
+    {
+      "name": "rBC.BoneMarrow_in",
+      "description": "Fe input from bone marrow",
+      "valueReference": 1174405178,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.Transfusion",
+      "description": "transfusion rate",
+      "valueReference": 234881122,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.Bleeding",
+      "description": "bleeding rate",
+      "valueReference": 234881123,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.Spleen_out",
+      "description": "Fe output to spleen",
+      "valueReference": 1174405155,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.Fe",
+      "description": "Fe amount in red blood cells (s6)",
+      "valueReference": 33554448,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 0.0000010167233
+    },
+    {
+      "name": "der(rBC.Fe)",
+      "description": "der(Fe amount in red blood cells (s6))",
+      "valueReference": 1124073488,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "rBC.Fe_input",
+      "description": "Fe ammount in bones: input",
+      "valueReference": 1174405180,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.Fe_output",
+      "description": "Fe ammount in bones: output",
+      "valueReference": 1174405181,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rBC.v_spl_1",
+      "description": "Spleen iron uptake rate from RBC (k10), 0.002 = value for trace exp., 0.004/0.005",
+      "valueReference": 16777284,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "h-1",
+      "displayFactor": 3600,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0000010009722222222221
+    },
+    {
+      "name": "rBC.blood_drawn",
+      "description": "Blood drawn so far, all draws together, each as a share of the blood there was (the application adds 0.1 per press)",
+      "valueReference": 16777285,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "rBC.blood_applied",
+      "description": "Draws already taken from Fe",
+      "valueReference": 1711276045,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "rBC.draw_check",
+      "description": "How often a new draw (a rise of blood_drawn) is looked for",
+      "valueReference": 16777286,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "start": 60
+    },
+    {
+      "name": "hepcidin.il6",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "hepcidin.Bmp6",
+      "valueReference": 33554454,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "hepcidin.ERFE",
+      "description": "Erythroferrone, relative: 1 = normal",
+      "valueReference": 33554453,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "hepcidin.ERFE_regulation",
+      "description": "Erythroferrone lowers hepcidin: 1 - yes, 0 - no",
+      "valueReference": 16777287,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "hepcidin.K_ERFE",
+      "description": "Erythroferrone (1 = normal) at which half of BMP6 is bound",
+      "valueReference": 16777288,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 2
+    },
+    {
+      "name": "hepcidin.h_ERFE",
+      "description": "Steepness of the binding",
+      "valueReference": 16777289,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 2
+    },
+    {
+      "name": "hepcidin.Bmp6_free_share",
+      "description": "Share of BMP6 not bound by erythroferrone, 1 = normal",
+      "valueReference": 1174405182,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "hepcidin.hep",
+      "description": "Hepcidin amount (s16)",
+      "valueReference": 33554449,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 6.649380000000001e-10
+    },
+    {
+      "name": "der(hepcidin.hep)",
+      "description": "der(Hepcidin amount (s16))",
+      "valueReference": 1124073489,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "hepcidin.k_deg",
+      "description": "Hepcidin degradation rate (k20), 0.067/0.070",
+      "valueReference": 16777290,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.000019444444444444445
+    },
+    {
+      "name": "hepcidin.knockout",
+      "valueReference": 16777291,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "hepcidin.K_mass",
+      "valueReference": 16777292,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000000
+    },
+    {
+      "name": "hepcidin.K_freq",
+      "valueReference": 16777293,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0002777777777777778
+    },
+    {
+      "name": "hepcidin.hep_in",
+      "description": "Production of hepcidin",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "hepcidin.hep_out",
+      "description": "Degradation of hepcidin",
+      "valueReference": 1174405184,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "hepcidin.hep_regulation",
+      "description": "Hepcidin regulation: 1 - auto, 0 - manual",
+      "valueReference": 16777294,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "hepcidin.hep_manual",
+      "valueReference": 16777295,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 6.649380000000001e-10
+    },
+    {
+      "name": "hepcidin.hep_regulation_switcher",
+      "valueReference": 100663307,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "hepcidin.tau_manual",
+      "description": "How fast hepcidin reaches the hand-set level in manual mode",
+      "valueReference": 16777296,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "min",
+      "displayFactor": 0.016666666666666666,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 60,
+      "start": 3600
+    },
+    {
+      "name": "iL6.il6",
+      "description": "IL-6 amount (s22)",
+      "valueReference": 33554450,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0
+    },
+    {
+      "name": "der(iL6.il6)",
+      "description": "der(IL-6 amount (s22))",
+      "valueReference": 1124073490,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "iL6.LPS",
+      "description": "LPS (Lipopolysaccharide) ammount (s23)",
+      "valueReference": 33554451,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 1e-15,
+      "start": 0
+    },
+    {
+      "name": "der(iL6.LPS)",
+      "description": "der(LPS (Lipopolysaccharide) ammount (s23))",
+      "valueReference": 1124073491,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "iL6.LPS_given",
+      "description": "LPS given so far, all doses together (the application adds 1 ug per press)",
+      "valueReference": 16777297,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 0
+    },
+    {
+      "name": "iL6.LPS_applied",
+      "description": "LPS doses already added to LPS",
+      "valueReference": 1711276046,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 0
+    },
+    {
+      "name": "iL6.LPS_infusion",
+      "description": "LPS given continuously: a lasting (chronic) inflammation; 1 to 5 pg/h covers the whole range of the response",
+      "valueReference": 16777298,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug/h",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "iL6.LPS_check",
+      "description": "How often a new dose (a rise of LPS_given) is looked for",
+      "valueReference": 16777299,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "start": 60
+    },
+    {
+      "name": "iL6.k_deg_LPS",
+      "description": "LPS degradation rate, 5.9/5.9",
+      "valueReference": 16777300,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0016266666666666667
+    },
+    {
+      "name": "iL6.il6mRNA",
+      "description": "IL-6 mRNA ammount (s21)",
+      "valueReference": 33554452,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 1e-9,
+      "start": 0
+    },
+    {
+      "name": "der(iL6.il6mRNA)",
+      "description": "der(IL-6 mRNA ammount (s21))",
+      "valueReference": 1124073492,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "iL6.il6mRNA_in",
+      "description": "Production of IL-6 mRNA",
+      "valueReference": 1174405185,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "iL6.il6mRNA_out",
+      "description": "Degradation of IL-6 mRNA",
+      "valueReference": 1174405186,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "iL6.K_mRNA",
+      "description": "Michaelis-Menten constant Il6mRNA synthesis, 2.6-e6/2.6e-6",
+      "valueReference": 16777301,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 2.6000000000000004e-15
+    },
+    {
+      "name": "iL6.k_deg_mRNA",
+      "description": "Il6mRNA degradation rate, 0.28/0.28",
+      "valueReference": 16777302,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.00007816666666666666
+    },
+    {
+      "name": "iL6.il6_in",
+      "description": "Production of IL-6",
+      "valueReference": 1174405187,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "iL6.il6_out",
+      "description": "Degradation of IL-6",
+      "valueReference": 1174405188,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "iL6.k_syn",
+      "description": "Il6 synthesis rate, 4.1067*k23, k23 = 157.4, 136/872",
+      "valueReference": 16777303,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.17955405
+    },
+    {
+      "name": "iL6.k_deg",
+      "description": "Il6 degradation rate, 4.45/4.45",
+      "valueReference": 16777304,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.001235138888888889
+    },
+    {
+      "name": "iL6.K_mass",
+      "valueReference": 16777305,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/ug",
+      "displayFactor": 1e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/ug",
+          "displayFactor": 1e-9,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1000000000
+    },
+    {
+      "name": "erythropoietin.Fe_RBC",
+      "description": "Fe amount in red blood cells",
+      "valueReference": 33554448,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "erythropoietin.EPO",
+      "description": "Erythropoietin, relative: 1 = normal",
+      "valueReference": 1174405141,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "erythropoietin.Fe_RBC_normal",
+      "description": "Normal (steady-state) red-cell iron",
+      "valueReference": 16777306,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 0.0000010167233
+    },
+    {
+      "name": "erythropoietin.n",
+      "description": "Steepness: EPO = (Fe_RBC_normal / Fe_RBC)^n",
+      "valueReference": 16777307,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 4
+    },
+    {
+      "name": "erythroferrone.EPO",
+      "description": "Erythropoietin, relative: 1 = normal",
+      "valueReference": 1174405141,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "erythroferrone.Fe_bm",
+      "description": "Fe amount in bone marrow (erythroblasts)",
+      "valueReference": 33554447,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "erythroferrone.ERFE",
+      "description": "Erythroferrone, relative: 1 = normal",
+      "valueReference": 33554453,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "der(erythroferrone.ERFE)",
+      "description": "der(Erythroferrone, relative: 1 = normal)",
+      "valueReference": 1124073493,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "erythroferrone.Fe_bm_normal",
+      "description": "Normal (steady-state) bone-marrow iron",
+      "valueReference": 16777308,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 6.315960400000001e-8
+    },
+    {
+      "name": "erythroferrone.tau",
+      "description": "Time constant of erythroferrone (4 h)",
+      "valueReference": 16777309,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "min",
+      "displayFactor": 0.016666666666666666,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "min",
+          "displayFactor": 0.016666666666666666,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 60,
+      "start": 14400
+    },
+    {
+      "name": "bmp6.Bmp6",
+      "description": "Bmp6 amount (s18)",
+      "valueReference": 33554454,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ug",
+      "displayFactor": 1000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.58291e-8
+    },
+    {
+      "name": "der(bmp6.Bmp6)",
+      "description": "der(Bmp6 amount (s18))",
+      "valueReference": 1124073494,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "kg/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bmp6.Fe_liv",
+      "description": "Fe amount in liver",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "bmp6.Fe_ser",
+      "description": "Fe amount in serum",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001
+    },
+    {
+      "name": "bmp6.Bmp6_in",
+      "description": "Bmp6 production rate",
+      "valueReference": 1174405189,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "bmp6.Bmp6_out",
+      "description": "Bmp6 production rate",
+      "valueReference": 1174405190,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "bmp6.v_max",
+      "description": "Bmp6 maximal synthesis rate",
+      "valueReference": 100663308,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bmp6.Tf",
+      "description": "Paremeter determining the maximal amount of iron that can be bound to transferrin (k32)",
+      "valueReference": 16777310,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 0.0000010000000000000002
+    },
+    {
+      "name": "bmp6.K",
+      "description": "Michaelis-Menten constant Bmp6 synthesis (k37), 16.5/55.7",
+      "valueReference": 16777311,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "g",
+      "displayFactor": 1000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "g",
+          "displayFactor": 1000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug",
+          "displayFactor": 1000000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.001,
+      "start": 1.965e-8
+    },
+    {
+      "name": "bmp6.k_max",
+      "valueReference": 16777312,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/(ug.h)",
+      "displayFactor": 0.0000036000000000000003,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/(kg.s)",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/(ug.h)",
+          "displayFactor": 0.0000036000000000000003,
+          "displayOffset": 0
+        }
+      ],
+      "start": 444861.1111111111
+    },
+    {
+      "name": "bmp6.k_deg",
+      "description": "Bmp6 degradation rate (k22), 1.0/9.5",
+      "valueReference": 16777313,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/min",
+      "displayFactor": 60,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Hz",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "1/min",
+          "displayFactor": 60,
+          "displayOffset": 0
+        },
+        {
+          "unit": "h-1",
+          "displayFactor": 3600,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0.0006656111111111111
+    },
+    {
+      "name": "transfusion.k",
+      "description": "Constant MassFlowRate output value",
+      "valueReference": 16777314,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "transfusion.y",
+      "description": "MassFlowRate constant",
+      "valueReference": 234881122,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "bleeding.k",
+      "description": "Constant MassFlowRate output value",
+      "valueReference": 16777315,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "bleeding.y",
+      "description": "MassFlowRate constant",
+      "valueReference": 234881123,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Fe_food.k",
+      "description": "Constant MassFlowRate output value",
+      "valueReference": 16777316,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 6.0731166666667e-11
+    },
+    {
+      "name": "Fe_food.y",
+      "description": "MassFlowRate constant",
+      "valueReference": 234881124,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "Infusion.k",
+      "description": "Constant MassFlowRate output value",
+      "valueReference": 16777317,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ug.h-1",
+      "displayFactor": 3600000000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "Infusion.y",
+      "description": "MassFlowRate constant",
+      "valueReference": 234881125,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mg/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "kg/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mg/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug.h-1",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ug/h",
+          "displayFactor": 3600000000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    }
+  ]
+}

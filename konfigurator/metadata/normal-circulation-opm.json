@@ -1,0 +1,3788 @@
+{
+  "fmiVersion": "2.0",
+  "modelName": "NormalCirculationOPM",
+  "modelIdentifier": "NormalCirculationOPM",
+  "guid": "{5907687c-bc6a-4781-b224-49630debccb2}",
+  "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
+  "variables": [
+    {
+      "name": "IntrathoracicPressure",
+      "description": "IntrathoracicPressure (SI)",
+      "valueReference": 16777216,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415,
+      "start": -533.29
+    },
+    {
+      "name": "HeartRate",
+      "description": "HeartRate (SI)",
+      "valueReference": 16777217,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "1/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 1.2
+    },
+    {
+      "name": "TricuspidalValveResistance",
+      "description": "TricuspidalValveResistance (SI)",
+      "valueReference": 16777218,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "PulmonaryValveResistance",
+      "description": "PulmonaryValveResistance (SI)",
+      "valueReference": 16777219,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "PulmonaryResistance",
+      "description": "PulmonaryResistance (SI)",
+      "valueReference": 16777220,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 14665500
+    },
+    {
+      "name": "PulmonaryVenousResistance",
+      "description": "PulmonaryVenousResistance (SI)",
+      "valueReference": 16777221,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "MitralValveResistance",
+      "description": "MitralValveResistance (SI)",
+      "valueReference": 16777222,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "AorticValveResistance",
+      "description": "AorticValveResistance (SI)",
+      "valueReference": 16777223,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "AorticFlowInertance",
+      "description": "AorticFlowInertance (SI)",
+      "valueReference": 16777224,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s2/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s2/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 226648
+    },
+    {
+      "name": "ArteriesResistance",
+      "description": "ArteriesResistance (SI)",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 7999340
+    },
+    {
+      "name": "ArteriolarResistance",
+      "description": "ArteriolarResistance (SI)",
+      "valueReference": 16777226,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 106658000
+    },
+    {
+      "name": "SmallVenuleResistance",
+      "description": "SmallVenuleResistance (SI)",
+      "valueReference": 16777227,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 26664500
+    },
+    {
+      "name": "VenousResistance",
+      "description": "VenousResistance (SI)",
+      "valueReference": 16777228,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 11999000
+    },
+    {
+      "name": "CentralVenousResistance",
+      "description": "CentralVenousResistance (SI)",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "Pa.s/m3",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa.s/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 399967
+    },
+    {
+      "name": "RightAtriumElastanceMin",
+      "description": "RightAtriumElastanceMin (SI)",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 6666120
+    },
+    {
+      "name": "RightAtriumElastanceMax",
+      "description": "RightAtriumElastanceMax (SI)",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 19998400
+    },
+    {
+      "name": "RightVentricleElastanceMin",
+      "description": "RightVentricleElastanceMin (SI)",
+      "valueReference": 16777232,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 7599380
+    },
+    {
+      "name": "RightVentricleElastanceMax",
+      "description": "RightVentricleElastanceMax (SI)",
+      "valueReference": 16777233,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 65328000
+    },
+    {
+      "name": "LeftAtriumElastanceMin",
+      "description": "LeftAtriumElastanceMin (SI)",
+      "valueReference": 16777234,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 15998700
+    },
+    {
+      "name": "LeftAtriumElastanceMax",
+      "description": "LeftAtriumElastanceMax (SI)",
+      "valueReference": 16777235,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 37330300
+    },
+    {
+      "name": "LeftVentricleElastanceMin",
+      "description": "LeftVentricleElastanceMin (SI)",
+      "valueReference": 16777236,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 11999000
+    },
+    {
+      "name": "LeftVentricleElastanceMax",
+      "description": "LeftVentricleElastanceMax (SI)",
+      "valueReference": 16777237,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 533290000
+    },
+    {
+      "name": "VRightAtrium",
+      "description": "Volume of Right Atrium",
+      "valueReference": 33554432,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000135
+    },
+    {
+      "name": "der(VRightAtrium)",
+      "description": "der(Volume of Right Atrium)",
+      "valueReference": 1124073472,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PRightAtrium",
+      "description": "Pressure of Right Atrium",
+      "valueReference": 1174405188,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0RightAtrium",
+      "description": "UnstressedVolume of Right Atrium",
+      "valueReference": 16777238,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00003
+    },
+    {
+      "name": "ERightAtrium",
+      "description": "Elastance of Right Atrium",
+      "valueReference": 1174405189,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "VRightVentricle",
+      "description": "Volume of Right Ventricle",
+      "valueReference": 33554433,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000131
+    },
+    {
+      "name": "der(VRightVentricle)",
+      "description": "der(Volume of Right Ventricle)",
+      "valueReference": 1124073473,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PRightVentricle",
+      "description": "Pressure of Right Ventricle",
+      "valueReference": 1174405190,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0RightVentricle",
+      "description": "UnstressedVolume of Right Ventricle",
+      "valueReference": 16777239,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00004
+    },
+    {
+      "name": "ERightVentricle",
+      "description": "Elastance of Right Ventricle",
+      "valueReference": 1174405191,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "VPulmonaryArteries",
+      "description": "Volume of Pulmonary Arteries",
+      "valueReference": 33554434,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000099
+    },
+    {
+      "name": "der(VPulmonaryArteries)",
+      "description": "der(Volume of Pulmonary Arteries)",
+      "valueReference": 1124073474,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PPulmonaryArteries",
+      "description": "Pressure of Pulmonary Arteries",
+      "valueReference": 1174405192,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0PulmonaryArteries",
+      "description": "UnstressedVolume of Pulmonary Arteries",
+      "valueReference": 16777240,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00005
+    },
+    {
+      "name": "EPulmonaryArteries",
+      "description": "Elastance of Pulmonary Arteries",
+      "valueReference": 16777241,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 31464100
+    },
+    {
+      "name": "VPulmonaryVeins",
+      "description": "Volume of Pulmonary Veins",
+      "valueReference": 33554435,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000516
+    },
+    {
+      "name": "der(VPulmonaryVeins)",
+      "description": "der(Volume of Pulmonary Veins)",
+      "valueReference": 1124073475,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PPulmonaryVeins",
+      "description": "Pressure of Pulmonary Veins",
+      "valueReference": 1174405193,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0PulmonaryVeins",
+      "description": "UnstressedVolume of Pulmonary Veins",
+      "valueReference": 16777242,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00035
+    },
+    {
+      "name": "EPulmonaryVeins",
+      "description": "Elastance of Pulmonary Veins",
+      "valueReference": 16777243,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 6066170
+    },
+    {
+      "name": "VLeftAtrium",
+      "description": "Volume of Left Atrium",
+      "valueReference": 33554436,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.0000931
+    },
+    {
+      "name": "der(VLeftAtrium)",
+      "description": "der(Volume of Left Atrium)",
+      "valueReference": 1124073476,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PLeftAtrium",
+      "description": "Pressure of Left Atrium",
+      "valueReference": 1174405194,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0LeftAtrium",
+      "description": "UnstressedVolume of Left Atrium",
+      "valueReference": 16777244,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00003
+    },
+    {
+      "name": "ELeftAtrium",
+      "description": "Elastance of Left Atrium",
+      "valueReference": 1174405195,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "VLeftVentricle",
+      "description": "Volume of Left Ventricle",
+      "valueReference": 33554437,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000144
+    },
+    {
+      "name": "der(VLeftVentricle)",
+      "description": "der(Volume of Left Ventricle)",
+      "valueReference": 1124073477,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PLeftVentricle",
+      "description": "Pressure of Left Ventricle",
+      "valueReference": 1174405196,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0LeftVentricle",
+      "description": "UnstressedVolume of Left Ventricle",
+      "valueReference": 16777245,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00006
+    },
+    {
+      "name": "ELeftVentricle",
+      "description": "Elastance of Left Ventricle",
+      "valueReference": 1174405197,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "VIntrathoracicArteries",
+      "description": "Volume of Intrathoracic Arteries",
+      "valueReference": 33554438,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000204
+    },
+    {
+      "name": "der(VIntrathoracicArteries)",
+      "description": "der(Volume of Intrathoracic Arteries)",
+      "valueReference": 1124073478,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PIntrathoracicArteries",
+      "description": "Pressure of Intrathoracic Arteries",
+      "valueReference": 1174405198,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0IntrathoracicArteries",
+      "description": "UnstressedVolume of Intrathoracic Arteries",
+      "valueReference": 16777246,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00014
+    },
+    {
+      "name": "EIntrathoracicArteries",
+      "description": "Elastance of Intrathoracic Arteries",
+      "valueReference": 16777247,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 190651000
+    },
+    {
+      "name": "VExtrathoracicArteries",
+      "description": "Volume of Extrathoracic Arteries",
+      "valueReference": 33554439,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000526
+    },
+    {
+      "name": "der(VExtrathoracicArteries)",
+      "description": "der(Volume of Extrathoracic Arteries)",
+      "valueReference": 1124073479,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PExtrathoracicArteries",
+      "description": "Pressure of Extrathoracic Arteries",
+      "valueReference": 1174405199,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0ExtrathoracicArteries",
+      "description": "UnstressedVolume of Extrathoracic Arteries",
+      "valueReference": 16777248,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00037
+    },
+    {
+      "name": "EExtrathoracicArteries",
+      "description": "Elastance of Extrathoracic Arteries",
+      "valueReference": 16777249,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 74127200
+    },
+    {
+      "name": "VSystemicTissues",
+      "description": "Volume of Systemic Tissues",
+      "valueReference": 33554440,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000283
+    },
+    {
+      "name": "der(VSystemicTissues)",
+      "description": "der(Volume of Systemic Tissues)",
+      "valueReference": 1124073480,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PSystemicTissues",
+      "description": "Pressure of Systemic Tissues",
+      "valueReference": 1174405200,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0SystemicTissues",
+      "description": "UnstressedVolume of Systemic Tissues",
+      "valueReference": 16777250,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.000185
+    },
+    {
+      "name": "ESystemicTissues",
+      "description": "Elastance of Systemic Tissues",
+      "valueReference": 16777251,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 34930500
+    },
+    {
+      "name": "VExtrathoracicVeins",
+      "description": "Volume of Extrathoracic Veins",
+      "valueReference": 33554441,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00153
+    },
+    {
+      "name": "der(VExtrathoracicVeins)",
+      "description": "der(Volume of Extrathoracic Veins)",
+      "valueReference": 1124073481,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PExtrathoracicVeins",
+      "description": "Pressure of Extrathoracic Veins",
+      "valueReference": 1174405201,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0ExtrathoracicVeins",
+      "description": "UnstressedVolume of Extrathoracic Veins",
+      "valueReference": 16777252,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.001
+    },
+    {
+      "name": "EExtrathoracicVeins",
+      "description": "Elastance of Extrathoracic Veins",
+      "valueReference": 16777253,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 2253150
+    },
+    {
+      "name": "VIntrathoracicVeins",
+      "description": "Volume of Intrathoracic Veins",
+      "valueReference": 33554442,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00148
+    },
+    {
+      "name": "der(VIntrathoracicVeins)",
+      "description": "der(Volume of Intrathoracic Veins)",
+      "valueReference": 1124073482,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "PIntrathoracicVeins",
+      "description": "Pressure of Intrathoracic Veins",
+      "valueReference": 1174405202,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "V0IntrathoracicVeins",
+      "description": "UnstressedVolume of Intrathoracic Veins",
+      "valueReference": 16777254,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml",
+          "displayFactor": 1000000,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 0.000001,
+      "start": 0.00119
+    },
+    {
+      "name": "EIntrathoracicVeins",
+      "description": "Elastance of Intrathoracic Veins",
+      "valueReference": 16777255,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002,
+      "start": 2426470
+    },
+    {
+      "name": "fTricuspidalValving",
+      "description": "flow of Tricuspidal Valving",
+      "valueReference": 1174405203,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fPulmonaryValving",
+      "description": "flow of Pulmonary Valving",
+      "valueReference": 1174405204,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fPulmonaryResisting",
+      "description": "flow of Pulmonary Resisting",
+      "valueReference": 1174405205,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fPulmonaryVenousResisting",
+      "description": "flow of Pulmonary Venous Resisting",
+      "valueReference": 1174405206,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fMitralValving",
+      "description": "flow of Mitral Valving",
+      "valueReference": 1174405207,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fAorticValving",
+      "description": "flow of Aortic Valving",
+      "valueReference": 1174405208,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fAorticFlowing",
+      "description": "flow of Aortic Flowing",
+      "valueReference": 33554443,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8,
+      "start": 0
+    },
+    {
+      "name": "der(fAorticFlowing)",
+      "description": "der(flow of Aortic Flowing)",
+      "valueReference": 1124073483,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "m3/s2",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s2",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "fArteriolarResisting",
+      "description": "flow of Arteriolar Resisting",
+      "valueReference": 1174405209,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fSmallVenuleResisting",
+      "description": "flow of Small Venule Resisting",
+      "valueReference": 1174405210,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fVenousResisting",
+      "description": "flow of Venous Resisting",
+      "valueReference": 1174405211,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "fCentralVenousResisting",
+      "description": "flow of Central Venous Resisting",
+      "valueReference": 1174405212,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "s_TricuspidalValving",
+      "description": "switching variable: the flow while open, the pressure drop while shut",
+      "valueReference": 1174405213,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "s_PulmonaryValving",
+      "description": "switching variable: the flow while open, the pressure drop while shut",
+      "valueReference": 1174405214,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "s_MitralValving",
+      "description": "switching variable: the flow while open, the pressure drop while shut",
+      "valueReference": 1174405215,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "s_AorticValving",
+      "description": "switching variable: the flow while open, the pressure drop while shut",
+      "valueReference": 1174405216,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.Etv",
+      "valueReference": 1711276129,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.Eta",
+      "valueReference": 1174405189,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.HR",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.HR",
+      "description": "Heart rate - beats per minute",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.Tas",
+      "description": "length of atrial systole in sec",
+      "valueReference": 1174405168,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.Tav",
+      "description": "atrioventricular delay in sec",
+      "valueReference": 234881064,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.Tvs",
+      "description": "legth of ventricular systole in sec",
+      "valueReference": 1711276081,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.T0",
+      "description": "start time of current cardiac cycle in sec",
+      "valueReference": 1174405170,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.AVDelay",
+      "description": "atrio-ventricular delay in sec",
+      "valueReference": 16777256,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.01
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.HP",
+      "description": "heart period - duration of cardiac cycle in sec",
+      "valueReference": 1174405171,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.heartIntervals.b",
+      "valueReference": 1174405172,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.Tas",
+      "valueReference": 1174405168,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.T0",
+      "valueReference": 1174405170,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663301,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663302,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.EMAX",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.EMIN",
+      "valueReference": 100663304,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElastance.Et",
+      "valueReference": 1174405189,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.Et",
+      "valueReference": 1711276129,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.Tas",
+      "valueReference": 1174405168,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.Tav",
+      "valueReference": 234881064,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.Tvs",
+      "valueReference": 1711276081,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.T0",
+      "valueReference": 1174405170,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663305,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663306,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.EMAX",
+      "valueReference": 100663307,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.EMIN",
+      "valueReference": 100663308,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.heartInterval",
+      "description": "in sec",
+      "valueReference": 1711276130,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElastance.Kn",
+      "valueReference": 100663296,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.57923032735652
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElmin",
+      "description": "minimal atrial elastance in mmHg/ml",
+      "valueReference": 100663309,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.atrialElmax",
+      "description": "maximal atrial elastance in mmHg/ml",
+      "valueReference": 100663310,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElmin",
+      "description": "minimal ventricular elastance in mmHg/ml",
+      "valueReference": 16777257,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightAtrialElastanceSetting.ventricularElmax",
+      "description": "maximal ventricular elastance in mmHg/ml",
+      "valueReference": 16777258,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.Etv",
+      "valueReference": 1174405191,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.Eta",
+      "valueReference": 1711276131,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.HR",
+      "valueReference": 100663311,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.HR",
+      "description": "Heart rate - beats per minute",
+      "valueReference": 100663311,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.Tas",
+      "description": "length of atrial systole in sec",
+      "valueReference": 1174405173,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.Tav",
+      "description": "atrioventricular delay in sec",
+      "valueReference": 234881067,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.Tvs",
+      "description": "legth of ventricular systole in sec",
+      "valueReference": 1174405174,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.T0",
+      "description": "start time of current cardiac cycle in sec",
+      "valueReference": 1174405175,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.AVDelay",
+      "description": "atrio-ventricular delay in sec",
+      "valueReference": 16777259,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.01
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.HP",
+      "description": "heart period - duration of cardiac cycle in sec",
+      "valueReference": 1174405176,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.heartIntervals.b",
+      "valueReference": 1174405177,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.Tas",
+      "valueReference": 1174405173,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.T0",
+      "valueReference": 1174405175,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663312,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663313,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.EMAX",
+      "valueReference": 100663314,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.EMIN",
+      "valueReference": 100663315,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElastance.Et",
+      "valueReference": 1711276131,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.Et",
+      "valueReference": 1174405191,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.Tas",
+      "valueReference": 1174405173,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.Tav",
+      "valueReference": 234881067,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.Tvs",
+      "valueReference": 1174405174,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.T0",
+      "valueReference": 1174405175,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663316,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663317,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.EMAX",
+      "valueReference": 100663318,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.EMIN",
+      "valueReference": 100663319,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.heartInterval",
+      "description": "in sec",
+      "valueReference": 1174405220,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElastance.Kn",
+      "valueReference": 100663297,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.57923032735652
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElmin",
+      "description": "minimal atrial elastance in mmHg/ml",
+      "valueReference": 16777260,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.atrialElmax",
+      "description": "maximal atrial elastance in mmHg/ml",
+      "valueReference": 16777261,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElmin",
+      "description": "minimal ventricular elastance in mmHg/ml",
+      "valueReference": 100663320,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_RightVentricularElastanceSetting.ventricularElmax",
+      "description": "maximal ventricular elastance in mmHg/ml",
+      "valueReference": 100663321,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.Etv",
+      "valueReference": 1711276133,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.Eta",
+      "valueReference": 1174405195,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.HR",
+      "valueReference": 100663322,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.HR",
+      "description": "Heart rate - beats per minute",
+      "valueReference": 100663322,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.Tas",
+      "description": "length of atrial systole in sec",
+      "valueReference": 1174405178,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.Tav",
+      "description": "atrioventricular delay in sec",
+      "valueReference": 234881070,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.Tvs",
+      "description": "legth of ventricular systole in sec",
+      "valueReference": 1711276091,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.T0",
+      "description": "start time of current cardiac cycle in sec",
+      "valueReference": 1174405180,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.AVDelay",
+      "description": "atrio-ventricular delay in sec",
+      "valueReference": 16777262,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.01
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.HP",
+      "description": "heart period - duration of cardiac cycle in sec",
+      "valueReference": 1174405181,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.heartIntervals.b",
+      "valueReference": 1174405182,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.Tas",
+      "valueReference": 1174405178,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.T0",
+      "valueReference": 1174405180,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663323,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663324,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.EMAX",
+      "valueReference": 100663325,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.EMIN",
+      "valueReference": 100663326,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElastance.Et",
+      "valueReference": 1174405195,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.Et",
+      "valueReference": 1711276133,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.Tas",
+      "valueReference": 1174405178,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.Tav",
+      "valueReference": 234881070,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.Tvs",
+      "valueReference": 1711276091,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.T0",
+      "valueReference": 1174405180,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663327,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663328,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.EMAX",
+      "valueReference": 100663329,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.EMIN",
+      "valueReference": 100663330,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.heartInterval",
+      "description": "in sec",
+      "valueReference": 1711276134,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElastance.Kn",
+      "valueReference": 100663298,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.57923032735652
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElmin",
+      "description": "minimal atrial elastance in mmHg/ml",
+      "valueReference": 100663331,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.atrialElmax",
+      "description": "maximal atrial elastance in mmHg/ml",
+      "valueReference": 100663332,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElmin",
+      "description": "minimal ventricular elastance in mmHg/ml",
+      "valueReference": 16777263,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftAtrialElastanceSetting.ventricularElmax",
+      "description": "maximal ventricular elastance in mmHg/ml",
+      "valueReference": 16777264,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.Etv",
+      "valueReference": 1174405197,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.Eta",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.HR",
+      "valueReference": 100663333,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.HR",
+      "description": "Heart rate - beats per minute",
+      "valueReference": 100663333,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.Tas",
+      "description": "length of atrial systole in sec",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.Tav",
+      "description": "atrioventricular delay in sec",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.Tvs",
+      "description": "legth of ventricular systole in sec",
+      "valueReference": 1174405184,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.T0",
+      "description": "start time of current cardiac cycle in sec",
+      "valueReference": 1174405185,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.AVDelay",
+      "description": "atrio-ventricular delay in sec",
+      "valueReference": 16777265,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.01
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.HP",
+      "description": "heart period - duration of cardiac cycle in sec",
+      "valueReference": 1174405186,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.heartIntervals.b",
+      "valueReference": 1174405187,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "boolean",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.Tas",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.T0",
+      "valueReference": 1174405185,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663334,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663335,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.EMAX",
+      "valueReference": 100663336,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.EMIN",
+      "valueReference": 100663337,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElastance.Et",
+      "valueReference": 1711276135,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.Et",
+      "valueReference": 1174405197,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.Tas",
+      "valueReference": 1174405183,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.Tav",
+      "valueReference": 234881073,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.Tvs",
+      "valueReference": 1174405184,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.T0",
+      "valueReference": 1174405185,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.EMAX_mmHg_per_ml",
+      "description": "maximal systolic elastance in mmHg/ml",
+      "valueReference": 100663338,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.EMIN_mmHg_per_ml",
+      "description": "diastolic elastance in mmHg/ml",
+      "valueReference": 100663339,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.EMAX",
+      "valueReference": 100663340,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.EMIN",
+      "valueReference": 100663341,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.heartInterval",
+      "description": "in sec",
+      "valueReference": 1174405224,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElastance.Kn",
+      "valueReference": 100663299,
+      "causality": "local",
+      "variability": "constant",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.57923032735652
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElmin",
+      "description": "minimal atrial elastance in mmHg/ml",
+      "valueReference": 16777266,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.atrialElmax",
+      "description": "maximal atrial elastance in mmHg/ml",
+      "valueReference": 16777267,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 1
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElmin",
+      "description": "minimal ventricular elastance in mmHg/ml",
+      "valueReference": 100663342,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "cardiacElastance_LeftVentricularElastanceSetting.ventricularElmax",
+      "description": "maximal ventricular elastance in mmHg/ml",
+      "valueReference": 100663343,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    }
+  ]
+}
