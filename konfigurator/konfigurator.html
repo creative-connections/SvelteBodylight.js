@@ -201,6 +201,9 @@
 
   <section class="panel" id="axes-panel" hidden>
     <h2>3c. Charts &mdash; titles and axes <span class="count-badge" id="axis-count"></span></h2>
+    <p class="status" id="axes-empty">No chart yet. Name one in the <strong>Chart</strong> column of
+      section 3 &mdash; outputs sharing a name become one chart &mdash; and its title, window and
+      axes appear here.</p>
     <p class="hint">
       The chart id comes from the Chart column above, where one output may name several charts
       separated by commas; the title is what a student reads, so it may
@@ -951,7 +954,11 @@
   function renderChartAxes(experiment) {
     const charts = experiment.charts ?? [];
     const panel = el('axes-panel');
-    panel.hidden = charts.length === 0;
+    // The section stays visible with nothing in it: hiding it made the step look missing.
+    // A curator following the manual looked for "3c" on the page and did not find it,
+    // because no output had been given a chart name yet and the whole panel was gone.
+    panel.hidden = false;
+    el('axes-empty').hidden = charts.length > 0;
     el('axis-count').textContent = charts.length ? String(charts.length) : '';
     const host = el('axes-list');
     host.innerHTML = '';
@@ -1703,6 +1710,23 @@
     exportStatus.textContent = `Exported ${experiment.inputs.length} input(s), ${experiment.parameters.length} parameter(s), ${experiment.outputs.length} output(s). Save this file as web/static/models/${experiment.modelId || '<model-id>'}/experiments/${experiment.id}.json`;
     exportStatus.classList.remove('error');
   });
+</script>
+
+<script>
+// Vloženo při sestavení balíku (cli/lib/konfiguratorBalik.mjs), ne v původní stránce.
+document.addEventListener('DOMContentLoaded', () => {
+  const duvod = 'Tady ne: potřebuje běžící aplikaci na téže adrese. Tempo změří kurátor.';
+  for (const id of ['test-run-button', 'open-button']) {
+    const b = document.getElementById(id);
+    if (!b) continue;
+    b.disabled = true;
+    b.title = duvod;
+    b.style.opacity = '0.45';
+    b.style.cursor = 'not-allowed';
+  }
+  const stav = document.getElementById('test-run-status');
+  if (stav) stav.textContent = duvod;
+});
 </script>
 </body>
 </html>
