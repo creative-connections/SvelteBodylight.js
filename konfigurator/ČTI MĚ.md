@@ -14,6 +14,7 @@ Sestavit experiment nad hotovým modelem — bez instalace, bez serveru, bez př
 | Model | Soubor s metadaty | Proměnných |
 | --- | --- | --- |
 | Alveolo-kapilární jednotka (s tkání) | `metadata/alveolar-capillary-tissue.json` | 310 |
+| Tepenný strom a pulzová vlna | `metadata/arterial-tree.json` | 2651 |
 | Dodání dortu (OPM, kvalitativní) | `metadata/cake-providing.json` | 54 |
 | Kávovar (OPM, kvalitativní) | `metadata/coffee-brewing.json` | 31 |
 | Zásoba železa ve ferritinu | `metadata/ferritin.json` | 39 |
