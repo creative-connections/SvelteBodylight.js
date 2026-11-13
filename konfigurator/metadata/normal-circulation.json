@@ -2,7 +2,7 @@
   "fmiVersion": "2.0",
   "modelName": "vanMeurs_Hemodynamics.Tests.NormalCirculation",
   "modelIdentifier": "vanMeurs_0Hemodynamics_Tests_NormalCirculation",
-  "guid": "{675aad0a-2dad-499b-bc5b-1059ea04b7c1}",
+  "guid": "{70b7b3a7-2693-426f-90ce-3d182af286d9}",
   "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
   "variables": [
     {
@@ -551,9 +551,61 @@
       "start": 0
     },
     {
+      "name": "modelSettings.leftVentricularSourceResistance",
+      "description": "left ventricle source resistance in Pa.s/m3; 0 is van Meurs&#39;s perfect pressure source",
+      "valueReference": 16777238,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "(mmHg.s)/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "(Pa.s)/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "(mmHg.s)/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 133322387.41500002,
+      "start": 0
+    },
+    {
+      "name": "modelSettings.rightVentricularSourceResistance",
+      "description": "right ventricle source resistance in Pa.s/m3; 0 is van Meurs&#39;s perfect pressure source",
+      "valueReference": 16777239,
+      "causality": "parameter",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "(mmHg.s)/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "(Pa.s)/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "(mmHg.s)/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 133322387.41500002,
+      "start": 0
+    },
+    {
       "name": "modelSettings.rightAtriumUnstressedVolume",
       "description": "right atrium unstressed volume",
-      "valueReference": 16777238,
+      "valueReference": 16777240,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -579,7 +631,7 @@
     {
       "name": "modelSettings.rightAtriumInitialVolume",
       "description": "right atrium initial volume",
-      "valueReference": 16777239,
+      "valueReference": 16777241,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -605,7 +657,7 @@
     {
       "name": "modelSettings.rightVentricleUnstressedVolume",
       "description": "right ventricle unstressed volume",
-      "valueReference": 16777240,
+      "valueReference": 16777242,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -631,7 +683,7 @@
     {
       "name": "modelSettings.rightVentricleInitialVolume",
       "description": "right ventricle initial volume",
-      "valueReference": 16777241,
+      "valueReference": 16777243,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -657,7 +709,7 @@
     {
       "name": "modelSettings.leftAtriumUnstressedVolume",
       "description": "left atrium unstressed volume",
-      "valueReference": 16777242,
+      "valueReference": 16777244,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -683,7 +735,7 @@
     {
       "name": "modelSettings.leftAtriumInitialVolume",
       "description": "left atrium initial volume",
-      "valueReference": 16777243,
+      "valueReference": 16777245,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -709,7 +761,7 @@
     {
       "name": "modelSettings.leftVentricleUnstressedVolume",
       "description": "left ventricle unstressed volume",
-      "valueReference": 16777244,
+      "valueReference": 16777246,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -735,7 +787,7 @@
     {
       "name": "modelSettings.leftVentricleInitialVolume",
       "description": "left ventricle initial volume",
-      "valueReference": 16777245,
+      "valueReference": 16777247,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -761,7 +813,7 @@
     {
       "name": "modelSettings.intrathoracicArteriesElastance",
       "description": "intrathoracic arteries elastance",
-      "valueReference": 16777246,
+      "valueReference": 16777248,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -786,7 +838,7 @@
     {
       "name": "modelSettings.intrathoracicArteriesUnstressedVolume",
       "description": "intrathoracic arteries unstressed volume",
-      "valueReference": 16777247,
+      "valueReference": 16777249,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -812,7 +864,7 @@
     {
       "name": "modelSettings.intrathoracicArteriesInitialVolume",
       "description": "intrathoracic arteries initial volume",
-      "valueReference": 16777248,
+      "valueReference": 16777250,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -838,7 +890,7 @@
     {
       "name": "modelSettings.aorticFlowInertance",
       "description": "aortic flow inertance",
-      "valueReference": 16777249,
+      "valueReference": 16777251,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -863,7 +915,7 @@
     {
       "name": "modelSettings.extrathoracicArteriesElastance",
       "description": "extrathoracic arteries elastance",
-      "valueReference": 16777250,
+      "valueReference": 16777252,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -888,7 +940,7 @@
     {
       "name": "modelSettings.extrathoracicArteriesUnstressedVolume",
       "description": "extrathoracic arteries unstressed volume",
-      "valueReference": 16777251,
+      "valueReference": 16777253,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -914,7 +966,7 @@
     {
       "name": "modelSettings.extrathoracicArteriesInitialVolume",
       "description": "extrathoracic arteries initial volume",
-      "valueReference": 16777252,
+      "valueReference": 16777254,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -940,7 +992,7 @@
     {
       "name": "modelSettings.arteriesResistance",
       "description": "systemic arteries resistance",
-      "valueReference": 16777253,
+      "valueReference": 16777255,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -966,7 +1018,7 @@
     {
       "name": "modelSettings.arterioliesResistance",
       "description": "arteriolar resistance",
-      "valueReference": 16777254,
+      "valueReference": 16777256,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -992,7 +1044,7 @@
     {
       "name": "modelSettings.systemicTissuesElastance",
       "description": "systemic tissues elastance",
-      "valueReference": 16777255,
+      "valueReference": 16777257,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1017,7 +1069,7 @@
     {
       "name": "modelSettings.systemicTissuesUnstressedVolume",
       "description": "systemic tissues unstressed volume",
-      "valueReference": 16777256,
+      "valueReference": 16777258,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1043,7 +1095,7 @@
     {
       "name": "modelSettings.systemicTissuesInitialVolume",
       "description": "systemic tissues initial volume",
-      "valueReference": 16777257,
+      "valueReference": 16777259,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -1069,7 +1121,7 @@
     {
       "name": "modelSettings.smallVenuleResistance",
       "description": "small venule resistance",
-      "valueReference": 16777258,
+      "valueReference": 16777260,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1095,7 +1147,7 @@
     {
       "name": "modelSettings.extrathoracicVeinsElastance",
       "description": "extrathoracic veins elastance",
-      "valueReference": 16777259,
+      "valueReference": 16777261,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1120,7 +1172,7 @@
     {
       "name": "modelSettings.extrathoracicVeinsUnstressedVolume",
       "description": "extrathoracic veins unstressed volume",
-      "valueReference": 16777260,
+      "valueReference": 16777262,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1146,7 +1198,7 @@
     {
       "name": "modelSettings.extrathoracicVeinsInitialVolume",
       "description": "extrathoracic veins initial volume",
-      "valueReference": 16777261,
+      "valueReference": 16777263,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -1172,7 +1224,7 @@
     {
       "name": "modelSettings.venousResistance",
       "description": "venous resistance",
-      "valueReference": 16777262,
+      "valueReference": 16777264,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1198,7 +1250,7 @@
     {
       "name": "modelSettings.intrathoracicVeinsElastance",
       "description": "intrathoracic veins elastance",
-      "valueReference": 16777263,
+      "valueReference": 16777265,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1223,7 +1275,7 @@
     {
       "name": "modelSettings.intrathoracicVeinsUnstressedVolume",
       "description": "intrathoracic veins unstressed volume",
-      "valueReference": 16777264,
+      "valueReference": 16777266,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1249,7 +1301,7 @@
     {
       "name": "modelSettings.intrathoracicVeins",
       "description": "intrathoracic veins initial volume",
-      "valueReference": 16777265,
+      "valueReference": 16777267,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -1275,7 +1327,7 @@
     {
       "name": "modelSettings.centralVenousResistance",
       "description": "central venous resistance",
-      "valueReference": 16777266,
+      "valueReference": 16777268,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1301,7 +1353,7 @@
     {
       "name": "modelSettings.pulmonaryArteriesElastance",
       "description": "pulmonary arteries elastance",
-      "valueReference": 16777267,
+      "valueReference": 16777269,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1326,7 +1378,7 @@
     {
       "name": "modelSettings.pulmonaryArteriesUnstressedVolume",
       "description": "pulmonary arteries unstressed volume",
-      "valueReference": 16777268,
+      "valueReference": 16777270,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1352,7 +1404,7 @@
     {
       "name": "modelSettings.pulmonaryArteriesInitialVolume",
       "description": "pulmonary arteries initial volume",
-      "valueReference": 16777269,
+      "valueReference": 16777271,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -1378,7 +1430,7 @@
     {
       "name": "modelSettings.pulmonaryResistance",
       "description": "pulmonary resistance",
-      "valueReference": 16777270,
+      "valueReference": 16777272,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1404,7 +1456,7 @@
     {
       "name": "modelSettings.pulmonaryVeinsElastance",
       "description": "pulmonary veins elastance",
-      "valueReference": 16777271,
+      "valueReference": 16777273,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1429,7 +1481,7 @@
     {
       "name": "modelSettings.pulmonaryVeinsUnstressedVolume",
       "description": "pulmonary veins unstressed volume",
-      "valueReference": 16777272,
+      "valueReference": 16777274,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1455,7 +1507,7 @@
     {
       "name": "modelSettings.pulmonaryVeinsInitialVolume",
       "description": "pulmonary veins initial volume",
-      "valueReference": 16777273,
+      "valueReference": 16777275,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -1481,7 +1533,7 @@
     {
       "name": "modelSettings.pulmonaryVenousResistance",
       "description": "pulmonary venous resistance",
-      "valueReference": 16777274,
+      "valueReference": 16777276,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1507,7 +1559,7 @@
     {
       "name": "modelSettings.extrathoracicExternalPressure",
       "description": "pressure of a suit on the lower body (MAST, anti-G suit)",
-      "valueReference": 16777275,
+      "valueReference": 16777277,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1532,7 +1584,7 @@
     {
       "name": "modelSettings.mastCoverage",
       "description": "share of the extrathoracic veins and tissues under the suit (legs and abdomen)",
-      "valueReference": 16777276,
+      "valueReference": 16777278,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1553,7 +1605,7 @@
     {
       "name": "modelSettings.abdominalPressure",
       "description": "intra-abdominal pressure; compresses the inferior vena cava and the abdominal veins",
-      "valueReference": 16777277,
+      "valueReference": 16777279,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1578,7 +1630,7 @@
     {
       "name": "modelSettings.abdominalTransmission",
       "description": "fraction of the intra-abdominal pressure transmitted into the thorax",
-      "valueReference": 16777278,
+      "valueReference": 16777280,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1599,7 +1651,7 @@
     {
       "name": "modelSettings.abdominalVenousFraction",
       "description": "share of the extrathoracic veins inside the abdomen (splanchnic veins)",
-      "valueReference": 16777279,
+      "valueReference": 16777281,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1644,7 +1696,7 @@
     {
       "name": "modelSettings.LeftAVDelay",
       "description": "left heart atrioventricular delay",
-      "valueReference": 16777280,
+      "valueReference": 16777282,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1663,7 +1715,7 @@
     {
       "name": "modelSettings.RightAVDelay",
       "description": "right heart atrioventricular delay",
-      "valueReference": 16777281,
+      "valueReference": 16777283,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1682,7 +1734,7 @@
     {
       "name": "modelSettings.bloodLossRate",
       "description": "hemorrhage",
-      "valueReference": 16777282,
+      "valueReference": 16777284,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1712,7 +1764,7 @@
     {
       "name": "modelSettings.infusionRate",
       "description": "intravenous infusion",
-      "valueReference": 16777283,
+      "valueReference": 16777285,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1742,7 +1794,7 @@
     {
       "name": "modelSettings.targetBloodVolume",
       "description": "blood volume the kidneys steer toward; the default is the initial volume",
-      "valueReference": 16777284,
+      "valueReference": 16777286,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1768,7 +1820,7 @@
     {
       "name": "modelSettings.renalVolumeControlRate",
       "description": "1/time constant of the kidneys&#39; approach to targetBloodVolume; 0 = kidneys off",
-      "valueReference": 16777285,
+      "valueReference": 16777287,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -1838,7 +1890,7 @@
     {
       "name": "rightHeart.tricuspidalValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405310,
+      "valueReference": 1174405312,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1867,7 +1919,7 @@
     {
       "name": "rightHeart.tricuspidalValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1891,7 +1943,7 @@
     {
       "name": "rightHeart.tricuspidalValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405311,
+      "valueReference": 1174405313,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1920,7 +1972,7 @@
     {
       "name": "rightHeart.tricuspidalValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1944,7 +1996,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405312,
+      "valueReference": 1174405314,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1973,7 +2025,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -1997,7 +2049,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405317,
+      "valueReference": 1174405319,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2026,7 +2078,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405313,
+      "valueReference": 1174405315,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2049,7 +2101,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.pressureDrop",
-      "valueReference": 1174405314,
+      "valueReference": 1174405316,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2072,7 +2124,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.bloodFlow",
-      "valueReference": 1174405312,
+      "valueReference": 1174405314,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2101,7 +2153,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405315,
+      "valueReference": 1174405317,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2118,7 +2170,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.outflowValve.open",
-      "valueReference": 1174405273,
+      "valueReference": 1174405275,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -2235,7 +2287,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.pressureDrop",
-      "valueReference": 1174405316,
+      "valueReference": 1174405318,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2258,7 +2310,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.bloodFlow",
-      "valueReference": 1174405312,
+      "valueReference": 1174405314,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2287,7 +2339,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405312,
+      "valueReference": 1174405314,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2316,7 +2368,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405313,
+      "valueReference": 1174405315,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2340,7 +2392,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405317,
+      "valueReference": 1174405319,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2369,7 +2421,7 @@
     {
       "name": "rightHeart.tricuspidalValve.outflowBloodResistor.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2417,7 +2469,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405318,
+      "valueReference": 1174405320,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2446,7 +2498,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405319,
+      "valueReference": 1174405321,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2470,7 +2522,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405323,
+      "valueReference": 1174405325,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2499,7 +2551,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2522,7 +2574,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.pressureDrop",
-      "valueReference": 1174405320,
+      "valueReference": 1174405322,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2545,7 +2597,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.bloodFlow",
-      "valueReference": 1174405318,
+      "valueReference": 1174405320,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2574,7 +2626,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405321,
+      "valueReference": 1174405323,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2591,7 +2643,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.backflowValve.open",
-      "valueReference": 1174405250,
+      "valueReference": 1174405252,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -2709,7 +2761,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.pressureDrop",
-      "valueReference": 1174405322,
+      "valueReference": 1174405324,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2732,7 +2784,7 @@
     },
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.bloodFlow",
-      "valueReference": 1174405323,
+      "valueReference": 1174405325,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2761,7 +2813,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405323,
+      "valueReference": 1174405325,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2790,7 +2842,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405319,
+      "valueReference": 1174405321,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2814,7 +2866,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405318,
+      "valueReference": 1174405320,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2843,7 +2895,7 @@
     {
       "name": "rightHeart.tricuspidalValve.backflowBloodConductance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2941,7 +2993,7 @@
     {
       "name": "rightHeart.pulmonaryValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405344,
+      "valueReference": 1174405346,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2970,7 +3022,7 @@
     {
       "name": "rightHeart.pulmonaryValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -2994,7 +3046,7 @@
     {
       "name": "rightHeart.pulmonaryValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405324,
+      "valueReference": 1174405326,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3023,7 +3075,7 @@
     {
       "name": "rightHeart.pulmonaryValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405352,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3047,7 +3099,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405325,
+      "valueReference": 1174405327,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3076,7 +3128,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405352,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3100,7 +3152,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405330,
+      "valueReference": 1174405332,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3129,7 +3181,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405326,
+      "valueReference": 1174405328,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3152,7 +3204,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.pressureDrop",
-      "valueReference": 1174405327,
+      "valueReference": 1174405329,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3175,7 +3227,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.bloodFlow",
-      "valueReference": 1174405325,
+      "valueReference": 1174405327,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3204,7 +3256,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405328,
+      "valueReference": 1174405330,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3221,7 +3273,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.outflowValve.open",
-      "valueReference": 1174405274,
+      "valueReference": 1174405276,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -3338,7 +3390,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.pressureDrop",
-      "valueReference": 1174405329,
+      "valueReference": 1174405331,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3361,7 +3413,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.bloodFlow",
-      "valueReference": 1174405325,
+      "valueReference": 1174405327,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3390,7 +3442,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405325,
+      "valueReference": 1174405327,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3419,7 +3471,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405326,
+      "valueReference": 1174405328,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3443,7 +3495,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405330,
+      "valueReference": 1174405332,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3472,7 +3524,7 @@
     {
       "name": "rightHeart.pulmonaryValve.outflowBloodResistor.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3520,7 +3572,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405331,
+      "valueReference": 1174405333,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3549,7 +3601,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405332,
+      "valueReference": 1174405334,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3573,7 +3625,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405336,
+      "valueReference": 1174405338,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3602,7 +3654,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405352,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3625,7 +3677,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.pressureDrop",
-      "valueReference": 1174405333,
+      "valueReference": 1174405335,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3648,7 +3700,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.bloodFlow",
-      "valueReference": 1174405331,
+      "valueReference": 1174405333,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3677,7 +3729,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405334,
+      "valueReference": 1174405336,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3694,7 +3746,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.backflowValve.open",
-      "valueReference": 1174405251,
+      "valueReference": 1174405253,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -3812,7 +3864,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.pressureDrop",
-      "valueReference": 1174405335,
+      "valueReference": 1174405337,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3835,7 +3887,7 @@
     },
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.bloodFlow",
-      "valueReference": 1174405336,
+      "valueReference": 1174405338,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3864,7 +3916,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405336,
+      "valueReference": 1174405338,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3893,7 +3945,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405332,
+      "valueReference": 1174405334,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3917,7 +3969,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405331,
+      "valueReference": 1174405333,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3946,7 +3998,7 @@
     {
       "name": "rightHeart.pulmonaryValve.backflowBloodConductance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -3993,7 +4045,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.Etv",
-      "valueReference": 1174405337,
+      "valueReference": 1174405339,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4016,7 +4068,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.Eta",
-      "valueReference": 1174405338,
+      "valueReference": 1174405340,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4040,7 +4092,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.Et0v",
       "description": "ventricular relative activation",
-      "valueReference": 1174405339,
+      "valueReference": 1174405341,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4058,7 +4110,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.Et0a",
       "description": "atrial relative activation",
-      "valueReference": 1174405340,
+      "valueReference": 1174405342,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4116,7 +4168,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.heartIntervals.Tas",
       "description": "length of atrial systole in sec",
-      "valueReference": 1174405252,
+      "valueReference": 1174405254,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4152,7 +4204,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.heartIntervals.Tvs",
       "description": "legth of ventricular systole in sec",
-      "valueReference": 1174405253,
+      "valueReference": 1174405255,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4163,7 +4215,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.heartIntervals.T0",
       "description": "start time of current cardiac cycle in sec",
-      "valueReference": 1174405254,
+      "valueReference": 1174405256,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4200,7 +4252,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.heartIntervals.HP",
       "description": "heart period - duration of cardiac cycle in sec",
-      "valueReference": 1174405255,
+      "valueReference": 1174405257,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4218,7 +4270,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.heartIntervals.b",
-      "valueReference": 1174405256,
+      "valueReference": 1174405258,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -4228,7 +4280,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.atrialElastance.Tas",
-      "valueReference": 1174405252,
+      "valueReference": 1174405254,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4245,7 +4297,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.atrialElastance.T0",
-      "valueReference": 1174405254,
+      "valueReference": 1174405256,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4310,7 +4362,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.atrialElastance.Et",
-      "valueReference": 1174405338,
+      "valueReference": 1174405340,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4334,7 +4386,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.atrialElastance.Et0",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405340,
+      "valueReference": 1174405342,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4351,7 +4403,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.Et",
-      "valueReference": 1174405337,
+      "valueReference": 1174405339,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4374,7 +4426,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.Tas",
-      "valueReference": 1174405252,
+      "valueReference": 1174405254,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4408,7 +4460,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.Tvs",
-      "valueReference": 1174405253,
+      "valueReference": 1174405255,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4418,7 +4470,7 @@
     },
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.T0",
-      "valueReference": 1174405254,
+      "valueReference": 1174405256,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -4482,7 +4534,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.heartInterval",
       "description": "in sec",
-      "valueReference": 1174405341,
+      "valueReference": 1174405343,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4511,7 +4563,7 @@
     {
       "name": "rightHeart.righHeartCardiacElastance.ventricularElastance.Et0",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405339,
+      "valueReference": 1174405341,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4621,7 +4673,7 @@
     {
       "name": "rightHeart.fromSystemicVeins.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405342,
+      "valueReference": 1174405344,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4650,7 +4702,7 @@
     {
       "name": "rightHeart.fromSystemicVeins.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4674,7 +4726,7 @@
     {
       "name": "rightHeart.toPulmonaryArtery.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405344,
+      "valueReference": 1174405346,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4703,7 +4755,7 @@
     {
       "name": "rightHeart.toPulmonaryArtery.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4756,7 +4808,7 @@
     {
       "name": "rightHeart.rightAtrium.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4804,7 +4856,7 @@
     {
       "name": "rightHeart.rightAtrium.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 1174405338,
+      "valueReference": 1174405340,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4954,7 +5006,7 @@
     {
       "name": "rightHeart.rightAtrium.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405345,
+      "valueReference": 1174405347,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -4979,7 +5031,7 @@
     {
       "name": "rightHeart.rightAtrium.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405346,
+      "valueReference": 1174405348,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5003,7 +5055,7 @@
     {
       "name": "rightHeart.rightAtrium.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5026,7 +5078,7 @@
     },
     {
       "name": "rightHeart.rightAtrium.inputElastance",
-      "valueReference": 1174405338,
+      "valueReference": 1174405340,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5050,7 +5102,7 @@
     {
       "name": "rightHeart.rightAtrium.edpvrBeta",
       "description": "Burkhoff EDPVR scale in Pa; 0 keeps van Meurs&#39;s straight diastolic line",
-      "valueReference": 16777286,
+      "valueReference": 16777288,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -5075,7 +5127,7 @@
     {
       "name": "rightHeart.rightAtrium.edpvrAlpha",
       "description": "Burkhoff EDPVR exponent in 1/m3",
-      "valueReference": 16777287,
+      "valueReference": 16777289,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -5094,7 +5146,7 @@
     {
       "name": "rightHeart.rightAtrium.edpvrPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405347,
+      "valueReference": 1174405349,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5118,7 +5170,7 @@
     {
       "name": "rightHeart.rightAtrium.relativeActivation",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405340,
+      "valueReference": 1174405342,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5132,6 +5184,211 @@
           "displayOffset": 0
         }
       ]
+    },
+    {
+      "name": "rightHeart.ventricularSource.pressureDrop",
+      "valueReference": 1174405350,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodFlow",
+      "valueReference": 1174405326,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodFlowInflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405326,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405447,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405351,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodFlowOutflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405352,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "rightHeart.ventricularSource.bloodResistance",
+      "valueReference": 100663354,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "(mmHg.s)/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "(Pa.s)/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "(mmHg.s)/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "rightHeart.ventricularPressure",
+      "description": "what a catheter in the ventricle reads, in Pa",
+      "valueReference": 1174405352,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
     },
     {
       "name": "rightHeart.rightVentricle.bloodFlowInflow.q",
@@ -5165,7 +5422,7 @@
     {
       "name": "rightHeart.rightVentricle.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5213,7 +5470,7 @@
     {
       "name": "rightHeart.rightVentricle.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 1174405337,
+      "valueReference": 1174405339,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5237,7 +5494,7 @@
     {
       "name": "rightHeart.rightVentricle.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663354,
+      "valueReference": 100663355,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5262,7 +5519,7 @@
     {
       "name": "rightHeart.rightVentricle.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663355,
+      "valueReference": 100663356,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5286,7 +5543,7 @@
     {
       "name": "rightHeart.rightVentricle.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663356,
+      "valueReference": 100663357,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -5363,7 +5620,7 @@
     {
       "name": "rightHeart.rightVentricle.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405348,
+      "valueReference": 1174405353,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5388,7 +5645,7 @@
     {
       "name": "rightHeart.rightVentricle.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405349,
+      "valueReference": 1174405354,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5412,7 +5669,7 @@
     {
       "name": "rightHeart.rightVentricle.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5435,7 +5692,7 @@
     },
     {
       "name": "rightHeart.rightVentricle.inputElastance",
-      "valueReference": 1174405337,
+      "valueReference": 1174405339,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5459,7 +5716,7 @@
     {
       "name": "rightHeart.rightVentricle.edpvrBeta",
       "description": "Burkhoff EDPVR scale in Pa; 0 keeps van Meurs&#39;s straight diastolic line",
-      "valueReference": 100663357,
+      "valueReference": 100663358,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5483,7 +5740,7 @@
     {
       "name": "rightHeart.rightVentricle.edpvrAlpha",
       "description": "Burkhoff EDPVR exponent in 1/m3",
-      "valueReference": 100663358,
+      "valueReference": 100663359,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5501,7 +5758,7 @@
     {
       "name": "rightHeart.rightVentricle.edpvrPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405350,
+      "valueReference": 1174405355,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5525,7 +5782,7 @@
     {
       "name": "rightHeart.rightVentricle.relativeActivation",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405339,
+      "valueReference": 1174405341,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5543,7 +5800,7 @@
     {
       "name": "leftHeart.mitralValve.outflowResistance",
       "description": "forward resistance of the open valve",
-      "valueReference": 100663359,
+      "valueReference": 100663360,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5568,7 +5825,7 @@
     {
       "name": "leftHeart.mitralValve.backflowConductance",
       "description": "backflow conductance of the closed valve (regurgitation)",
-      "valueReference": 100663360,
+      "valueReference": 100663361,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -5593,7 +5850,7 @@
     {
       "name": "leftHeart.mitralValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405351,
+      "valueReference": 1174405356,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5622,7 +5879,7 @@
     {
       "name": "leftHeart.mitralValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5646,7 +5903,7 @@
     {
       "name": "leftHeart.mitralValve.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405352,
+      "valueReference": 1174405357,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5675,7 +5932,7 @@
     {
       "name": "leftHeart.mitralValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5698,59 +5955,6 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowValve.bloodFlowInflow.q",
-      "description": "blood flow in m3/sec",
-      "valueReference": 1174405353,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "ml/min",
-      "displayFactor": 60000000,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "m3/s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "l/min",
-          "displayFactor": 60000,
-          "displayOffset": 0
-        },
-        {
-          "unit": "ml/min",
-          "displayFactor": 60000000,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 1.6666666666666667e-8
-    },
-    {
-      "name": "leftHeart.mitralValve.outflowValve.bloodFlowInflow.pressure",
-      "description": "Pressure in Pa",
-      "valueReference": 1174405383,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "leftHeart.mitralValve.outflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
       "valueReference": 1174405358,
       "causality": "local",
@@ -5779,9 +5983,62 @@
       "nominal": 1.6666666666666667e-8
     },
     {
+      "name": "leftHeart.mitralValve.outflowValve.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405388,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.mitralValve.outflowValve.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405363,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
       "name": "leftHeart.mitralValve.outflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405354,
+      "valueReference": 1174405359,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5804,7 +6061,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowValve.pressureDrop",
-      "valueReference": 1174405355,
+      "valueReference": 1174405360,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5827,7 +6084,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowValve.bloodFlow",
-      "valueReference": 1174405353,
+      "valueReference": 1174405358,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5856,7 +6113,7 @@
     {
       "name": "leftHeart.mitralValve.outflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405356,
+      "valueReference": 1174405361,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -5873,7 +6130,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowValve.open",
-      "valueReference": 1174405264,
+      "valueReference": 1174405266,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -5990,7 +6247,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.pressureDrop",
-      "valueReference": 1174405357,
+      "valueReference": 1174405362,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6013,7 +6270,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodFlow",
-      "valueReference": 1174405353,
+      "valueReference": 1174405358,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6042,7 +6299,7 @@
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405353,
+      "valueReference": 1174405358,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6071,7 +6328,7 @@
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405354,
+      "valueReference": 1174405359,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6095,7 +6352,7 @@
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405358,
+      "valueReference": 1174405363,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6124,7 +6381,7 @@
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6147,7 +6404,7 @@
     },
     {
       "name": "leftHeart.mitralValve.outflowBloodResistor.bloodResistance",
-      "valueReference": 100663361,
+      "valueReference": 100663362,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -6171,59 +6428,6 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowValve.bloodFlowInflow.q",
-      "description": "blood flow in m3/sec",
-      "valueReference": 1174405359,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "ml/min",
-      "displayFactor": 60000000,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "m3/s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "l/min",
-          "displayFactor": 60000,
-          "displayOffset": 0
-        },
-        {
-          "unit": "ml/min",
-          "displayFactor": 60000000,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 1.6666666666666667e-8
-    },
-    {
-      "name": "leftHeart.mitralValve.backflowValve.bloodFlowInflow.pressure",
-      "description": "Pressure in Pa",
-      "valueReference": 1174405360,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "leftHeart.mitralValve.backflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
       "valueReference": 1174405364,
       "causality": "local",
@@ -6252,9 +6456,62 @@
       "nominal": 1.6666666666666667e-8
     },
     {
+      "name": "leftHeart.mitralValve.backflowValve.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405365,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.mitralValve.backflowValve.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405369,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
       "name": "leftHeart.mitralValve.backflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6277,7 +6534,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowValve.pressureDrop",
-      "valueReference": 1174405361,
+      "valueReference": 1174405366,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6300,7 +6557,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowValve.bloodFlow",
-      "valueReference": 1174405359,
+      "valueReference": 1174405364,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6329,7 +6586,7 @@
     {
       "name": "leftHeart.mitralValve.backflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405362,
+      "valueReference": 1174405367,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6346,7 +6603,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowValve.open",
-      "valueReference": 1174405257,
+      "valueReference": 1174405259,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -6464,7 +6721,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.pressureDrop",
-      "valueReference": 1174405363,
+      "valueReference": 1174405368,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6487,7 +6744,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodFlow",
-      "valueReference": 1174405364,
+      "valueReference": 1174405369,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6516,7 +6773,7 @@
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405364,
+      "valueReference": 1174405369,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6545,7 +6802,7 @@
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405360,
+      "valueReference": 1174405365,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6569,7 +6826,7 @@
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405359,
+      "valueReference": 1174405364,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6598,7 +6855,7 @@
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6621,7 +6878,7 @@
     },
     {
       "name": "leftHeart.mitralValve.backflowBloodConductance.bloodConductance",
-      "valueReference": 100663362,
+      "valueReference": 100663363,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -6646,7 +6903,7 @@
     {
       "name": "leftHeart.aorticValve.outflowResistance",
       "description": "forward resistance of the open valve",
-      "valueReference": 100663363,
+      "valueReference": 100663364,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -6671,7 +6928,7 @@
     {
       "name": "leftHeart.aorticValve.backflowConductance",
       "description": "backflow conductance of the closed valve (regurgitation)",
-      "valueReference": 100663364,
+      "valueReference": 100663365,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -6696,7 +6953,7 @@
     {
       "name": "leftHeart.aorticValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405384,
+      "valueReference": 1174405389,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6725,7 +6982,7 @@
     {
       "name": "leftHeart.aorticValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6778,7 +7035,7 @@
     {
       "name": "leftHeart.aorticValve.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405395,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6801,59 +7058,6 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowValve.bloodFlowInflow.q",
-      "description": "blood flow in m3/sec",
-      "valueReference": 1174405365,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "ml/min",
-      "displayFactor": 60000000,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "m3/s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "l/min",
-          "displayFactor": 60000,
-          "displayOffset": 0
-        },
-        {
-          "unit": "ml/min",
-          "displayFactor": 60000000,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 1.6666666666666667e-8
-    },
-    {
-      "name": "leftHeart.aorticValve.outflowValve.bloodFlowInflow.pressure",
-      "description": "Pressure in Pa",
-      "valueReference": 1174405438,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "leftHeart.aorticValve.outflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
       "valueReference": 1174405370,
       "causality": "local",
@@ -6882,9 +7086,62 @@
       "nominal": 1.6666666666666667e-8
     },
     {
+      "name": "leftHeart.aorticValve.outflowValve.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405395,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.aorticValve.outflowValve.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405375,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
       "name": "leftHeart.aorticValve.outflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405366,
+      "valueReference": 1174405371,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6907,7 +7164,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowValve.pressureDrop",
-      "valueReference": 1174405367,
+      "valueReference": 1174405372,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6930,7 +7187,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowValve.bloodFlow",
-      "valueReference": 1174405365,
+      "valueReference": 1174405370,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6959,7 +7216,7 @@
     {
       "name": "leftHeart.aorticValve.outflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405368,
+      "valueReference": 1174405373,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -6976,7 +7233,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowValve.open",
-      "valueReference": 1174405265,
+      "valueReference": 1174405267,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -7093,7 +7350,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.pressureDrop",
-      "valueReference": 1174405369,
+      "valueReference": 1174405374,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7116,7 +7373,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodFlow",
-      "valueReference": 1174405365,
+      "valueReference": 1174405370,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7145,7 +7402,7 @@
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405365,
+      "valueReference": 1174405370,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7174,7 +7431,7 @@
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405366,
+      "valueReference": 1174405371,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7198,7 +7455,7 @@
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405370,
+      "valueReference": 1174405375,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7227,7 +7484,7 @@
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7250,7 +7507,7 @@
     },
     {
       "name": "leftHeart.aorticValve.outflowBloodResistor.bloodResistance",
-      "valueReference": 100663365,
+      "valueReference": 100663366,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7274,59 +7531,6 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowValve.bloodFlowInflow.q",
-      "description": "blood flow in m3/sec",
-      "valueReference": 1174405371,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "ml/min",
-      "displayFactor": 60000000,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "m3/s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "l/min",
-          "displayFactor": 60000,
-          "displayOffset": 0
-        },
-        {
-          "unit": "ml/min",
-          "displayFactor": 60000000,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 1.6666666666666667e-8
-    },
-    {
-      "name": "leftHeart.aorticValve.backflowValve.bloodFlowInflow.pressure",
-      "description": "Pressure in Pa",
-      "valueReference": 1174405372,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "leftHeart.aorticValve.backflowValve.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
       "valueReference": 1174405376,
       "causality": "local",
@@ -7355,9 +7559,62 @@
       "nominal": 1.6666666666666667e-8
     },
     {
+      "name": "leftHeart.aorticValve.backflowValve.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405377,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.aorticValve.backflowValve.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405381,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
       "name": "leftHeart.aorticValve.backflowValve.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405395,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7380,7 +7637,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowValve.pressureDrop",
-      "valueReference": 1174405373,
+      "valueReference": 1174405378,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7403,7 +7660,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowValve.bloodFlow",
-      "valueReference": 1174405371,
+      "valueReference": 1174405376,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7432,7 +7689,7 @@
     {
       "name": "leftHeart.aorticValve.backflowValve.s",
       "description": "mmHg of pressure drop when shut, l/min of flow when open",
-      "valueReference": 1174405374,
+      "valueReference": 1174405379,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7449,7 +7706,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowValve.open",
-      "valueReference": 1174405258,
+      "valueReference": 1174405260,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -7567,7 +7824,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.pressureDrop",
-      "valueReference": 1174405375,
+      "valueReference": 1174405380,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7590,7 +7847,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodFlow",
-      "valueReference": 1174405376,
+      "valueReference": 1174405381,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7619,7 +7876,7 @@
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405376,
+      "valueReference": 1174405381,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7648,7 +7905,7 @@
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405372,
+      "valueReference": 1174405377,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7672,7 +7929,7 @@
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405371,
+      "valueReference": 1174405376,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7701,7 +7958,7 @@
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7724,7 +7981,7 @@
     },
     {
       "name": "leftHeart.aorticValve.backflowBloodConductance.bloodConductance",
-      "valueReference": 100663366,
+      "valueReference": 100663367,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7748,7 +8005,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.Etv",
-      "valueReference": 1174405377,
+      "valueReference": 1174405382,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7771,7 +8028,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.Eta",
-      "valueReference": 1174405378,
+      "valueReference": 1174405383,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7795,7 +8052,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.Et0v",
       "description": "ventricular relative activation",
-      "valueReference": 1174405379,
+      "valueReference": 1174405384,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7813,7 +8070,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.Et0a",
       "description": "atrial relative activation",
-      "valueReference": 1174405380,
+      "valueReference": 1174405385,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -7830,7 +8087,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.AVDelay",
-      "valueReference": 100663367,
+      "valueReference": 100663368,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7848,7 +8105,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.HR",
       "description": "heart rate",
-      "valueReference": 100663368,
+      "valueReference": 100663369,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7871,7 +8128,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.Tas",
       "description": "length of atrial systole in sec",
-      "valueReference": 1174405259,
+      "valueReference": 1174405261,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -7889,7 +8146,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.Tav",
       "description": "atrioventricular delay in sec",
-      "valueReference": 100663369,
+      "valueReference": 100663370,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7907,7 +8164,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.Tvs",
       "description": "legth of ventricular systole in sec",
-      "valueReference": 1174405260,
+      "valueReference": 1174405262,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -7918,7 +8175,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.T0",
       "description": "start time of current cardiac cycle in sec",
-      "valueReference": 1174405261,
+      "valueReference": 1174405263,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -7937,7 +8194,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.AVDelay",
       "description": "atrioventricular delay",
-      "valueReference": 100663369,
+      "valueReference": 100663370,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -7955,7 +8212,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.HP",
       "description": "heart period - duration of cardiac cycle in sec",
-      "valueReference": 1174405262,
+      "valueReference": 1174405264,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -7973,7 +8230,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.heartIntervals.b",
-      "valueReference": 1174405263,
+      "valueReference": 1174405265,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -7983,7 +8240,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.Tas",
-      "valueReference": 1174405259,
+      "valueReference": 1174405261,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -8000,7 +8257,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.T0",
-      "valueReference": 1174405261,
+      "valueReference": 1174405263,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -8018,7 +8275,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.EMAX",
       "description": "maximal systolic elastance in mmHg/ml",
-      "valueReference": 100663370,
+      "valueReference": 100663371,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8042,7 +8299,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.EMIN",
       "description": "diastolic elastance in mmHg/ml",
-      "valueReference": 100663371,
+      "valueReference": 100663372,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8065,7 +8322,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.Et",
-      "valueReference": 1174405378,
+      "valueReference": 1174405383,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8089,7 +8346,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElastance.Et0",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405380,
+      "valueReference": 1174405385,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8106,7 +8363,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Et",
-      "valueReference": 1174405377,
+      "valueReference": 1174405382,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8129,50 +8386,6 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Tas",
-      "valueReference": 1174405259,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "s",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        }
-      ]
-    },
-    {
-      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Tav",
-      "valueReference": 100663369,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "unit": "s",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "s",
-          "displayFactor": 1,
-          "displayOffset": 0
-        }
-      ]
-    },
-    {
-      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Tvs",
-      "valueReference": 1174405260,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.T0",
       "valueReference": 1174405261,
       "causality": "local",
       "variability": "discrete",
@@ -8189,8 +8402,52 @@
       ]
     },
     {
+      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Tav",
+      "valueReference": 100663370,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Tvs",
+      "valueReference": 1174405262,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.T0",
+      "valueReference": 1174405263,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.EMAX",
-      "valueReference": 100663372,
+      "valueReference": 100663373,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8213,7 +8470,7 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.EMIN",
-      "valueReference": 100663373,
+      "valueReference": 100663374,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8237,7 +8494,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.heartInterval",
       "description": "in sec",
-      "valueReference": 1174405381,
+      "valueReference": 1174405386,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8266,7 +8523,7 @@
     {
       "name": "leftHeart.leftHeartCardiacElastance.ventricularElastance.Et0",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405379,
+      "valueReference": 1174405384,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8283,29 +8540,6 @@
     },
     {
       "name": "leftHeart.leftHeartCardiacElastance.atrialElmin",
-      "valueReference": 100663374,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "unit": "mmHg/ml",
-      "displayFactor": 7.500615758456563e-9,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa/m3",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg/ml",
-          "displayFactor": 7.500615758456563e-9,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133322387.41500002
-    },
-    {
-      "name": "leftHeart.leftHeartCardiacElastance.atrialElmax",
       "valueReference": 100663375,
       "causality": "local",
       "variability": "tunable",
@@ -8328,7 +8562,7 @@
       "nominal": 133322387.41500002
     },
     {
-      "name": "leftHeart.leftHeartCardiacElastance.ventricularElmin",
+      "name": "leftHeart.leftHeartCardiacElastance.atrialElmax",
       "valueReference": 100663376,
       "causality": "local",
       "variability": "tunable",
@@ -8351,8 +8585,31 @@
       "nominal": 133322387.41500002
     },
     {
-      "name": "leftHeart.leftHeartCardiacElastance.ventricularElmax",
+      "name": "leftHeart.leftHeartCardiacElastance.ventricularElmin",
       "valueReference": 100663377,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "mmHg/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "leftHeart.leftHeartCardiacElastance.ventricularElmax",
+      "valueReference": 100663378,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8376,7 +8633,7 @@
     {
       "name": "leftHeart.fromPulmonaryVeins.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405382,
+      "valueReference": 1174405387,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8405,7 +8662,7 @@
     {
       "name": "leftHeart.fromPulmonaryVeins.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8429,7 +8686,7 @@
     {
       "name": "leftHeart.toAorta.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405384,
+      "valueReference": 1174405389,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8458,7 +8715,7 @@
     {
       "name": "leftHeart.toAorta.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8511,7 +8768,7 @@
     {
       "name": "leftHeart.leftAtrium.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8559,7 +8816,7 @@
     {
       "name": "leftHeart.leftAtrium.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 1174405378,
+      "valueReference": 1174405383,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8583,7 +8840,7 @@
     {
       "name": "leftHeart.leftAtrium.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663378,
+      "valueReference": 100663379,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8608,7 +8865,7 @@
     {
       "name": "leftHeart.leftAtrium.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663379,
+      "valueReference": 100663380,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -8632,7 +8889,7 @@
     {
       "name": "leftHeart.leftAtrium.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663380,
+      "valueReference": 100663381,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -8709,7 +8966,7 @@
     {
       "name": "leftHeart.leftAtrium.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405385,
+      "valueReference": 1174405390,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8734,7 +8991,7 @@
     {
       "name": "leftHeart.leftAtrium.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405386,
+      "valueReference": 1174405391,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8758,7 +9015,7 @@
     {
       "name": "leftHeart.leftAtrium.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8781,7 +9038,7 @@
     },
     {
       "name": "leftHeart.leftAtrium.inputElastance",
-      "valueReference": 1174405378,
+      "valueReference": 1174405383,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8805,7 +9062,7 @@
     {
       "name": "leftHeart.leftAtrium.edpvrBeta",
       "description": "Burkhoff EDPVR scale in Pa; 0 keeps van Meurs&#39;s straight diastolic line",
-      "valueReference": 16777288,
+      "valueReference": 16777290,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -8830,7 +9087,7 @@
     {
       "name": "leftHeart.leftAtrium.edpvrAlpha",
       "description": "Burkhoff EDPVR exponent in 1/m3",
-      "valueReference": 16777289,
+      "valueReference": 16777291,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -8849,7 +9106,7 @@
     {
       "name": "leftHeart.leftAtrium.edpvrPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405387,
+      "valueReference": 1174405392,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8873,7 +9130,7 @@
     {
       "name": "leftHeart.leftAtrium.relativeActivation",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405380,
+      "valueReference": 1174405385,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8887,6 +9144,211 @@
           "displayOffset": 0
         }
       ]
+    },
+    {
+      "name": "leftHeart.ventricularSource.pressureDrop",
+      "valueReference": 1174405393,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodFlow",
+      "valueReference": 1124073487,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodFlowInflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1124073487,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodFlowInflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405446,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodFlowOutflow.q",
+      "description": "blood flow in m3/sec",
+      "valueReference": 1174405394,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "ml/min",
+      "displayFactor": 60000000,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "m3/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "l/min",
+          "displayFactor": 60000,
+          "displayOffset": 0
+        },
+        {
+          "unit": "ml/min",
+          "displayFactor": 60000000,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 1.6666666666666667e-8
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodFlowOutflow.pressure",
+      "description": "Pressure in Pa",
+      "valueReference": 1174405395,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "leftHeart.ventricularSource.bloodResistance",
+      "valueReference": 100663382,
+      "causality": "local",
+      "variability": "tunable",
+      "type": "real",
+      "unit": "(mmHg.s)/ml",
+      "displayFactor": 7.500615758456563e-9,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "(Pa.s)/m3",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "(mmHg.s)/ml",
+          "displayFactor": 7.500615758456563e-9,
+          "displayOffset": 0
+        }
+      ],
+      "min": 0,
+      "nominal": 133322387.41500002
+    },
+    {
+      "name": "leftHeart.ventricularPressure",
+      "description": "what a catheter in the ventricle reads, in Pa",
+      "valueReference": 1174405395,
+      "causality": "local",
+      "variability": "continuous",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
     },
     {
       "name": "leftHeart.leftVentricle.bloodFlowInflow.q",
@@ -8920,7 +9382,7 @@
     {
       "name": "leftHeart.leftVentricle.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8968,7 +9430,7 @@
     {
       "name": "leftHeart.leftVentricle.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 1174405377,
+      "valueReference": 1174405382,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -8992,7 +9454,7 @@
     {
       "name": "leftHeart.leftVentricle.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663381,
+      "valueReference": 100663383,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9017,7 +9479,7 @@
     {
       "name": "leftHeart.leftVentricle.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663382,
+      "valueReference": 100663384,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9041,7 +9503,7 @@
     {
       "name": "leftHeart.leftVentricle.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663383,
+      "valueReference": 100663385,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -9118,7 +9580,7 @@
     {
       "name": "leftHeart.leftVentricle.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405388,
+      "valueReference": 1174405396,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9143,7 +9605,7 @@
     {
       "name": "leftHeart.leftVentricle.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405389,
+      "valueReference": 1174405397,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9167,7 +9629,7 @@
     {
       "name": "leftHeart.leftVentricle.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9190,7 +9652,7 @@
     },
     {
       "name": "leftHeart.leftVentricle.inputElastance",
-      "valueReference": 1174405377,
+      "valueReference": 1174405382,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9214,7 +9676,7 @@
     {
       "name": "leftHeart.leftVentricle.edpvrBeta",
       "description": "Burkhoff EDPVR scale in Pa; 0 keeps van Meurs&#39;s straight diastolic line",
-      "valueReference": 100663384,
+      "valueReference": 100663386,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9238,7 +9700,7 @@
     {
       "name": "leftHeart.leftVentricle.edpvrAlpha",
       "description": "Burkhoff EDPVR exponent in 1/m3",
-      "valueReference": 100663385,
+      "valueReference": 100663387,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9256,7 +9718,7 @@
     {
       "name": "leftHeart.leftVentricle.edpvrPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405390,
+      "valueReference": 1174405398,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9280,7 +9742,7 @@
     {
       "name": "leftHeart.leftVentricle.relativeActivation",
       "description": "relative activation: 0 in diastole, 1 at peak systole",
-      "valueReference": 1174405379,
+      "valueReference": 1174405384,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9298,7 +9760,7 @@
     {
       "name": "pulmonaryCirculation.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405391,
+      "valueReference": 1174405399,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9327,7 +9789,7 @@
     {
       "name": "pulmonaryCirculation.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9351,7 +9813,7 @@
     {
       "name": "pulmonaryCirculation.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405392,
+      "valueReference": 1174405400,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9380,7 +9842,7 @@
     {
       "name": "pulmonaryCirculation.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9404,7 +9866,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405445,
+      "valueReference": 1174405453,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9433,7 +9895,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9481,7 +9943,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663386,
+      "valueReference": 100663388,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9505,7 +9967,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663387,
+      "valueReference": 100663389,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9530,7 +9992,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663388,
+      "valueReference": 100663390,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9554,7 +10016,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663389,
+      "valueReference": 100663391,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -9630,7 +10092,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405393,
+      "valueReference": 1174405401,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9655,7 +10117,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405394,
+      "valueReference": 1174405402,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9679,7 +10141,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryArteries.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9732,7 +10194,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405395,
+      "valueReference": 1174405403,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9780,7 +10242,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663390,
+      "valueReference": 100663392,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9804,7 +10266,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663391,
+      "valueReference": 100663393,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9829,7 +10291,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663392,
+      "valueReference": 100663394,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -9853,7 +10315,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663393,
+      "valueReference": 100663395,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -9930,7 +10392,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405396,
+      "valueReference": 1174405404,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9955,7 +10417,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405397,
+      "valueReference": 1174405405,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -9979,7 +10441,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVeins.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405395,
+      "valueReference": 1174405403,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10002,7 +10464,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.pressureDrop",
-      "valueReference": 1174405398,
+      "valueReference": 1174405406,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10025,7 +10487,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodFlow",
-      "valueReference": 1174405399,
+      "valueReference": 1174405407,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10054,7 +10516,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405399,
+      "valueReference": 1174405407,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10083,7 +10545,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10107,7 +10569,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405400,
+      "valueReference": 1174405408,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10136,7 +10598,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405395,
+      "valueReference": 1174405403,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10159,7 +10621,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryResistance.bloodResistance",
-      "valueReference": 100663394,
+      "valueReference": 100663396,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10183,7 +10645,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.pressureDrop",
-      "valueReference": 1174405401,
+      "valueReference": 1174405409,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10206,7 +10668,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodFlow",
-      "valueReference": 1174405382,
+      "valueReference": 1174405387,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10235,7 +10697,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405382,
+      "valueReference": 1174405387,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10264,7 +10726,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405395,
+      "valueReference": 1174405403,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10288,7 +10750,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405392,
+      "valueReference": 1174405400,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10317,7 +10779,7 @@
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405383,
+      "valueReference": 1174405388,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10340,7 +10802,7 @@
     },
     {
       "name": "pulmonaryCirculation.pulmonaryVenousResistance.bloodResistance",
-      "valueReference": 100663395,
+      "valueReference": 100663397,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10364,7 +10826,7 @@
     },
     {
       "name": "pulmonaryCirculation.bloodVolume",
-      "valueReference": 1174405402,
+      "valueReference": 1174405410,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10389,7 +10851,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405441,
+      "valueReference": 1174405449,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10418,7 +10880,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10466,7 +10928,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663396,
+      "valueReference": 100663398,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10490,7 +10952,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663397,
+      "valueReference": 100663399,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10515,7 +10977,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663398,
+      "valueReference": 100663400,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10539,7 +11001,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663399,
+      "valueReference": 100663401,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -10615,7 +11077,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405403,
+      "valueReference": 1174405411,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10640,7 +11102,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405404,
+      "valueReference": 1174405412,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10664,7 +11126,7 @@
     {
       "name": "systemicArteries.intrathoracicArteries.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10687,7 +11149,7 @@
     },
     {
       "name": "systemicArteries.aorticFlowInertia.pressureDrop",
-      "valueReference": 1174405405,
+      "valueReference": 1174405413,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10786,7 +11248,7 @@
     {
       "name": "systemicArteries.aorticFlowInertia.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405406,
+      "valueReference": 1174405414,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10810,7 +11272,7 @@
     {
       "name": "systemicArteries.aorticFlowInertia.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 100663583,
+      "valueReference": 100663591,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10839,7 +11301,7 @@
     {
       "name": "systemicArteries.aorticFlowInertia.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10862,7 +11324,7 @@
     },
     {
       "name": "systemicArteries.aorticFlowInertia.inertance",
-      "valueReference": 100663400,
+      "valueReference": 100663402,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10886,7 +11348,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405443,
+      "valueReference": 1174405451,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10915,7 +11377,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405442,
+      "valueReference": 1174405450,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -10963,7 +11425,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663401,
+      "valueReference": 100663403,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -10987,7 +11449,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663402,
+      "valueReference": 100663404,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11012,7 +11474,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 16777290,
+      "valueReference": 16777292,
       "causality": "parameter",
       "variability": "tunable",
       "type": "real",
@@ -11037,7 +11499,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663403,
+      "valueReference": 100663405,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -11113,7 +11575,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405408,
+      "valueReference": 1174405416,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11138,7 +11600,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405409,
+      "valueReference": 1174405417,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11162,7 +11624,7 @@
     {
       "name": "systemicArteries.extrathoracicArteries.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405442,
+      "valueReference": 1174405450,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11185,7 +11647,7 @@
     },
     {
       "name": "systemicArteries.arteriesResistance.pressureDrop",
-      "valueReference": 1174405410,
+      "valueReference": 1174405418,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11266,7 +11728,7 @@
     {
       "name": "systemicArteries.arteriesResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405442,
+      "valueReference": 1174405450,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11290,7 +11752,7 @@
     {
       "name": "systemicArteries.arteriesResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 100663583,
+      "valueReference": 100663591,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11319,7 +11781,7 @@
     {
       "name": "systemicArteries.arteriesResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405406,
+      "valueReference": 1174405414,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11342,7 +11804,7 @@
     },
     {
       "name": "systemicArteries.arteriesResistance.bloodResistance",
-      "valueReference": 100663404,
+      "valueReference": 100663406,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11367,7 +11829,7 @@
     {
       "name": "systemicArteries.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405411,
+      "valueReference": 1174405419,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11396,7 +11858,7 @@
     {
       "name": "systemicArteries.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11419,7 +11881,7 @@
     },
     {
       "name": "systemicArteries.arterioliesResistance.pressureDrop",
-      "valueReference": 1174405412,
+      "valueReference": 1174405420,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11442,7 +11904,7 @@
     },
     {
       "name": "systemicArteries.arterioliesResistance.bloodFlow",
-      "valueReference": 1174405415,
+      "valueReference": 1174405423,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11471,7 +11933,7 @@
     {
       "name": "systemicArteries.arterioliesResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405415,
+      "valueReference": 1174405423,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11500,7 +11962,7 @@
     {
       "name": "systemicArteries.arterioliesResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11524,7 +11986,7 @@
     {
       "name": "systemicArteries.arterioliesResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405413,
+      "valueReference": 1174405421,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11553,7 +12015,7 @@
     {
       "name": "systemicArteries.arterioliesResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405442,
+      "valueReference": 1174405450,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11576,7 +12038,7 @@
     },
     {
       "name": "systemicArteries.arterioliesResistance.bloodResistance",
-      "valueReference": 100663405,
+      "valueReference": 100663407,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11600,7 +12062,7 @@
     },
     {
       "name": "systemicArteries.bloodVolume",
-      "valueReference": 1174405414,
+      "valueReference": 1174405422,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11625,7 +12087,7 @@
     {
       "name": "systemicArteries.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405415,
+      "valueReference": 1174405423,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11654,7 +12116,7 @@
     {
       "name": "systemicArteries.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11678,7 +12140,7 @@
     {
       "name": "tissuesCapilaries.volumeFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405413,
+      "valueReference": 1174405421,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11707,7 +12169,7 @@
     {
       "name": "tissuesCapilaries.volumeFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11731,7 +12193,7 @@
     {
       "name": "tissuesCapilaries.volumeFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405417,
+      "valueReference": 1174405425,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11760,7 +12222,7 @@
     {
       "name": "tissuesCapilaries.volumeFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11813,7 +12275,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -11861,7 +12323,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663406,
+      "valueReference": 100663408,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11885,7 +12347,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663407,
+      "valueReference": 100663409,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11910,7 +12372,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663408,
+      "valueReference": 100663410,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -11934,7 +12396,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663409,
+      "valueReference": 100663411,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -12011,7 +12473,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405418,
+      "valueReference": 1174405426,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12036,7 +12498,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405419,
+      "valueReference": 1174405427,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12060,7 +12522,7 @@
     {
       "name": "tissuesCapilaries.systemicTissues.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12108,7 +12570,7 @@
     {
       "name": "systemicVeins.volumeFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405423,
+      "valueReference": 1174405431,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12137,7 +12599,7 @@
     {
       "name": "systemicVeins.volumeFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12161,7 +12623,7 @@
     {
       "name": "systemicVeins.volumeFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405420,
+      "valueReference": 1174405428,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12190,7 +12652,7 @@
     {
       "name": "systemicVeins.volumeFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12213,7 +12675,7 @@
     },
     {
       "name": "systemicVeins.smallVenuleResistance.pressureDrop",
-      "valueReference": 1174405421,
+      "valueReference": 1174405429,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12236,7 +12698,7 @@
     },
     {
       "name": "systemicVeins.smallVenuleResistance.bloodFlow",
-      "valueReference": 1174405417,
+      "valueReference": 1174405425,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12265,7 +12727,7 @@
     {
       "name": "systemicVeins.smallVenuleResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405417,
+      "valueReference": 1174405425,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12294,7 +12756,7 @@
     {
       "name": "systemicVeins.smallVenuleResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12318,7 +12780,7 @@
     {
       "name": "systemicVeins.smallVenuleResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405423,
+      "valueReference": 1174405431,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12347,7 +12809,7 @@
     {
       "name": "systemicVeins.smallVenuleResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405416,
+      "valueReference": 1174405424,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12370,7 +12832,7 @@
     },
     {
       "name": "systemicVeins.smallVenuleResistance.bloodResistance",
-      "valueReference": 100663410,
+      "valueReference": 100663412,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12424,7 +12886,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12472,7 +12934,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663411,
+      "valueReference": 100663413,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12496,7 +12958,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663412,
+      "valueReference": 100663414,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12521,7 +12983,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663413,
+      "valueReference": 100663415,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12545,7 +13007,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663414,
+      "valueReference": 100663416,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -12622,7 +13084,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405424,
+      "valueReference": 1174405432,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12647,7 +13109,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405425,
+      "valueReference": 1174405433,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12671,7 +13133,7 @@
     {
       "name": "systemicVeins.extrathoracicVeins.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12694,7 +13156,7 @@
     },
     {
       "name": "systemicVeins.venousResistance.pressureDrop",
-      "valueReference": 1711276338,
+      "valueReference": 1711276346,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12717,7 +13179,7 @@
     },
     {
       "name": "systemicVeins.venousResistance.bloodFlow",
-      "valueReference": 1174405427,
+      "valueReference": 1174405435,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12746,7 +13208,7 @@
     {
       "name": "systemicVeins.venousResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405427,
+      "valueReference": 1174405435,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12775,7 +13237,7 @@
     {
       "name": "systemicVeins.venousResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405428,
+      "valueReference": 1174405436,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12799,7 +13261,7 @@
     {
       "name": "systemicVeins.venousResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405429,
+      "valueReference": 1174405437,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12828,7 +13290,7 @@
     {
       "name": "systemicVeins.venousResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12851,7 +13313,7 @@
     },
     {
       "name": "systemicVeins.venousResistance.bloodResistance",
-      "valueReference": 100663415,
+      "valueReference": 100663417,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12876,7 +13338,7 @@
     {
       "name": "systemicVeins.venousResistance.externalPressure",
       "description": "pressure around the vessel",
-      "valueReference": 100663416,
+      "valueReference": 100663418,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -12929,7 +13391,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405428,
+      "valueReference": 1174405436,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -12977,7 +13439,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.elastance",
       "description": "elastance in Pa/m3",
-      "valueReference": 100663417,
+      "valueReference": 100663419,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13001,7 +13463,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.unstressedVolume",
       "description": "volume in m3",
-      "valueReference": 100663418,
+      "valueReference": 100663420,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13026,7 +13488,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.externalPressure",
       "description": "external pressure in Pa",
-      "valueReference": 100663419,
+      "valueReference": 100663421,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13050,7 +13512,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.V0",
       "description": "initial volume in m3",
-      "valueReference": 100663420,
+      "valueReference": 100663422,
       "causality": "local",
       "variability": "fixed",
       "type": "real",
@@ -13127,7 +13589,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.stressedVolume",
       "description": "volume in m3",
-      "valueReference": 1174405430,
+      "valueReference": 1174405438,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13152,7 +13614,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.transmuralPressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405431,
+      "valueReference": 1174405439,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13176,7 +13638,7 @@
     {
       "name": "systemicVeins.intrathoracicVeins.pressure",
       "description": "pressure in Pa",
-      "valueReference": 1174405428,
+      "valueReference": 1174405436,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13200,7 +13662,7 @@
     {
       "name": "systemicVeins.hemorrhage.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405432,
+      "valueReference": 1174405440,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13229,7 +13691,7 @@
     {
       "name": "systemicVeins.hemorrhage.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13253,7 +13715,7 @@
     {
       "name": "systemicVeins.hemorrhage.lossRate",
       "description": "rate of blood loss",
-      "valueReference": 100663421,
+      "valueReference": 100663423,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13307,7 +13769,7 @@
     {
       "name": "systemicVeins.infusion.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 100663609,
+      "valueReference": 100663617,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13336,7 +13798,7 @@
     {
       "name": "systemicVeins.infusion.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405422,
+      "valueReference": 1174405430,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13360,7 +13822,7 @@
     {
       "name": "systemicVeins.infusion.infusionRate",
       "description": "rate of infusion",
-      "valueReference": 100663422,
+      "valueReference": 100663424,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13388,7 +13850,7 @@
     },
     {
       "name": "systemicVeins.centralVenousResistance.pressureDrop",
-      "valueReference": 1174405434,
+      "valueReference": 1174405442,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13411,7 +13873,7 @@
     },
     {
       "name": "systemicVeins.centralVenousResistance.bloodFlow",
-      "valueReference": 1174405420,
+      "valueReference": 1174405428,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13440,7 +13902,7 @@
     {
       "name": "systemicVeins.centralVenousResistance.bloodFlowInflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405420,
+      "valueReference": 1174405428,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13469,7 +13931,7 @@
     {
       "name": "systemicVeins.centralVenousResistance.bloodFlowInflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13493,7 +13955,7 @@
     {
       "name": "systemicVeins.centralVenousResistance.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405435,
+      "valueReference": 1174405443,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13522,7 +13984,7 @@
     {
       "name": "systemicVeins.centralVenousResistance.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405428,
+      "valueReference": 1174405436,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13545,7 +14007,7 @@
     },
     {
       "name": "systemicVeins.centralVenousResistance.bloodResistance",
-      "valueReference": 100663423,
+      "valueReference": 100663425,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -13569,7 +14031,7 @@
     },
     {
       "name": "systemicVeins.bloodVolume",
-      "valueReference": 1174405436,
+      "valueReference": 1174405444,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13594,7 +14056,7 @@
     {
       "name": "totalBloodVolume",
       "description": "all blood in the circulation",
-      "valueReference": 1174405437,
+      "valueReference": 1174405445,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13644,7 +14106,7 @@
     {
       "name": "leftVentricleMonitor.pressure",
       "description": "ventricular pressure",
-      "valueReference": 1174405438,
+      "valueReference": 1174405446,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13668,7 +14130,7 @@
     {
       "name": "leftVentricleMonitor.inflowValveOpen",
       "description": "atrioventricular valve (mitral or tricuspid) is open",
-      "valueReference": 1174405264,
+      "valueReference": 1174405266,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -13680,7 +14142,7 @@
     {
       "name": "leftVentricleMonitor.outflowValveOpen",
       "description": "semilunar valve (aortic or pulmonary) is open",
-      "valueReference": 1174405265,
+      "valueReference": 1174405267,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -13692,7 +14154,7 @@
     {
       "name": "leftVentricleMonitor.EDV0",
       "description": "end-diastolic volume shown before the first beat is measured",
-      "valueReference": 16777291,
+      "valueReference": 16777293,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -13718,7 +14180,7 @@
     {
       "name": "leftVentricleMonitor.SV0",
       "description": "stroke volume shown before the first beat is measured",
-      "valueReference": 16777292,
+      "valueReference": 16777294,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -13744,7 +14206,7 @@
     {
       "name": "leftVentricleMonitor.EDP0",
       "description": "end-diastolic pressure shown before the first beat is measured",
-      "valueReference": 16777293,
+      "valueReference": 16777295,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -13769,7 +14231,7 @@
     {
       "name": "leftVentricleMonitor.filled",
       "description": "an end-diastole has been measured, so the next end-systole closes a whole beat",
-      "valueReference": 1711276178,
+      "valueReference": 1711276180,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -13781,7 +14243,7 @@
     {
       "name": "leftVentricleMonitor.EDV",
       "description": "end-diastolic volume of the last beat",
-      "valueReference": 1711276179,
+      "valueReference": 1711276181,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13806,7 +14268,7 @@
     {
       "name": "leftVentricleMonitor.EDP",
       "description": "end-diastolic pressure of the last beat",
-      "valueReference": 1711276180,
+      "valueReference": 1711276182,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13830,7 +14292,7 @@
     {
       "name": "leftVentricleMonitor.ESV",
       "description": "end-systolic volume of the last beat",
-      "valueReference": 1711276181,
+      "valueReference": 1711276183,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13855,7 +14317,7 @@
     {
       "name": "leftVentricleMonitor.SV",
       "description": "stroke volume of the last beat",
-      "valueReference": 1711276182,
+      "valueReference": 1711276184,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13880,7 +14342,7 @@
     {
       "name": "leftVentricleMonitor.EF",
       "description": "ejection fraction of the last beat",
-      "valueReference": 1711276183,
+      "valueReference": 1711276185,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13898,7 +14360,7 @@
     {
       "name": "leftVentricleMonitor.CO",
       "description": "cardiac output: stroke volume times heart rate",
-      "valueReference": 1711276184,
+      "valueReference": 1711276186,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -13952,7 +14414,7 @@
     {
       "name": "rightVentricleMonitor.pressure",
       "description": "ventricular pressure",
-      "valueReference": 1174405439,
+      "valueReference": 1174405447,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -13976,7 +14438,7 @@
     {
       "name": "rightVentricleMonitor.inflowValveOpen",
       "description": "atrioventricular valve (mitral or tricuspid) is open",
-      "valueReference": 1174405273,
+      "valueReference": 1174405275,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -13988,7 +14450,7 @@
     {
       "name": "rightVentricleMonitor.outflowValveOpen",
       "description": "semilunar valve (aortic or pulmonary) is open",
-      "valueReference": 1174405274,
+      "valueReference": 1174405276,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -14000,7 +14462,7 @@
     {
       "name": "rightVentricleMonitor.EDV0",
       "description": "end-diastolic volume shown before the first beat is measured",
-      "valueReference": 16777294,
+      "valueReference": 16777296,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -14026,7 +14488,7 @@
     {
       "name": "rightVentricleMonitor.SV0",
       "description": "stroke volume shown before the first beat is measured",
-      "valueReference": 16777295,
+      "valueReference": 16777297,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -14052,7 +14514,7 @@
     {
       "name": "rightVentricleMonitor.EDP0",
       "description": "end-diastolic pressure shown before the first beat is measured",
-      "valueReference": 16777296,
+      "valueReference": 16777298,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -14077,7 +14539,7 @@
     {
       "name": "rightVentricleMonitor.filled",
       "description": "an end-diastole has been measured, so the next end-systole closes a whole beat",
-      "valueReference": 1711276187,
+      "valueReference": 1711276189,
       "causality": "local",
       "variability": "discrete",
       "type": "boolean",
@@ -14089,7 +14551,7 @@
     {
       "name": "rightVentricleMonitor.EDV",
       "description": "end-diastolic volume of the last beat",
-      "valueReference": 1711276188,
+      "valueReference": 1711276190,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14114,7 +14576,7 @@
     {
       "name": "rightVentricleMonitor.EDP",
       "description": "end-diastolic pressure of the last beat",
-      "valueReference": 1711276189,
+      "valueReference": 1711276191,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14138,7 +14600,7 @@
     {
       "name": "rightVentricleMonitor.ESV",
       "description": "end-systolic volume of the last beat",
-      "valueReference": 1711276190,
+      "valueReference": 1711276192,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14163,7 +14625,7 @@
     {
       "name": "rightVentricleMonitor.SV",
       "description": "stroke volume of the last beat",
-      "valueReference": 1711276191,
+      "valueReference": 1711276193,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14188,7 +14650,7 @@
     {
       "name": "rightVentricleMonitor.EF",
       "description": "ejection fraction of the last beat",
-      "valueReference": 1711276192,
+      "valueReference": 1711276194,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14206,7 +14668,7 @@
     {
       "name": "rightVentricleMonitor.CO",
       "description": "cardiac output: stroke volume times heart rate",
-      "valueReference": 1711276193,
+      "valueReference": 1711276195,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14235,7 +14697,7 @@
     {
       "name": "aorticPressureMonitor.pressure",
       "description": "pressure in the artery",
-      "valueReference": 1174405440,
+      "valueReference": 1174405448,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14259,7 +14721,7 @@
     {
       "name": "aorticPressureMonitor.netInflow",
       "description": "net flow into the artery, the rate at which its volume changes",
-      "valueReference": 1174405441,
+      "valueReference": 1174405449,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14288,7 +14750,7 @@
     {
       "name": "aorticPressureMonitor.cycleStart",
       "description": "start time of the current cardiac cycle (heartIntervals.T0)",
-      "valueReference": 1711276194,
+      "valueReference": 1711276196,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14306,7 +14768,7 @@
     {
       "name": "aorticPressureMonitor.systolic",
       "description": "systolic pressure of the last beat",
-      "valueReference": 1711276195,
+      "valueReference": 1711276197,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14330,7 +14792,7 @@
     {
       "name": "aorticPressureMonitor.diastolic",
       "description": "diastolic pressure of the last beat",
-      "valueReference": 1711276196,
+      "valueReference": 1711276198,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14354,52 +14816,6 @@
     {
       "name": "aorticPressureMonitor.mean",
       "description": "mean pressure over the last beat",
-      "valueReference": 1711276197,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "aorticPressureMonitor.peak",
-      "valueReference": 1711276198,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "aorticPressureMonitor.trough",
       "valueReference": 1711276199,
       "causality": "local",
       "variability": "discrete",
@@ -14422,8 +14838,54 @@
       "nominal": 133.322387415
     },
     {
-      "name": "aorticPressureMonitor.beatStart",
+      "name": "aorticPressureMonitor.peak",
       "valueReference": 1711276200,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "aorticPressureMonitor.trough",
+      "valueReference": 1711276201,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "aorticPressureMonitor.beatStart",
+      "valueReference": 1711276202,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14441,7 +14903,7 @@
     },
     {
       "name": "aorticPressureMonitor.areaAtStart",
-      "valueReference": 1711276201,
+      "valueReference": 1711276203,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14502,7 +14964,7 @@
     {
       "name": "peripheralPressureMonitor.pressure",
       "description": "pressure in the artery",
-      "valueReference": 1174405442,
+      "valueReference": 1174405450,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14526,7 +14988,7 @@
     {
       "name": "peripheralPressureMonitor.netInflow",
       "description": "net flow into the artery, the rate at which its volume changes",
-      "valueReference": 1174405443,
+      "valueReference": 1174405451,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14555,7 +15017,7 @@
     {
       "name": "peripheralPressureMonitor.cycleStart",
       "description": "start time of the current cardiac cycle (heartIntervals.T0)",
-      "valueReference": 1711276202,
+      "valueReference": 1711276204,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14573,7 +15035,7 @@
     {
       "name": "peripheralPressureMonitor.systolic",
       "description": "systolic pressure of the last beat",
-      "valueReference": 1711276203,
+      "valueReference": 1711276205,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14597,7 +15059,7 @@
     {
       "name": "peripheralPressureMonitor.diastolic",
       "description": "diastolic pressure of the last beat",
-      "valueReference": 1711276204,
+      "valueReference": 1711276206,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14621,52 +15083,6 @@
     {
       "name": "peripheralPressureMonitor.mean",
       "description": "mean pressure over the last beat",
-      "valueReference": 1711276205,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "peripheralPressureMonitor.peak",
-      "valueReference": 1711276206,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "peripheralPressureMonitor.trough",
       "valueReference": 1711276207,
       "causality": "local",
       "variability": "discrete",
@@ -14689,8 +15105,54 @@
       "nominal": 133.322387415
     },
     {
-      "name": "peripheralPressureMonitor.beatStart",
+      "name": "peripheralPressureMonitor.peak",
       "valueReference": 1711276208,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "peripheralPressureMonitor.trough",
+      "valueReference": 1711276209,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "peripheralPressureMonitor.beatStart",
+      "valueReference": 1711276210,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14708,7 +15170,7 @@
     },
     {
       "name": "peripheralPressureMonitor.areaAtStart",
-      "valueReference": 1711276209,
+      "valueReference": 1711276211,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14769,7 +15231,7 @@
     {
       "name": "pulmonaryPressureMonitor.pressure",
       "description": "pressure in the artery",
-      "valueReference": 1174405444,
+      "valueReference": 1174405452,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14793,7 +15255,7 @@
     {
       "name": "pulmonaryPressureMonitor.netInflow",
       "description": "net flow into the artery, the rate at which its volume changes",
-      "valueReference": 1174405445,
+      "valueReference": 1174405453,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -14822,7 +15284,7 @@
     {
       "name": "pulmonaryPressureMonitor.cycleStart",
       "description": "start time of the current cardiac cycle (heartIntervals.T0)",
-      "valueReference": 1711276210,
+      "valueReference": 1711276212,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14840,7 +15302,7 @@
     {
       "name": "pulmonaryPressureMonitor.systolic",
       "description": "systolic pressure of the last beat",
-      "valueReference": 1711276211,
+      "valueReference": 1711276213,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14864,7 +15326,7 @@
     {
       "name": "pulmonaryPressureMonitor.diastolic",
       "description": "diastolic pressure of the last beat",
-      "valueReference": 1711276212,
+      "valueReference": 1711276214,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14888,52 +15350,6 @@
     {
       "name": "pulmonaryPressureMonitor.mean",
       "description": "mean pressure over the last beat",
-      "valueReference": 1711276213,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "pulmonaryPressureMonitor.peak",
-      "valueReference": 1711276214,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "real",
-      "unit": "mmHg",
-      "displayFactor": 0.007500615758456563,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "Pa",
-          "displayFactor": 1,
-          "displayOffset": 0
-        },
-        {
-          "unit": "mmHg",
-          "displayFactor": 0.007500615758456563,
-          "displayOffset": 0
-        }
-      ],
-      "nominal": 133.322387415
-    },
-    {
-      "name": "pulmonaryPressureMonitor.trough",
       "valueReference": 1711276215,
       "causality": "local",
       "variability": "discrete",
@@ -14956,8 +15372,54 @@
       "nominal": 133.322387415
     },
     {
-      "name": "pulmonaryPressureMonitor.beatStart",
+      "name": "pulmonaryPressureMonitor.peak",
       "valueReference": 1711276216,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "pulmonaryPressureMonitor.trough",
+      "valueReference": 1711276217,
+      "causality": "local",
+      "variability": "discrete",
+      "type": "real",
+      "unit": "mmHg",
+      "displayFactor": 0.007500615758456563,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "Pa",
+          "displayFactor": 1,
+          "displayOffset": 0
+        },
+        {
+          "unit": "mmHg",
+          "displayFactor": 0.007500615758456563,
+          "displayOffset": 0
+        }
+      ],
+      "nominal": 133.322387415
+    },
+    {
+      "name": "pulmonaryPressureMonitor.beatStart",
+      "valueReference": 1711276218,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -14975,7 +15437,7 @@
     },
     {
       "name": "pulmonaryPressureMonitor.areaAtStart",
-      "valueReference": 1711276217,
+      "valueReference": 1711276219,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15065,7 +15527,7 @@
     {
       "name": "cardiacOutputMonitor.cycleStart",
       "description": "start time of the current cardiac cycle (heartIntervals.T0)",
-      "valueReference": 1174405261,
+      "valueReference": 1174405263,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15083,7 +15545,7 @@
     {
       "name": "cardiacOutputMonitor.meanFlow",
       "description": "mean net flow over the last beat -- through the aortic valve, the cardiac output that reaches the body",
-      "valueReference": 1711276218,
+      "valueReference": 1711276220,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15112,7 +15574,7 @@
     {
       "name": "cardiacOutputMonitor.strokeVolume",
       "description": "net volume passed during the last beat -- through the aortic valve, the forward stroke volume",
-      "valueReference": 1711276219,
+      "valueReference": 1711276221,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15135,7 +15597,7 @@
     {
       "name": "cardiacOutputMonitor.meanFlow0",
       "description": "mean flow shown before the first beat is measured",
-      "valueReference": 16777297,
+      "valueReference": 16777299,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -15165,7 +15627,7 @@
     {
       "name": "cardiacOutputMonitor.strokeVolume0",
       "description": "stroke volume shown before the first beat is measured",
-      "valueReference": 16777298,
+      "valueReference": 16777300,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
@@ -15188,7 +15650,7 @@
     },
     {
       "name": "cardiacOutputMonitor.beatStart",
-      "valueReference": 1711276220,
+      "valueReference": 1711276222,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15206,7 +15668,7 @@
     },
     {
       "name": "cardiacOutputMonitor.passedAtStart",
-      "valueReference": 1711276221,
+      "valueReference": 1711276223,
       "causality": "local",
       "variability": "discrete",
       "type": "real",
@@ -15283,7 +15745,7 @@
     {
       "name": "kidneys.bloodFlowOutflow.q",
       "description": "blood flow in m3/sec",
-      "valueReference": 1174405446,
+      "valueReference": 1174405454,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -15312,7 +15774,7 @@
     {
       "name": "kidneys.bloodFlowOutflow.pressure",
       "description": "Pressure in Pa",
-      "valueReference": 1174405343,
+      "valueReference": 1174405345,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -15336,7 +15798,7 @@
     {
       "name": "kidneys.volume",
       "description": "circulating blood volume",
-      "valueReference": 1174405437,
+      "valueReference": 1174405445,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
@@ -15361,7 +15823,7 @@
     {
       "name": "kidneys.targetVolume",
       "description": "blood volume the kidneys steer toward",
-      "valueReference": 100663424,
+      "valueReference": 100663426,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -15386,7 +15848,7 @@
     {
       "name": "kidneys.rate",
       "description": "1/time constant of the approach; 0 switches the kidneys off",
-      "valueReference": 100663425,
+      "valueReference": 100663427,
       "causality": "local",
       "variability": "tunable",
       "type": "real",
@@ -15405,7 +15867,7 @@
     {
       "name": "kidneys.retention",
       "description": "fluid retained per unit time; negative when the kidneys excrete the excess",
-      "valueReference": 1174405447,
+      "valueReference": 1174405455,
       "causality": "local",
       "variability": "continuous",
       "type": "real",
