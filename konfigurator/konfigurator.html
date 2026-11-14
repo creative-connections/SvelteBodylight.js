@@ -1596,6 +1596,10 @@
                gap: 26px; align-items: start; }
   @media (max-width: 940px) { .workbench { grid-template-columns: 1fr; } }
   .rail { display: flex; flex-direction: column; gap: 18px; }
+  /* The rail arrives in two parts -- an operated head, a read body (see markup.ts) -- so the
+     gap that used to fall between the sections has to be restated inside each. */
+  .rail-head { display: flex; flex-direction: column; gap: 10px; }
+  .rail-body { display: flex; flex-direction: column; gap: 18px; }
   .stage { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
   .block { border: 1px solid #d2d9d3; border-radius: 4px; background: #fffffb; }
   .block > h2 { margin: 0; padding: 10px 13px; font: 11px ui-monospace, monospace;

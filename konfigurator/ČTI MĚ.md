@@ -5,7 +5,9 @@ Sestavit experiment nad hotovým modelem — bez instalace, bez serveru, bez př
 ## Jak začít
 
 1. Otevřete v prohlížeči soubor **konfigurator.html** (stačí na něj poklepat).
-2. V sekci 1 vyberte metadata modelu ze složky **metadata/**.
+2. V sekci 1 vyberte `model-metadata.json` **svého** modelu — ten, který vám vyrobil převodník
+   (třetí z těch tří souborů). Složka **metadata/** nese naše modely, na kterých si konfigurátor
+   můžete vyzkoušet; váš soubor v ní není a nemá být, a sekce 1 vezme jakýkoli `.json` z disku.
 3. Projděte sekce 2 až 3C a nakonec v sekci 4 klikněte **Download experiment JSON**.
 4. Stažený soubor pošlete kurátorovi; ten ho zařadí do katalogu.
 
