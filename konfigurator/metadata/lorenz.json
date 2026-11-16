@@ -2,12 +2,11 @@
   "fmiVersion": "2.0",
   "modelName": "LorenzAttractor",
   "modelIdentifier": "LorenzAttractor",
-  "guid": "{9dea3f0a-b9ba-41cb-8f55-4d6d9437fdf8}",
+  "guid": "{e3a0b8d3-da14-4037-957e-1e40ad17bc4a}",
   "generationTool": "OpenModelica Compiler OpenModelica 1.27.2",
   "variables": [
     {
       "name": "x",
-      "description": "rychlost konvekce",
       "valueReference": 0,
       "causality": "local",
       "variability": "continuous",
@@ -19,7 +18,6 @@
     },
     {
       "name": "y",
-      "description": "teplotní rozdíl mezi stoupajícím a klesajícím proudem",
       "valueReference": 1,
       "causality": "local",
       "variability": "continuous",
@@ -31,7 +29,6 @@
     },
     {
       "name": "z",
-      "description": "odchylka svislého teplotního profilu od lineárního",
       "valueReference": 2,
       "causality": "local",
       "variability": "continuous",
@@ -43,7 +40,6 @@
     },
     {
       "name": "der(x)",
-      "description": "der(rychlost konvekce)",
       "valueReference": 3,
       "causality": "local",
       "variability": "continuous",
@@ -54,7 +50,6 @@
     },
     {
       "name": "der(y)",
-      "description": "der(teplotní rozdíl mezi stoupajícím a klesajícím proudem)",
       "valueReference": 4,
       "causality": "local",
       "variability": "continuous",
@@ -65,7 +60,6 @@
     },
     {
       "name": "der(z)",
-      "description": "der(odchylka svislého teplotního profilu od lineárního)",
       "valueReference": 5,
       "causality": "local",
       "variability": "continuous",
@@ -76,7 +70,6 @@
     },
     {
       "name": "b",
-      "description": "geometrický poměr konvekční cely",
       "valueReference": 6,
       "causality": "parameter",
       "variability": "fixed",
@@ -88,7 +81,6 @@
     },
     {
       "name": "r",
-      "description": "Rayleighovo číslo (podíl ke kritickému)",
       "valueReference": 7,
       "causality": "parameter",
       "variability": "fixed",
@@ -100,7 +92,6 @@
     },
     {
       "name": "sigma",
-      "description": "Prandtlovo číslo",
       "valueReference": 8,
       "causality": "parameter",
       "variability": "fixed",
