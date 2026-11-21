@@ -335,6 +335,14 @@ button.primary:hover:not(:disabled) { background: #24443f; border-color: #24443f
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* Nesmrstit se. Stage je ve velkem okne flexovy sloupec s vlastnim roletnikem, a flexova
+     polozka se normalne nezmensi pod svuj obsah -- jenze `overflow: hidden` o pricku niz tu
+     automatickou mez rusi, takze prave tahle polozka a zadna jina se slozila na svoje dva
+     pixely ramecku. Grafy vedle maji obsah, ktery se nezmensi, tak zustaly cele a odecty
+     zmizely: na sdilene strance z nich byla vodorovna cara mezi poslednim grafem a paticku.
+     A videt to bylo jen na dost velkem okne, protoze ten roletnik plati az od 941x560 --
+     `check:phone` meri 390 px, kde se nic z toho nedeje. */
+  flex: none;
   /* Hairlines belong to the tiles, not to a gap over a coloured backdrop. With the backdrop the
      last row's empty cells showed it as a grey slab beside a lone readout -- six tiles in a row
      of five, and the sixth looked like a rendering fault. */
@@ -468,6 +476,19 @@ fmu-slider .fmu-slider-restore[hidden] { display: none; }
 }
 .tiles .fmu-readout-unit { font-family: var(--mono); font-size: 11px; color: var(--faint); }
 
+/* A reading opened as a chart of its own -- the element says it is open, this says what that
+   looks like. The tile takes the whole row, because a plot squeezed into a 150 px grid cell is a
+   picture nothing can be read off; and the tiles beside it keep their places, so closing the
+   chart puts the grid back exactly as it was. */
+.tiles fmu-readout .fmu-readout-chart {
+  align-self: start; margin-top: 4px; border: 0; background: none; padding: 0;
+  font: 10.5px var(--mono, ui-monospace), monospace; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+}
+fmu-readout .fmu-readout-chart[hidden] { display: none; }
+.tiles fmu-readout[data-fmu-chart-open] { grid-column: 1 / -1; }
+.tiles fmu-readout[data-fmu-chart-open] fmu-chart { display: block; margin-top: 10px; }
+
 .fixed-list fmu-readout { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
 .fixed-list .fmu-readout-label { flex: 1; font-weight: 500; }
 .fixed-list .fmu-readout-value,
@@ -522,6 +543,12 @@ fmu-chart { display: block; min-width: 0; }
 	   a frozen trace during a run is explained by something a reader can see. */
 	.panel-tool.pinned.svelte-ucvjhx { background:#bd5238; border-color:#bd5238; color:#f7f7f1; }
 	.panel-tool.pinned.svelte-ucvjhx:hover:not(:disabled) { background:#19332f; border-color:#19332f; }
+	/* Sbalený graf je titulní lišta a nic víc: linka pod ní by oddělovala od prázdna. */
+	.chart-panel.collapsed.svelte-ucvjhx .panel-head:where(.svelte-ucvjhx) { border-bottom:0; }
+	/* A nesmí si nechat výšku řádku: grafy stojí v mřížce, která položky natahuje na nejvyšší
+	   z nich, takže sbalený panel zůstal prázdnou krabicí 358 px vysokou -- graf zmizel a místo
+	   po něm ne. Na to se nepřijde asercí, jen pohledem. */
+	.chart-panel.collapsed.svelte-ucvjhx { align-self:start; }
 	.chart-body.svelte-ucvjhx { display:flex; align-items:stretch; }
 	.y-axis.svelte-ucvjhx { display:flex; flex-direction:column; justify-content:space-between; padding:24px 0 24px 14px; font:10px ui-monospace, monospace; color:#687873; text-align:right; min-width:56px; }
 	.chart-wrap.svelte-ucvjhx { position:relative; height:240px; padding:24px; flex:1; min-width:0; padding-left:10px; }
@@ -1182,6 +1209,57 @@ fmu-chart { display: block; min-width: 0; }
 		const groups = chart.variants ?? [];
 		if (groups.length === 0) return chart.series;
 		return groups[Math.min(Math.max(0, variant), groups.length - 1)].series;
+	}
+	/**
+	* A chart the student opened from a readout, rather than one the curator drew.
+	*
+	* The second of the three view controls the curator asked for on 2026-11-11: an output shown only
+	* as a number offers to become a curve. It is a synthesized `ChartConfig` and nothing else -- one
+	* series, no frame, no window -- and that is what makes the control cheap. Every host already
+	* draws whatever `chart(id)` hands it, so the panel, its legend, its history window, its pinning
+	* and its collapse come along without one line of new drawing code; and the points were there all
+	* along, because `runLoop` collects them for every declared output, not only for the charted ones.
+	*
+	* THE AXES ARE DELIBERATELY NOT FIXED. A measured frame exists only for the charts the curator
+	* listed -- `measure:frame` walks the scenario to get them -- so a frame here would be a number
+	* nobody measured. That is not a concession: a frame is worth having where the picture has
+	* something to prove, and a plot a student opened out of curiosity proves nothing, while autoscale
+	* never clips.
+	*
+	* The id carries the output's name, so a host needs no second piece of state to find the chart
+	* again, and `openedOutputOf` is the only thing that knows how to read it back.
+	*/
+	var OPENED_CHART_PREFIX = "opened:";
+	function openedChartId(name) {
+		return OPENED_CHART_PREFIX + name;
+	}
+	function openedOutputOf(id) {
+		return id.startsWith("opened:") ? id.slice(7) : null;
+	}
+	/**
+	* The chart itself. The title is passed in rather than derived: the hosts already know how to name
+	* a variable in the page's language, and a second way of naming it here is a second way for the
+	* legend and the heading to disagree.
+	*/
+	function openedChart(name, title) {
+		return {
+			id: openedChartId(name),
+			title,
+			series: [name]
+		};
+	}
+	/**
+	* Does any curated chart already draw this output?
+	*
+	* The control is for outputs shown *only* as a number (the curator's words), so a reading that is
+	* already a curve above does not offer to become one again. The condition is static -- which chart
+	* declares which series -- so the button cannot appear and vanish while the student works, which
+	* a condition on what is currently drawn would do. `series` lists the curves of every variant
+	* group, so a curve sitting in a group that is not shown still counts as drawn; and an output used
+	* as a loop's x axis counts too, since it is on the screen as an axis.
+	*/
+	function chartsDraw(charts, name) {
+		return (charts ?? []).some((chart) => chart.series.includes(name) || chart.x === name);
 	}
 	/** What separates a twin's id from the variable name in a series key. No Modelica name holds it. */
 	var TWIN_SEPARATOR = "@";
@@ -2571,6 +2649,14 @@ fmu-chart { display: block; min-width: 0; }
 		zoomOutY: "Oddálit ↕",
 		zoomOutYTitle: "Rozšíří svislou osu, aby bylo vidět, kam se smyčka posune",
 		hideCurveTitle: "Skrýt tuto křivku",
+		collapseChart: "Sbalit",
+		collapseChartTitle: "Sbalí graf na titulní lištu; model běží dál a křivka se zaznamenává",
+		expandChart: "Rozbalit",
+		expandChartTitle: "Zobrazí graf znovu",
+		openChart: "Do grafu",
+		openChartTitle: (label) => `Otevře „${label}“ jako graf; osy se škálují samy a běh se tím nemění`,
+		closeChart: "Zavřít graf",
+		closeChartTitle: "Nechá jen číslo; zaznamenaný běh se tím nezahodí",
 		showCurveTitle: "Znovu zobrazit tuto křivku",
 		windowTitle: "Kolik sekund graf kreslí; v okně se pak posouvá jako monitor. Kliknutím do grafu se okno zapíchne a kreslí od toho okamžiku dopředu",
 		windowWholeRun: "Okno: celý běh",
@@ -2635,6 +2721,14 @@ fmu-chart { display: block; min-width: 0; }
 			zoomOutY: "Zoom out ↕",
 			zoomOutYTitle: "Widen the vertical axis, to see where the loop moves",
 			hideCurveTitle: "Hide this curve",
+			collapseChart: "Collapse",
+			collapseChartTitle: "Collapses the chart to its title bar; the model keeps running and the curve keeps being recorded",
+			expandChart: "Expand",
+			expandChartTitle: "Show the chart again",
+			openChart: "As a chart",
+			openChartTitle: (label) => `Open “${label}” as a chart; it scales itself to its data and the run is unchanged`,
+			closeChart: "Close chart",
+			closeChartTitle: "Leaves the number alone; the recorded run is not thrown away",
 			showCurveTitle: "Show this curve again",
 			windowTitle: "How many seconds the chart draws; inside the window it scrolls like a monitor. Click the plot to pin the window and draw forward from that instant",
 			windowWholeRun: "Window: whole run",
@@ -2950,6 +3044,14 @@ fmu-chart { display: block; min-width: 0; }
 		namedOf(name) {
 			return this.configOf(name) ?? (this.experiment?.states ?? []).find((state) => state.name === name) ?? (this.experiment?.triggers ?? []).find((trigger) => trigger.name === name);
 		}
+		/**
+		* A declared output that no curated chart draws: the readings the open-as-a-chart control is
+		* offered on. A fixed parameter never qualifies -- it is a constant, and so is its curve.
+		*/
+		canOpen(name) {
+			const output = (this.experiment?.outputs ?? []).find((each) => each.name === name);
+			return Boolean(output) && !chartsDraw(this.experiment?.charts, name);
+		}
 		get steps() {
 			return (this.experiment?.steps ?? []).filter((step) => step?.text);
 		}
@@ -3131,8 +3233,13 @@ fmu-chart { display: block; min-width: 0; }
 				},
 				chart: (id) => {
 					const chart = (this.experiment?.charts ?? []).find((each) => each.id === id);
-					return chart ? viewChart(chart, this.alternateView) : null;
+					if (chart) return viewChart(chart, this.alternateView);
+					const opened = openedOutputOf(id);
+					if (!opened || !this.canOpen(opened)) return null;
+					const named = this.namedOf(opened);
+					return openedChart(opened, named ? labelFor(named, this.descriptions, this.language) : opened);
 				},
+				canOpenChart: (name) => this.canOpen(name),
 				pointsFor: (name) => {
 					const points = this.run?.points[name] ?? [];
 					const output = (this.experiment?.outputs ?? []).find((o) => o.name === name);
@@ -6753,6 +6860,34 @@ createHTML: (html) => {
 	* Uses a `WeakMap` to avoid memory leaks.
 	*/
 	var mounted_components = /* @__PURE__ */ new WeakMap();
+	/**
+	* Unmounts a component that was previously mounted using `mount` or `hydrate`.
+	*
+	* Since 5.13.0, if `options.outro` is `true`, [transitions](https://svelte.dev/docs/svelte/transition) will play before the component is removed from the DOM.
+	*
+	* Returns a `Promise` that resolves after transitions have completed if `options.outro` is true, or immediately otherwise (prior to 5.13.0, returns `void`).
+	*
+	* ```js
+	* import { mount, unmount } from 'svelte';
+	* import App from './App.svelte';
+	*
+	* const app = mount(App, { target: document.body });
+	*
+	* // later...
+	* unmount(app, { outro: true });
+	* ```
+	* @param {Record<string, any>} component
+	* @param {{ outro?: boolean }} [options]
+	* @returns {Promise<void>}
+	*/
+	function unmount(component, options) {
+		const fn = mounted_components.get(component);
+		if (fn) {
+			mounted_components.delete(component);
+			return fn(options);
+		}
+		return Promise.resolve();
+	}
 	//#endregion
 	//#region web/node_modules/svelte/src/internal/client/dom/blocks/branches.js
 	/** @import { Effect, TemplateNode } from '#client' */
@@ -8196,13 +8331,52 @@ createHTML: (html) => {
 			}
 		}
 	};
-	/** `<fmu-readout name="PAO2">` -- a label, the current value and its unit. */
+	/**
+	* `<fmu-readout name="PAO2">` -- a label, the current value and its unit.
+	*
+	* And, where the host allows it, a way to see that number as a curve: the second of the three view
+	* controls the curator asked for on 2026-11-11. The chart is an ordinary `<fmu-chart>` appended as
+	* a child of the readout, which is what makes the control cost almost nothing -- the panel, its
+	* legend, its history window and its collapse all come along, and the points were being collected
+	* for every declared output all the while.
+	*
+	* WHY THE CHART LIVES INSIDE THE READOUT. The element cannot know where its page keeps charts: on
+	* the shared page the readouts are tiles in a grid and the curated plots are above them, in a
+	* designed layout a reading may be anywhere in a drawing. So the element puts the plot where it
+	* can -- under the number it belongs to -- and says so with `data-fmu-chart-open`, leaving each
+	* page's own stylesheet to decide what that looks like. The same division as the state lamp: the
+	* element says which situation holds, the page says how it should look. One line of CSS then makes
+	* an open tile span its grid row.
+	*
+	* Opening is a view and nothing else. The run carries on, the curve keeps being recorded, and
+	* closing the chart throws nothing away -- reopening it brings back the whole run.
+	*/
 	var FmuReadoutElement = class extends FmuChild {
 		constructor(..._args4) {
 			super(..._args4);
 			_defineProperty(this, "labelNode", void 0);
 			_defineProperty(this, "valueNode", void 0);
 			_defineProperty(this, "unitNode", void 0);
+			_defineProperty(this, "openNode", void 0);
+			_defineProperty(
+				this,
+				/** The chart element while one is open, so an update does not build a second one. */
+				"chartNode",
+				void 0
+			);
+			_defineProperty(
+				this,
+				/**
+				* What the button last said, so an unchanged state is not written again.
+				*
+				* `update` runs on every frame for every readout -- twenty-one of them on the circulation --
+				* and the button's words change only when the student presses it. Rebuilding the title string
+				* twenty-five times a second for each tile would be work nobody can see, and the pace gate is
+				* the one that would notice. The same thought as not writing a value the FMU already holds.
+				*/
+				"shown",
+				void 0
+			);
 		}
 		build() {
 			this.labelNode = document.createElement("span");
@@ -8211,7 +8385,13 @@ createHTML: (html) => {
 			this.valueNode.className = "fmu-readout-value";
 			this.unitNode = document.createElement("small");
 			this.unitNode.className = "fmu-readout-unit";
-			this.append(this.labelNode, this.valueNode, this.unitNode);
+			this.openNode = document.createElement("button");
+			this.openNode.type = "button";
+			this.openNode.className = "fmu-readout-chart";
+			this.openNode.dataset.fmuTool = "open-chart";
+			this.openNode.hidden = true;
+			this.openNode.addEventListener("click", () => this.toggleChart());
+			this.append(this.labelNode, this.valueNode, this.unitNode, this.openNode);
 		}
 		update() {
 			if (!this.host) return;
@@ -8220,6 +8400,37 @@ createHTML: (html) => {
 			this.valueNode.textContent = this.host.value(name);
 			this.dataset.fmuReading = this.host.reading(name);
 			this.unitNode.textContent = this.host.unit(name);
+			const offered = this.host.canOpenChart(name);
+			this.openNode.hidden = !offered;
+			if (!offered) {
+				this.closeChart();
+				this.shown = void 0;
+				return;
+			}
+			if (this.chartNode && this.chartNode.getAttribute("chart") !== openedChartId(name)) this.closeChart();
+			const state = `${this.chartNode ? "open" : "shut"}|${name}|${this.host.language()}`;
+			if (state === this.shown) return;
+			this.shown = state;
+			const words = wordsFor(this.host.language());
+			this.openNode.textContent = this.chartNode ? words.closeChart : words.openChart;
+			this.openNode.title = this.chartNode ? words.closeChartTitle : words.openChartTitle(this.host.label(name));
+		}
+		toggleChart() {
+			if (this.chartNode) this.closeChart();
+			else {
+				const name = this.getAttribute("name") ?? "";
+				if (!this.host?.canOpenChart(name)) return;
+				this.chartNode = document.createElement("fmu-chart");
+				this.chartNode.setAttribute("chart", openedChartId(name));
+				this.appendChild(this.chartNode);
+				this.toggleAttribute("data-fmu-chart-open", true);
+			}
+			this.update();
+		}
+		closeChart() {
+			this.chartNode?.remove();
+			this.chartNode = void 0;
+			this.toggleAttribute("data-fmu-chart-open", false);
 		}
 	};
 	/**
@@ -8376,25 +8587,28 @@ createHTML: (html) => {
 	var root_1 = /* @__PURE__ */ from_html(`<button class="panel-tool pinned svelte-ucvjhx" data-fmu-tool="window-release" type="button"> </button>`);
 	var root_2 = /* @__PURE__ */ from_html(`<button class="panel-tool svelte-ucvjhx" data-fmu-tool="fit" type="button"> </button>`);
 	var root_3 = /* @__PURE__ */ from_html(`<button class="panel-tool svelte-ucvjhx" data-fmu-tool="zoom-out-x" type="button"> </button><button class="panel-tool svelte-ucvjhx" data-fmu-tool="zoom-out-y" type="button"> </button>`, 1);
-	var root_4 = /* @__PURE__ */ from_html(`<span class="panel-tools svelte-ucvjhx"><!><!><!><!></span>`);
-	var root_5 = /* @__PURE__ */ from_svg(`<line class="grid svelte-ucvjhx" x1="0" x2="800" vector-effect="non-scaling-stroke"></line><line class="grid svelte-ucvjhx" y1="0" y2="300" vector-effect="non-scaling-stroke"></line>`, 1);
-	var root_6 = /* @__PURE__ */ from_svg(`<polyline vector-effect="non-scaling-stroke"></polyline>`);
-	var root_7 = /* @__PURE__ */ from_svg(`<polyline class="svelte-ucvjhx"></polyline>`);
-	var root_8 = /* @__PURE__ */ from_svg(`<line class="cursor svelte-ucvjhx" y1="0" y2="300" vector-effect="non-scaling-stroke"></line>`);
-	var root_9 = /* @__PURE__ */ from_html(`<span class="guide-label svelte-ucvjhx"> </span>`);
-	var root_10 = /* @__PURE__ */ from_html(`<div class="guide-labels svelte-ucvjhx"></div>`);
-	var root_11 = /* @__PURE__ */ from_html(`<span class="empty svelte-ucvjhx"> </span>`);
-	var root_12 = /* @__PURE__ */ from_html(`<span class="cursor-value svelte-ucvjhx"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></span>`);
-	var root_13 = /* @__PURE__ */ from_html(`<div class="cursor-readout svelte-ucvjhx"><span class="cursor-time svelte-ucvjhx"> </span><!></div>`);
-	var root_14 = /* @__PURE__ */ from_html(`<button type="button"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></button>`);
-	var root_15 = /* @__PURE__ */ from_html(`<span class="legend-item svelte-ucvjhx"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></span>`);
-	var root_16 = /* @__PURE__ */ from_html(`<div class="legend svelte-ucvjhx"></div>`);
-	var root_17 = /* @__PURE__ */ from_html(`<label class="variant svelte-ucvjhx"><input type="radio" class="svelte-ucvjhx"/> </label>`);
-	var root_18 = /* @__PURE__ */ from_html(`<div class="variants svelte-ucvjhx" role="radiogroup"></div>`);
-	var root_19 = /* @__PURE__ */ from_html(`<div class="chart-panel svelte-ucvjhx"><div class="panel-head svelte-ucvjhx"><span class="chart-title svelte-ucvjhx"> </span><span class="chart-unit svelte-ucvjhx"> </span><!></div> <div class="chart-body svelte-ucvjhx"><div class="y-axis svelte-ucvjhx"><span> </span><span> </span><span> </span></div> <div class="chart-wrap chart-wrap-multi svelte-ucvjhx"><svg viewBox="0 0 800 300" preserveAspectRatio="none" role="img" class="svelte-ucvjhx"><!><!><!><!></svg> <!> <!></div></div> <div class="x-axis svelte-ucvjhx"><span> </span><span> </span></div> <!> <!></div>`);
+	var root_4 = /* @__PURE__ */ from_html(`<!><!><!><!>`, 1);
+	var root_5 = /* @__PURE__ */ from_html(`<button class="panel-tool svelte-ucvjhx" type="button"> </button>`);
+	var root_6 = /* @__PURE__ */ from_html(`<span class="panel-tools svelte-ucvjhx"><!><!></span>`);
+	var root_7 = /* @__PURE__ */ from_svg(`<line class="grid svelte-ucvjhx" x1="0" x2="800" vector-effect="non-scaling-stroke"></line><line class="grid svelte-ucvjhx" y1="0" y2="300" vector-effect="non-scaling-stroke"></line>`, 1);
+	var root_8 = /* @__PURE__ */ from_svg(`<polyline vector-effect="non-scaling-stroke"></polyline>`);
+	var root_9 = /* @__PURE__ */ from_svg(`<polyline class="svelte-ucvjhx"></polyline>`);
+	var root_10 = /* @__PURE__ */ from_svg(`<line class="cursor svelte-ucvjhx" y1="0" y2="300" vector-effect="non-scaling-stroke"></line>`);
+	var root_11 = /* @__PURE__ */ from_html(`<span class="guide-label svelte-ucvjhx"> </span>`);
+	var root_12 = /* @__PURE__ */ from_html(`<div class="guide-labels svelte-ucvjhx"></div>`);
+	var root_13 = /* @__PURE__ */ from_html(`<span class="empty svelte-ucvjhx"> </span>`);
+	var root_14 = /* @__PURE__ */ from_html(`<span class="cursor-value svelte-ucvjhx"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></span>`);
+	var root_15 = /* @__PURE__ */ from_html(`<div class="cursor-readout svelte-ucvjhx"><span class="cursor-time svelte-ucvjhx"> </span><!></div>`);
+	var root_16 = /* @__PURE__ */ from_html(`<button type="button"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></button>`);
+	var root_17 = /* @__PURE__ */ from_html(`<span class="legend-item svelte-ucvjhx"><i class="svelte-ucvjhx"></i> <strong class="svelte-ucvjhx"> </strong></span>`);
+	var root_18 = /* @__PURE__ */ from_html(`<div class="legend svelte-ucvjhx"></div>`);
+	var root_19 = /* @__PURE__ */ from_html(`<label class="variant svelte-ucvjhx"><input type="radio" class="svelte-ucvjhx"/> </label>`);
+	var root_20 = /* @__PURE__ */ from_html(`<div class="variants svelte-ucvjhx" role="radiogroup"></div>`);
+	var root_21 = /* @__PURE__ */ from_html(`<div class="chart-body svelte-ucvjhx"><div class="y-axis svelte-ucvjhx"><span> </span><span> </span><span> </span></div> <div class="chart-wrap chart-wrap-multi svelte-ucvjhx"><svg viewBox="0 0 800 300" preserveAspectRatio="none" role="img" class="svelte-ucvjhx"><!><!><!><!></svg> <!> <!></div></div> <div class="x-axis svelte-ucvjhx"><span> </span><span> </span></div> <!> <!>`, 1);
+	var root_22 = /* @__PURE__ */ from_html(`<div><div class="panel-head svelte-ucvjhx"><span class="chart-title svelte-ucvjhx"> </span><span class="chart-unit svelte-ucvjhx"> </span><!></div> <!></div>`);
 	function ChartPanel($$anchor, $$props) {
 		push($$props, true);
-		let xStartLabel = prop($$props, "xStartLabel", 3, "0"), language = prop($$props, "language", 3, void 0), cursor = prop($$props, "cursor", 3, true), onFit = prop($$props, "onFit", 3, void 0), fitLabel = prop($$props, "fitLabel", 3, ""), onZoomOut = prop($$props, "onZoomOut", 3, void 0), onWindow = prop($$props, "onWindow", 3, void 0), windowLabel = prop($$props, "windowLabel", 3, ""), onPick = prop($$props, "onPick", 3, void 0), onRelease = prop($$props, "onRelease", 3, void 0), releaseLabel = prop($$props, "releaseLabel", 3, ""), onToggleSeries = prop($$props, "onToggleSeries", 3, void 0), legendByValue = prop($$props, "legendByValue", 3, false), variants = prop($$props, "variants", 19, () => []), variant = prop($$props, "variant", 3, 0), onVariant = prop($$props, "onVariant", 3, void 0), words = prop($$props, "words", 19, () => wordsFor(void 0));
+		let xStartLabel = prop($$props, "xStartLabel", 3, "0"), language = prop($$props, "language", 3, void 0), cursor = prop($$props, "cursor", 3, true), onFit = prop($$props, "onFit", 3, void 0), fitLabel = prop($$props, "fitLabel", 3, ""), onZoomOut = prop($$props, "onZoomOut", 3, void 0), onWindow = prop($$props, "onWindow", 3, void 0), windowLabel = prop($$props, "windowLabel", 3, ""), onPick = prop($$props, "onPick", 3, void 0), onRelease = prop($$props, "onRelease", 3, void 0), releaseLabel = prop($$props, "releaseLabel", 3, ""), onToggleSeries = prop($$props, "onToggleSeries", 3, void 0), onCollapse = prop($$props, "onCollapse", 3, void 0), collapsed = prop($$props, "collapsed", 3, false), legendByValue = prop($$props, "legendByValue", 3, false), variants = prop($$props, "variants", 19, () => []), variant = prop($$props, "variant", 3, 0), onVariant = prop($$props, "onVariant", 3, void 0), words = prop($$props, "words", 19, () => wordsFor(void 0));
 		/** Whose decimal sign the y axis is written in; without one it keeps the point. */
 		const GRID_FRACTIONS = [
 			0,
@@ -8476,7 +8690,8 @@ createHTML: (html) => {
 		const hovered = /* @__PURE__ */ user_derived(hoverValues);
 		const groupName = `fmu-variant-${Math.random().toString(36).slice(2)}`;
 		const legendSeries = /* @__PURE__ */ user_derived(() => legendByValue() ? orderedByValue($$props.rendered.series, (series) => series.current) : $$props.rendered.series);
-		var div = root_19();
+		var div = root_22();
+		let classes;
 		var div_1 = child(div);
 		var span = child(div_1);
 		var text = child(span, true);
@@ -8485,324 +8700,361 @@ createHTML: (html) => {
 		var text_1 = child(span_1, true);
 		reset(span_1);
 		var node = sibling(span_1);
-		var consequent_4 = ($$anchor) => {
-			var span_2 = root_4();
+		var consequent_6 = ($$anchor) => {
+			var span_2 = root_6();
 			var node_1 = child(span_2);
-			var consequent = ($$anchor) => {
-				var button = root$1();
-				var text_2 = child(button, true);
-				reset(button);
-				template_effect(() => {
-					set_attribute(button, "title", words().windowTitle);
-					set_text(text_2, windowLabel());
+			var consequent_4 = ($$anchor) => {
+				var fragment = root_4();
+				var node_2 = first_child(fragment);
+				var consequent = ($$anchor) => {
+					var button = root$1();
+					var text_2 = child(button, true);
+					reset(button);
+					template_effect(() => {
+						set_attribute(button, "title", words().windowTitle);
+						set_text(text_2, windowLabel());
+					});
+					delegated("click", button, function(...$$args) {
+						onWindow()?.apply(this, $$args);
+					});
+					append($$anchor, button);
+				};
+				if_block(node_2, ($$render) => {
+					if (onWindow()) $$render(consequent);
 				});
-				delegated("click", button, function(...$$args) {
-					onWindow()?.apply(this, $$args);
+				var node_3 = sibling(node_2);
+				var consequent_1 = ($$anchor) => {
+					var button_1 = root_1();
+					var text_3 = child(button_1, true);
+					reset(button_1);
+					template_effect(() => {
+						set_attribute(button_1, "title", words().windowPinnedTitle);
+						set_text(text_3, releaseLabel());
+					});
+					delegated("click", button_1, function(...$$args) {
+						onRelease()?.apply(this, $$args);
+					});
+					append($$anchor, button_1);
+				};
+				if_block(node_3, ($$render) => {
+					if (onRelease()) $$render(consequent_1);
 				});
-				append($$anchor, button);
-			};
-			if_block(node_1, ($$render) => {
-				if (onWindow()) $$render(consequent);
-			});
-			var node_2 = sibling(node_1);
-			var consequent_1 = ($$anchor) => {
-				var button_1 = root_1();
-				var text_3 = child(button_1, true);
-				reset(button_1);
-				template_effect(() => {
-					set_attribute(button_1, "title", words().windowPinnedTitle);
-					set_text(text_3, releaseLabel());
+				var node_4 = sibling(node_3);
+				var consequent_2 = ($$anchor) => {
+					var button_2 = root_2();
+					var text_4 = child(button_2, true);
+					reset(button_2);
+					template_effect(() => {
+						button_2.disabled = !$$props.rendered.hasData;
+						set_attribute(button_2, "title", words().fitAxesTitle);
+						set_text(text_4, fitLabel() || words().fitAxes);
+					});
+					delegated("click", button_2, function(...$$args) {
+						onFit()?.apply(this, $$args);
+					});
+					append($$anchor, button_2);
+				};
+				if_block(node_4, ($$render) => {
+					if (onFit()) $$render(consequent_2);
 				});
-				delegated("click", button_1, function(...$$args) {
-					onRelease()?.apply(this, $$args);
+				var node_5 = sibling(node_4);
+				var consequent_3 = ($$anchor) => {
+					var fragment_1 = root_3();
+					var button_3 = first_child(fragment_1);
+					var text_5 = child(button_3, true);
+					reset(button_3);
+					var button_4 = sibling(button_3);
+					var text_6 = child(button_4, true);
+					reset(button_4);
+					template_effect(() => {
+						button_3.disabled = !$$props.rendered.hasData;
+						set_attribute(button_3, "title", words().zoomOutXTitle);
+						set_text(text_5, words().zoomOutX);
+						button_4.disabled = !$$props.rendered.hasData;
+						set_attribute(button_4, "title", words().zoomOutYTitle);
+						set_text(text_6, words().zoomOutY);
+					});
+					delegated("click", button_3, () => onZoomOut()?.("x"));
+					delegated("click", button_4, () => onZoomOut()?.("y"));
+					append($$anchor, fragment_1);
+				};
+				if_block(node_5, ($$render) => {
+					if (onZoomOut()) $$render(consequent_3);
 				});
-				append($$anchor, button_1);
-			};
-			if_block(node_2, ($$render) => {
-				if (onRelease()) $$render(consequent_1);
-			});
-			var node_3 = sibling(node_2);
-			var consequent_2 = ($$anchor) => {
-				var button_2 = root_2();
-				var text_4 = child(button_2, true);
-				reset(button_2);
-				template_effect(() => {
-					button_2.disabled = !$$props.rendered.hasData;
-					set_attribute(button_2, "title", words().fitAxesTitle);
-					set_text(text_4, fitLabel() || words().fitAxes);
-				});
-				delegated("click", button_2, function(...$$args) {
-					onFit()?.apply(this, $$args);
-				});
-				append($$anchor, button_2);
-			};
-			if_block(node_3, ($$render) => {
-				if (onFit()) $$render(consequent_2);
-			});
-			var node_4 = sibling(node_3);
-			var consequent_3 = ($$anchor) => {
-				var fragment = root_3();
-				var button_3 = first_child(fragment);
-				var text_5 = child(button_3, true);
-				reset(button_3);
-				var button_4 = sibling(button_3);
-				var text_6 = child(button_4, true);
-				reset(button_4);
-				template_effect(() => {
-					button_3.disabled = !$$props.rendered.hasData;
-					set_attribute(button_3, "title", words().zoomOutXTitle);
-					set_text(text_5, words().zoomOutX);
-					button_4.disabled = !$$props.rendered.hasData;
-					set_attribute(button_4, "title", words().zoomOutYTitle);
-					set_text(text_6, words().zoomOutY);
-				});
-				delegated("click", button_3, () => onZoomOut()?.("x"));
-				delegated("click", button_4, () => onZoomOut()?.("y"));
 				append($$anchor, fragment);
 			};
-			if_block(node_4, ($$render) => {
-				if (onZoomOut()) $$render(consequent_3);
+			if_block(node_1, ($$render) => {
+				if (!collapsed()) $$render(consequent_4);
+			});
+			var node_6 = sibling(node_1);
+			var consequent_5 = ($$anchor) => {
+				var button_5 = root_5();
+				var text_7 = child(button_5, true);
+				reset(button_5);
+				template_effect(() => {
+					set_attribute(button_5, "data-fmu-tool", collapsed() ? "expand" : "collapse");
+					set_attribute(button_5, "title", collapsed() ? words().expandChartTitle : words().collapseChartTitle);
+					set_text(text_7, collapsed() ? words().expandChart : words().collapseChart);
+				});
+				delegated("click", button_5, function(...$$args) {
+					onCollapse()?.apply(this, $$args);
+				});
+				append($$anchor, button_5);
+			};
+			if_block(node_6, ($$render) => {
+				if (onCollapse()) $$render(consequent_5);
 			});
 			reset(span_2);
 			append($$anchor, span_2);
 		};
 		if_block(node, ($$render) => {
-			if (onWindow() || onRelease() || onFit() || onZoomOut()) $$render(consequent_4);
+			if (onWindow() || onRelease() || onFit() || onZoomOut() || onCollapse()) $$render(consequent_6);
 		});
 		reset(div_1);
-		var div_2 = sibling(div_1, 2);
-		var div_3 = child(div_2);
-		var span_3 = child(div_3);
-		var text_7 = child(span_3, true);
-		reset(span_3);
-		var span_4 = sibling(span_3);
-		var text_8 = child(span_4, true);
-		reset(span_4);
-		var span_5 = sibling(span_4);
-		var text_9 = child(span_5, true);
-		reset(span_5);
-		reset(div_3);
-		var div_4 = sibling(div_3, 2);
-		var svg = child(div_4);
-		var node_5 = child(svg);
-		each(node_5, 17, () => GRID_FRACTIONS, index, ($$anchor, fraction) => {
-			var fragment_1 = root_5();
-			var line = first_child(fragment_1);
-			var line_1 = sibling(line);
-			template_effect(() => {
-				set_attribute(line, "y1", get(fraction) * 300);
-				set_attribute(line, "y2", get(fraction) * 300);
-				set_attribute(line_1, "x1", get(fraction) * 800);
-				set_attribute(line_1, "x2", get(fraction) * 800);
-			});
-			append($$anchor, fragment_1);
-		});
-		var node_6 = sibling(node_5);
-		each(node_6, 17, () => $$props.rendered.guides ?? [], index, ($$anchor, guide) => {
-			var polyline = root_6();
-			template_effect(() => {
-				set_class(polyline, 0, clsx(get(guide).dashed ? "guide guide-dashed" : "guide"), "svelte-ucvjhx");
-				set_attribute(polyline, "points", get(guide).points);
-			});
-			append($$anchor, polyline);
-		});
-		var node_7 = sibling(node_6);
-		each(node_7, 17, () => $$props.rendered.series, index, ($$anchor, series) => {
-			var fragment_2 = comment();
-			var node_8 = first_child(fragment_2);
-			var consequent_5 = ($$anchor) => {
-				var polyline_1 = root_7();
+		var node_7 = sibling(div_1, 2);
+		var consequent_15 = ($$anchor) => {
+			var fragment_2 = root_21();
+			var div_2 = first_child(fragment_2);
+			var div_3 = child(div_2);
+			var span_3 = child(div_3);
+			var text_8 = child(span_3, true);
+			reset(span_3);
+			var span_4 = sibling(span_3);
+			var text_9 = child(span_4, true);
+			reset(span_4);
+			var span_5 = sibling(span_4);
+			var text_10 = child(span_5, true);
+			reset(span_5);
+			reset(div_3);
+			var div_4 = sibling(div_3, 2);
+			var svg = child(div_4);
+			var node_8 = child(svg);
+			each(node_8, 17, () => GRID_FRACTIONS, index, ($$anchor, fraction) => {
+				var fragment_3 = root_7();
+				var line = first_child(fragment_3);
+				var line_1 = sibling(line);
 				template_effect(() => {
-					set_attribute(polyline_1, "points", get(series).points);
-					set_style(polyline_1, `stroke:${get(series).color}`);
-				});
-				append($$anchor, polyline_1);
-			};
-			if_block(node_8, ($$render) => {
-				if (!get(series).hidden) $$render(consequent_5);
-			});
-			append($$anchor, fragment_2);
-		});
-		var node_9 = sibling(node_7);
-		var consequent_6 = ($$anchor) => {
-			var line_2 = root_8();
-			template_effect(() => {
-				set_attribute(line_2, "x1", get(hoverFraction) * 800);
-				set_attribute(line_2, "x2", get(hoverFraction) * 800);
-			});
-			append($$anchor, line_2);
-		};
-		if_block(node_9, ($$render) => {
-			if (get(hovering)) $$render(consequent_6);
-		});
-		reset(svg);
-		var node_10 = sibling(svg, 2);
-		var consequent_7 = ($$anchor) => {
-			var div_5 = root_10();
-			each(div_5, 21, () => $$props.rendered.guides ?? [], index, ($$anchor, guide) => {
-				var span_6 = root_9();
-				var text_10 = child(span_6, true);
-				reset(span_6);
-				template_effect(() => {
-					set_style(span_6, `left:${get(guide).labelX / 800 * 100}%; top:${get(guide).labelY / 300 * 100}%`);
-					set_text(text_10, get(guide).label);
-				});
-				append($$anchor, span_6);
-			});
-			reset(div_5);
-			append($$anchor, div_5);
-		};
-		if_block(node_10, ($$render) => {
-			if (($$props.rendered.guides ?? []).length > 0) $$render(consequent_7);
-		});
-		var node_11 = sibling(node_10, 2);
-		var consequent_8 = ($$anchor) => {
-			var span_7 = root_11();
-			var text_11 = child(span_7, true);
-			reset(span_7);
-			template_effect(() => set_text(text_11, words().pressStart));
-			append($$anchor, span_7);
-		};
-		if_block(node_11, ($$render) => {
-			if (!$$props.rendered.hasData) $$render(consequent_8);
-		});
-		reset(div_4);
-		reset(div_2);
-		var div_6 = sibling(div_2, 2);
-		var span_8 = child(div_6);
-		var text_12 = child(span_8, true);
-		reset(span_8);
-		var span_9 = sibling(span_8);
-		var text_13 = child(span_9, true);
-		reset(span_9);
-		reset(div_6);
-		var node_12 = sibling(div_6, 2);
-		var consequent_9 = ($$anchor) => {
-			var div_7 = root_13();
-			var span_10 = child(div_7);
-			var text_14 = child(span_10);
-			reset(span_10);
-			each(sibling(span_10), 17, () => get(hovered).rows, index, ($$anchor, row) => {
-				var span_11 = root_12();
-				var i = child(span_11);
-				var text_15 = sibling(i);
-				var strong = sibling(text_15);
-				var text_16 = child(strong, true);
-				reset(strong);
-				reset(span_11);
-				template_effect(($0) => {
-					set_style(i, `background:${get(row).color}`);
-					set_text(text_15, `${get(row).label ?? ""} `);
-					set_text(text_16, $0);
-				}, [() => $$props.formatNumber(get(row).value)]);
-				append($$anchor, span_11);
-			});
-			reset(div_7);
-			template_effect(($0) => set_text(text_14, `${$0 ?? ""} ${$$props.timeUnit ?? ""}`), [() => $$props.formatNumber($$props.toDisplayTime(get(hovered).time))]);
-			append($$anchor, div_7);
-		};
-		var consequent_11 = ($$anchor) => {
-			var div_8 = root_16();
-			each(div_8, 21, () => get(legendSeries), (series) => series.name, ($$anchor, series) => {
-				var fragment_3 = comment();
-				var node_14 = first_child(fragment_3);
-				var consequent_10 = ($$anchor) => {
-					var button_5 = root_14();
-					let classes;
-					var i_1 = child(button_5);
-					var text_17 = sibling(i_1, 1, true);
-					var strong_1 = sibling(text_17);
-					var text_18 = child(strong_1, true);
-					reset(strong_1);
-					reset(button_5);
-					template_effect(($0, $1) => {
-						classes = set_class(button_5, 1, "legend-item legend-toggle svelte-ucvjhx", null, classes, { "legend-hidden": get(series).hidden });
-						set_attribute(button_5, "data-fmu-series", get(series).name);
-						set_attribute(button_5, "aria-pressed", !get(series).hidden);
-						set_attribute(button_5, "title", get(series).hidden ? words().showCurveTitle : words().hideCurveTitle);
-						set_style(i_1, `background:${get(series).color}`);
-						set_text(text_17, get(series).label);
-						set_attribute(strong_1, "data-fmu-reading", $0);
-						set_text(text_18, $1);
-					}, [() => get(series).current === null || get(series).current === void 0 ? "-" : String(Number(get(series).current.toPrecision(4))), () => get(series).current === null || get(series).current === void 0 ? "-" : $$props.formatNumber(get(series).current)]);
-					delegated("click", button_5, () => onToggleSeries()?.(get(series).name));
-					append($$anchor, button_5);
-				};
-				var alternate = ($$anchor) => {
-					var span_12 = root_15();
-					var i_2 = child(span_12);
-					var text_19 = sibling(i_2, 1, true);
-					var strong_2 = sibling(text_19);
-					var text_20 = child(strong_2, true);
-					reset(strong_2);
-					reset(span_12);
-					template_effect(($0, $1) => {
-						set_style(i_2, `background:${get(series).color}`);
-						set_text(text_19, get(series).label);
-						set_attribute(strong_2, "data-fmu-reading", $0);
-						set_text(text_20, $1);
-					}, [() => get(series).current === null || get(series).current === void 0 ? "-" : String(Number(get(series).current.toPrecision(4))), () => get(series).current === null || get(series).current === void 0 ? "-" : $$props.formatNumber(get(series).current)]);
-					append($$anchor, span_12);
-				};
-				if_block(node_14, ($$render) => {
-					if (onToggleSeries()) $$render(consequent_10);
-					else $$render(alternate, -1);
+					set_attribute(line, "y1", get(fraction) * 300);
+					set_attribute(line, "y2", get(fraction) * 300);
+					set_attribute(line_1, "x1", get(fraction) * 800);
+					set_attribute(line_1, "x2", get(fraction) * 800);
 				});
 				append($$anchor, fragment_3);
 			});
-			reset(div_8);
-			append($$anchor, div_8);
-		};
-		if_block(node_12, ($$render) => {
-			if (get(hovered)) $$render(consequent_9);
-			else if ($$props.rendered.series.length > 1) $$render(consequent_11, 1);
-		});
-		var node_15 = sibling(node_12, 2);
-		var consequent_12 = ($$anchor) => {
-			var div_9 = root_18();
-			each(div_9, 21, variants, index, ($$anchor, name, index) => {
-				var label = root_17();
-				var input = child(label);
-				remove_input_defaults(input);
-				set_value(input, index);
-				set_attribute(input, "data-fmu-variant", index);
-				var text_21 = sibling(input, 1, true);
-				reset(label);
+			var node_9 = sibling(node_8);
+			each(node_9, 17, () => $$props.rendered.guides ?? [], index, ($$anchor, guide) => {
+				var polyline = root_8();
 				template_effect(() => {
-					set_attribute(input, "name", groupName);
-					set_checked(input, index === variant());
-					set_text(text_21, get(name));
+					set_class(polyline, 0, clsx(get(guide).dashed ? "guide guide-dashed" : "guide"), "svelte-ucvjhx");
+					set_attribute(polyline, "points", get(guide).points);
 				});
-				delegated("change", input, () => onVariant()?.(index));
-				append($$anchor, label);
+				append($$anchor, polyline);
 			});
-			reset(div_9);
-			append($$anchor, div_9);
+			var node_10 = sibling(node_9);
+			each(node_10, 17, () => $$props.rendered.series, index, ($$anchor, series) => {
+				var fragment_4 = comment();
+				var node_11 = first_child(fragment_4);
+				var consequent_7 = ($$anchor) => {
+					var polyline_1 = root_9();
+					template_effect(() => {
+						set_attribute(polyline_1, "points", get(series).points);
+						set_style(polyline_1, `stroke:${get(series).color}`);
+					});
+					append($$anchor, polyline_1);
+				};
+				if_block(node_11, ($$render) => {
+					if (!get(series).hidden) $$render(consequent_7);
+				});
+				append($$anchor, fragment_4);
+			});
+			var node_12 = sibling(node_10);
+			var consequent_8 = ($$anchor) => {
+				var line_2 = root_10();
+				template_effect(() => {
+					set_attribute(line_2, "x1", get(hoverFraction) * 800);
+					set_attribute(line_2, "x2", get(hoverFraction) * 800);
+				});
+				append($$anchor, line_2);
+			};
+			if_block(node_12, ($$render) => {
+				if (get(hovering)) $$render(consequent_8);
+			});
+			reset(svg);
+			var node_13 = sibling(svg, 2);
+			var consequent_9 = ($$anchor) => {
+				var div_5 = root_12();
+				each(div_5, 21, () => $$props.rendered.guides ?? [], index, ($$anchor, guide) => {
+					var span_6 = root_11();
+					var text_11 = child(span_6, true);
+					reset(span_6);
+					template_effect(() => {
+						set_style(span_6, `left:${get(guide).labelX / 800 * 100}%; top:${get(guide).labelY / 300 * 100}%`);
+						set_text(text_11, get(guide).label);
+					});
+					append($$anchor, span_6);
+				});
+				reset(div_5);
+				append($$anchor, div_5);
+			};
+			if_block(node_13, ($$render) => {
+				if (($$props.rendered.guides ?? []).length > 0) $$render(consequent_9);
+			});
+			var node_14 = sibling(node_13, 2);
+			var consequent_10 = ($$anchor) => {
+				var span_7 = root_13();
+				var text_12 = child(span_7, true);
+				reset(span_7);
+				template_effect(() => set_text(text_12, words().pressStart));
+				append($$anchor, span_7);
+			};
+			if_block(node_14, ($$render) => {
+				if (!$$props.rendered.hasData) $$render(consequent_10);
+			});
+			reset(div_4);
+			reset(div_2);
+			var div_6 = sibling(div_2, 2);
+			var span_8 = child(div_6);
+			var text_13 = child(span_8, true);
+			reset(span_8);
+			var span_9 = sibling(span_8);
+			var text_14 = child(span_9, true);
+			reset(span_9);
+			reset(div_6);
+			var node_15 = sibling(div_6, 2);
+			var consequent_11 = ($$anchor) => {
+				var div_7 = root_15();
+				var span_10 = child(div_7);
+				var text_15 = child(span_10);
+				reset(span_10);
+				each(sibling(span_10), 17, () => get(hovered).rows, index, ($$anchor, row) => {
+					var span_11 = root_14();
+					var i = child(span_11);
+					var text_16 = sibling(i);
+					var strong = sibling(text_16);
+					var text_17 = child(strong, true);
+					reset(strong);
+					reset(span_11);
+					template_effect(($0) => {
+						set_style(i, `background:${get(row).color}`);
+						set_text(text_16, `${get(row).label ?? ""} `);
+						set_text(text_17, $0);
+					}, [() => $$props.formatNumber(get(row).value)]);
+					append($$anchor, span_11);
+				});
+				reset(div_7);
+				template_effect(($0) => set_text(text_15, `${$0 ?? ""} ${$$props.timeUnit ?? ""}`), [() => $$props.formatNumber($$props.toDisplayTime(get(hovered).time))]);
+				append($$anchor, div_7);
+			};
+			var consequent_13 = ($$anchor) => {
+				var div_8 = root_18();
+				each(div_8, 21, () => get(legendSeries), (series) => series.name, ($$anchor, series) => {
+					var fragment_5 = comment();
+					var node_17 = first_child(fragment_5);
+					var consequent_12 = ($$anchor) => {
+						var button_6 = root_16();
+						let classes_1;
+						var i_1 = child(button_6);
+						var text_18 = sibling(i_1, 1, true);
+						var strong_1 = sibling(text_18);
+						var text_19 = child(strong_1, true);
+						reset(strong_1);
+						reset(button_6);
+						template_effect(($0, $1) => {
+							classes_1 = set_class(button_6, 1, "legend-item legend-toggle svelte-ucvjhx", null, classes_1, { "legend-hidden": get(series).hidden });
+							set_attribute(button_6, "data-fmu-series", get(series).name);
+							set_attribute(button_6, "aria-pressed", !get(series).hidden);
+							set_attribute(button_6, "title", get(series).hidden ? words().showCurveTitle : words().hideCurveTitle);
+							set_style(i_1, `background:${get(series).color}`);
+							set_text(text_18, get(series).label);
+							set_attribute(strong_1, "data-fmu-reading", $0);
+							set_text(text_19, $1);
+						}, [() => get(series).current === null || get(series).current === void 0 ? "-" : String(Number(get(series).current.toPrecision(4))), () => get(series).current === null || get(series).current === void 0 ? "-" : $$props.formatNumber(get(series).current)]);
+						delegated("click", button_6, () => onToggleSeries()?.(get(series).name));
+						append($$anchor, button_6);
+					};
+					var alternate = ($$anchor) => {
+						var span_12 = root_17();
+						var i_2 = child(span_12);
+						var text_20 = sibling(i_2, 1, true);
+						var strong_2 = sibling(text_20);
+						var text_21 = child(strong_2, true);
+						reset(strong_2);
+						reset(span_12);
+						template_effect(($0, $1) => {
+							set_style(i_2, `background:${get(series).color}`);
+							set_text(text_20, get(series).label);
+							set_attribute(strong_2, "data-fmu-reading", $0);
+							set_text(text_21, $1);
+						}, [() => get(series).current === null || get(series).current === void 0 ? "-" : String(Number(get(series).current.toPrecision(4))), () => get(series).current === null || get(series).current === void 0 ? "-" : $$props.formatNumber(get(series).current)]);
+						append($$anchor, span_12);
+					};
+					if_block(node_17, ($$render) => {
+						if (onToggleSeries()) $$render(consequent_12);
+						else $$render(alternate, -1);
+					});
+					append($$anchor, fragment_5);
+				});
+				reset(div_8);
+				append($$anchor, div_8);
+			};
+			if_block(node_15, ($$render) => {
+				if (get(hovered)) $$render(consequent_11);
+				else if ($$props.rendered.series.length > 1) $$render(consequent_13, 1);
+			});
+			var node_18 = sibling(node_15, 2);
+			var consequent_14 = ($$anchor) => {
+				var div_9 = root_20();
+				each(div_9, 21, variants, index, ($$anchor, name, index) => {
+					var label = root_19();
+					var input = child(label);
+					remove_input_defaults(input);
+					set_value(input, index);
+					set_attribute(input, "data-fmu-variant", index);
+					var text_22 = sibling(input, 1, true);
+					reset(label);
+					template_effect(() => {
+						set_attribute(input, "name", groupName);
+						set_checked(input, index === variant());
+						set_text(text_22, get(name));
+					});
+					delegated("change", input, () => onVariant()?.(index));
+					append($$anchor, label);
+				});
+				reset(div_9);
+				append($$anchor, div_9);
+			};
+			if_block(node_18, ($$render) => {
+				if (variants().length > 1) $$render(consequent_14);
+			});
+			template_effect(($0, $1, $2, $3) => {
+				set_text(text_8, $0);
+				set_text(text_9, $1);
+				set_text(text_10, $2);
+				set_attribute(svg, "aria-label", $3);
+				set_text(text_13, xStartLabel());
+				set_text(text_14, $$props.spanLabel);
+			}, [
+				() => $$props.rendered.hasData ? formatAxisNumber($$props.rendered.maxValue) : "",
+				() => $$props.rendered.hasData ? formatAxisNumber(($$props.rendered.minValue + $$props.rendered.maxValue) / 2) : "",
+				() => $$props.rendered.hasData ? formatAxisNumber($$props.rendered.minValue) : "",
+				() => `${$$props.title}: ${$$props.rendered.series.map((s) => s.label).join(", ")}`
+			]);
+			delegated("mousemove", svg, hoverMove);
+			event("mouseleave", svg, () => set(hovering, false));
+			delegated("pointerdown", svg, pickDown);
+			delegated("pointerup", svg, pickUp);
+			event("pointercancel", svg, () => pressed = null);
+			append($$anchor, fragment_2);
 		};
-		if_block(node_15, ($$render) => {
-			if (variants().length > 1) $$render(consequent_12);
+		if_block(node_7, ($$render) => {
+			if (!collapsed()) $$render(consequent_15);
 		});
 		reset(div);
-		template_effect(($0, $1, $2, $3) => {
+		template_effect(() => {
+			classes = set_class(div, 1, "chart-panel svelte-ucvjhx", null, classes, { collapsed: collapsed() });
 			set_text(text, $$props.title);
 			set_text(text_1, $$props.unit);
-			set_text(text_7, $0);
-			set_text(text_8, $1);
-			set_text(text_9, $2);
-			set_attribute(svg, "aria-label", $3);
-			set_text(text_12, xStartLabel());
-			set_text(text_13, $$props.spanLabel);
-		}, [
-			() => $$props.rendered.hasData ? formatAxisNumber($$props.rendered.maxValue) : "",
-			() => $$props.rendered.hasData ? formatAxisNumber(($$props.rendered.minValue + $$props.rendered.maxValue) / 2) : "",
-			() => $$props.rendered.hasData ? formatAxisNumber($$props.rendered.minValue) : "",
-			() => `${$$props.title}: ${$$props.rendered.series.map((s) => s.label).join(", ")}`
-		]);
-		delegated("mousemove", svg, hoverMove);
-		event("mouseleave", svg, () => set(hovering, false));
-		delegated("pointerdown", svg, pickDown);
-		delegated("pointerup", svg, pickUp);
-		event("pointercancel", svg, () => pressed = null);
+		});
 		append($$anchor, div);
 		pop();
 	}
@@ -8836,6 +9088,7 @@ createHTML: (html) => {
 		let pinned = /* @__PURE__ */ state(null);
 		let hidden = /* @__PURE__ */ state(proxy([]));
 		let variant = /* @__PURE__ */ state(0);
+		let collapsed = /* @__PURE__ */ state(false);
 		user_effect(() => $$props.host.subscribe(() => set(version, get(version) + 1)));
 		const viewAlternate = /* @__PURE__ */ user_derived(() => {
 			get(version);
@@ -9065,6 +9318,10 @@ createHTML: (html) => {
 					get releaseLabel() {
 						return get(pinnedLabel);
 					},
+					get collapsed() {
+						return get(collapsed);
+					},
+					onCollapse: () => set(collapsed, !get(collapsed)),
 					get words() {
 						return get(words);
 					},
@@ -9111,18 +9368,33 @@ createHTML: (html) => {
 	var FmuChartElement = class extends FmuChild {
 		constructor(..._args) {
 			super(..._args);
-			_defineProperty(this, "mounted", false);
+			_defineProperty(this, "mounted", void 0);
 		}
 		update() {
 			if (!this.host || this.mounted) return;
-			this.mounted = true;
-			mount(FmuChart, {
+			this.mounted = mount(FmuChart, {
 				target: this,
 				props: {
 					host: this.host,
 					chart: this.getAttribute("chart") ?? ""
 				}
 			});
+		}
+		/**
+		* Taken down with the element, because the component subscribes to the host on its own.
+		*
+		* The base class only drops the element's own subscription, so without this the panel of a
+		* removed chart went on being redrawn 25 times a second against a host it could still reach,
+		* for as long as the page lived -- and a reading whose chart a student opens and closes and
+		* opens again would leave one such ghost behind each time. No chart element in this library is
+		* ever moved (a layout builds one in place; the application moves its own Svelte nodes, not
+		* these), so disconnecting always means going away for good.
+		*/
+		disconnectedCallback() {
+			super.disconnectedCallback();
+			const mounted = this.mounted;
+			this.mounted = void 0;
+			if (mounted) unmount(mounted, { outro: false });
 		}
 	};
 	//#endregion
