@@ -1,8 +1,8 @@
 {
   "fmiVersion": "2.0",
-  "modelName": "Frvs.SimpleCirculationSurfaceChip",
-  "modelIdentifier": "Frvs_SimpleCirculationSurfaceChip",
-  "guid": "{abd53646-4c6f-4ff1-bd2d-85d1225f02b8}",
+  "modelName": "SimpleCirculationStatic",
+  "modelIdentifier": "SimpleCirculationStatic",
+  "guid": "{d4874902-ac74-46bb-9c43-7848729f3c55}",
   "generationTool": "Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)",
   "variables": [
     {
@@ -10,7 +10,7 @@
       "description": "Constant output value",
       "valueReference": 16777216,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -22,7 +22,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881024,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -33,7 +33,7 @@
       "description": "Constant output value",
       "valueReference": 16777217,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -45,7 +45,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881025,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -56,7 +56,7 @@
       "description": "Constant output value",
       "valueReference": 16777218,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -68,7 +68,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881026,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -79,7 +79,7 @@
       "description": "Constant output value",
       "valueReference": 16777219,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -91,7 +91,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881027,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -102,7 +102,7 @@
       "description": "Constant output value",
       "valueReference": 16777220,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -114,7 +114,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881028,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -125,7 +125,7 @@
       "description": "Constant output value",
       "valueReference": 16777221,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -137,7 +137,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881029,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -148,7 +148,7 @@
       "description": "Constant output value",
       "valueReference": 16777222,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -160,7 +160,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881030,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -171,7 +171,7 @@
       "description": "Constant output value",
       "valueReference": 16777223,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -183,112 +183,55 @@
       "description": "Connector of Real output signal",
       "valueReference": 234881031,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.v1",
-      "valueReference": 100663300,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.V0",
-      "valueReference": 100663301,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.v2",
-      "valueReference": 100663302,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.v3",
-      "valueReference": 100663303,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.v4",
-      "valueReference": 100663304,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "bloodVolume1.pv",
-      "valueReference": 16777224,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0.10526315789473684
-    },
-    {
-      "name": "bloodVolume1.sa",
-      "valueReference": 16777225,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0.12789473684210526
-    },
-    {
-      "name": "bloodVolume1.sv",
-      "valueReference": 16777226,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0.6878947368421052
-    },
-    {
-      "name": "bloodVolume1.pa",
-      "valueReference": 16777227,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0.07894736842105263
     },
     {
       "name": "dSV.k",
       "description": "Constant output value",
-      "valueReference": 16777228,
+      "valueReference": 16777224,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ],
+      "start": 0
+    },
+    {
+      "name": "dSV.y",
+      "description": "Connector of Real output signal",
+      "valueReference": 234881032,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "dBV.k",
+      "description": "Constant output value",
+      "valueReference": 16777225,
+      "causality": "parameter",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -296,136 +239,22 @@
       "start": 0
     },
     {
-      "name": "dSV.y",
+      "name": "dBV.y",
       "description": "Connector of Real output signal",
-      "valueReference": 234881036,
+      "valueReference": 234881033,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
-    },
-    {
-      "name": "SA_VplusSV_V.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 1174405156,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SA_VplusSV_V.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 33554434,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SA_VplusSV_V.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 1711276057,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SA_VplusSV_V.k1",
-      "description": "Gain of input signal 1",
-      "valueReference": 16777229,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "SA_VplusSV_V.k2",
-      "description": "Gain of input signal 2",
-      "valueReference": 16777230,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "TotalUnstressedVolume.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 1174405146,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "TotalUnstressedVolume.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 1711276059,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "TotalUnstressedVolume.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 1711276060,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "TotalUnstressedVolume.k1",
-      "description": "Gain of input signal 1",
-      "valueReference": 16777231,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "TotalUnstressedVolume.k2",
-      "description": "Gain of input signal 2",
-      "valueReference": 16777232,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": -1
     },
     {
       "name": "bw.k",
       "description": "Constant output value",
-      "valueReference": 16777233,
+      "valueReference": 16777226,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -442,9 +271,9 @@
     {
       "name": "bw.y",
       "description": "Connector of Real output signal",
-      "valueReference": 234881041,
+      "valueReference": 234881034,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -460,9 +289,9 @@
     {
       "name": "bh.k",
       "description": "Constant output value",
-      "valueReference": 16777234,
+      "valueReference": 16777227,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -479,9 +308,9 @@
     {
       "name": "bh.y",
       "description": "Connector of Real output signal",
-      "valueReference": 234881042,
+      "valueReference": 234881035,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -497,9 +326,9 @@
     {
       "name": "bodySurface.bodyWeight",
       "description": "body weight [kg]",
-      "valueReference": 234881041,
+      "valueReference": 234881034,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -515,9 +344,9 @@
     {
       "name": "bodySurface.bodyHeight",
       "description": "body height [cm]",
-      "valueReference": 234881042,
+      "valueReference": 234881035,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -532,9 +361,9 @@
     },
     {
       "name": "bodySurface.bodySurface",
-      "valueReference": 100663305,
+      "valueReference": 100663297,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -543,9 +372,9 @@
     {
       "name": "BMI.weight",
       "description": "weight in kg",
-      "valueReference": 234881041,
+      "valueReference": 234881034,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -561,9 +390,9 @@
     {
       "name": "BMI.height",
       "description": "height in cm",
-      "valueReference": 234881042,
+      "valueReference": 234881035,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -578,273 +407,9 @@
     },
     {
       "name": "BMI.bmi",
-      "valueReference": 100663306,
+      "valueReference": 100663298,
       "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAS_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881028,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAS_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAS_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663307,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RPS.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881027,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RPS.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RPS.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663308,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KLH_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881025,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KLH_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KLH_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663309,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVP_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881031,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVP_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVP_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663310,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RTS.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881026,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RTS.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "RTS.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663311,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVS_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881029,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVS_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CVS_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663312,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KRH_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881024,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KRH_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "KRH_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663313,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAP_S.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881030,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAP_S.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CAP_S.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663314,
-      "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -852,9 +417,9 @@
     },
     {
       "name": "normalBloodVolume.bw",
-      "valueReference": 234881041,
+      "valueReference": 234881034,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -869,9 +434,9 @@
     },
     {
       "name": "normalBloodVolume.bh",
-      "valueReference": 234881042,
+      "valueReference": 234881035,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "unit": "1",
       "displayFactor": 1,
@@ -886,111 +451,193 @@
     },
     {
       "name": "normalBloodVolume.bV",
-      "valueReference": 100663315,
+      "valueReference": 100663299,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
     },
     {
-      "name": "dBV.k",
-      "description": "Constant output value",
-      "valueReference": 16777235,
+      "name": "bloodVolume1.v1",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bloodVolume1.V0",
+      "valueReference": 100663301,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "bloodVolume1.v2",
+      "valueReference": 100663302,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bloodVolume1.v3",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bloodVolume1.v4",
+      "valueReference": 100663304,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "bloodVolume1.pv",
+      "valueReference": 16777228,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": [],
-      "start": 0
+      "start": 0.10526315789473684
     },
     {
-      "name": "dBV.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 234881043,
-      "causality": "local",
-      "variability": "tunable",
+      "name": "bloodVolume1.sa",
+      "valueReference": 16777229,
+      "causality": "parameter",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
-      "unitOptions": []
+      "unitOptions": [],
+      "start": 0.12789473684210526
     },
     {
-      "name": "BVplusdBV.u1",
+      "name": "bloodVolume1.sv",
+      "valueReference": 16777230,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.6878947368421052
+    },
+    {
+      "name": "bloodVolume1.pa",
+      "valueReference": 16777231,
+      "causality": "parameter",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [],
+      "start": 0.07894736842105263
+    },
+    {
+      "name": "CI.u1",
       "description": "Connector of Real input signal 1",
-      "valueReference": 234881043,
+      "valueReference": 100663305,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
     },
     {
-      "name": "BVplusdBV.u2",
+      "name": "CI.u2",
       "description": "Connector of Real input signal 2",
-      "valueReference": 100663315,
+      "valueReference": 100663297,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
     },
     {
-      "name": "BVplusdBV.y",
+      "name": "CI.y",
       "description": "Connector of Real output signal",
-      "valueReference": 100663316,
+      "valueReference": 100663306,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": []
-    },
-    {
-      "name": "BVplusdBV.k1",
-      "description": "Gain of input signal 1",
-      "valueReference": 16777236,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "BVplusdBV.k2",
-      "description": "Gain of input signal 2",
-      "valueReference": 16777237,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
     },
     {
       "name": "V0.u1",
       "description": "Connector of Real input signal 1",
-      "valueReference": 100663317,
+      "valueReference": 100663307,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
+      "unit": "ml",
       "displayFactor": 1,
       "displayOffset": 0,
-      "unitOptions": []
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
     },
     {
       "name": "V0.u2",
       "description": "Connector of Real input signal 2",
-      "valueReference": 100663315,
+      "valueReference": 100663299,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -1001,7 +648,7 @@
       "description": "Connector of Real output signal",
       "valueReference": 100663301,
       "causality": "local",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -1010,9 +657,9 @@
     {
       "name": "V0.k1",
       "description": "Gain of input signal 1",
-      "valueReference": 16777238,
+      "valueReference": 16777232,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -1022,1640 +669,19 @@
     {
       "name": "V0.k2",
       "description": "Gain of input signal 2",
-      "valueReference": 16777239,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "normalV0.k",
-      "description": "Gain value multiplied with input signal",
-      "valueReference": 16777240,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "unit": "1",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [
-        {
-          "unit": "1",
-          "displayFactor": 1,
-          "displayOffset": 0
-        }
-      ],
-      "start": 762.5
-    },
-    {
-      "name": "normalV0.u",
-      "description": "Input signal connector",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "normalV0.y",
-      "description": "Output signal connector",
-      "valueReference": 100663318,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SV.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 234881036,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SV.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663318,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SV.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 100663317,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "SV.k1",
-      "description": "Gain of input signal 1",
-      "valueReference": 16777241,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "SV.k2",
-      "description": "Gain of input signal 2",
-      "valueReference": 16777242,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "CI.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 1711276061,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CI.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 100663305,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "CI.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 1711276062,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "PA_VplusPV_V.u1",
-      "description": "Connector of Real input signal 1",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "PA_VplusPV_V.u2",
-      "description": "Connector of Real input signal 2",
-      "valueReference": 33554432,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "PA_VplusPV_V.y",
-      "description": "Connector of Real output signal",
-      "valueReference": 1711276064,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "PA_VplusPV_V.k1",
-      "description": "Gain of input signal 1",
-      "valueReference": 16777243,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "PA_VplusPV_V.k2",
-      "description": "Gain of input signal 2",
-      "valueReference": 16777244,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 1
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405153,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405154,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405173,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 1711276067,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405153,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.StarlingSlope",
-      "description": "ml/(torr sec)",
-      "valueReference": 100663313,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.pump",
-      "description": "true..Q=k*P false..manual",
-      "valueReference": 16777245,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": null
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.pumpVar",
-      "valueReference": 234881053,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.manualBloodFlow",
-      "description": "blood flow in l/min",
-      "valueReference": 16777246,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 5
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.refBloodVolume",
-      "description": "ml",
-      "valueReference": 1174405156,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.doPump",
-      "valueReference": 1174405143,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RightHeart.hysteresisVolume",
-      "valueReference": 16777247,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 20
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.bloodFlow.Q",
-      "description": "blood flow ml/sec",
-      "valueReference": 1124073472,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.bloodFlow.Pressure",
-      "description": "blood pressure in torr",
-      "valueReference": 1174405173,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.Compliance",
-      "description": "ml/torr",
-      "valueReference": 100663314,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.Volume",
-      "description": "volume in ml",
-      "valueReference": 33554432,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "der(simpleCirculationChip.PlumonaryArteries.Volume)",
-      "description": "der(volume in ml)",
-      "valueReference": 1124073472,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.Pressure",
-      "valueReference": 1174405173,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.UnstressedVolume",
-      "description": "Unstressed volume in ml",
-      "valueReference": 100663300,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.InitialVolume",
-      "valueReference": 16777248,
+      "valueReference": 16777233,
       "causality": "parameter",
       "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": [],
-      "start": 194.41589911888062
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryArteries.StressedVolume",
-      "description": "Stressed volume in ml",
-      "valueReference": 1174405169,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405157,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405173,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405158,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 1174405159,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405157,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalPulmonaryResistance.BloodResistance",
-      "valueReference": 100663308,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.bloodFlow.Q",
-      "description": "blood flow ml/sec",
-      "valueReference": 1124073473,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.bloodFlow.Pressure",
-      "description": "blood pressure in torr",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.Compliance",
-      "description": "ml/torr",
-      "valueReference": 100663310,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.Volume",
-      "description": "volume in ml",
-      "valueReference": 33554433,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "der(simpleCirculationChip.PlumonaryVeins.Volume)",
-      "description": "der(volume in ml)",
-      "valueReference": 1124073473,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.Pressure",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.UnstressedVolume",
-      "description": "Unstressed volume in ml",
-      "valueReference": 100663302,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.InitialVolume",
-      "valueReference": 16777249,
-      "causality": "parameter",
-      "variability": "fixed",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 367.81386319788226
-    },
-    {
-      "name": "simpleCirculationChip.PlumonaryVeins.StressedVolume",
-      "description": "Stressed volume in ml",
-      "valueReference": 1174405170,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405160,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405161,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 1711276074,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405160,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.StarlingSlope",
-      "description": "ml/(torr sec)",
-      "valueReference": 100663309,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.pump",
-      "description": "true..Q=k*P false..manual",
-      "valueReference": 16777250,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": null
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.pumpVar",
-      "valueReference": 234881058,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.manualBloodFlow",
-      "description": "blood flow in l/min",
-      "valueReference": 16777251,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 5
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.refBloodVolume",
-      "description": "ml",
-      "valueReference": 1174405163,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.doPump",
-      "valueReference": 1174405144,
-      "causality": "local",
-      "variability": "discrete",
-      "type": "boolean",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LeftHeart.hysteresisVolume",
-      "valueReference": 16777252,
-      "causality": "parameter",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 20
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405160,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405161,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 100663296,
-      "causality": "local",
-      "variability": "constant",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405160,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter1.BloodFlowPerMin",
-      "valueReference": 1711276061,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.bloodFlow.Q",
-      "description": "blood flow ml/sec",
-      "valueReference": 1124073474,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.bloodFlow.Pressure",
-      "description": "blood pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.Compliance",
-      "description": "ml/torr",
-      "valueReference": 100663307,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.Volume",
-      "description": "volume in ml",
-      "valueReference": 33554434,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "der(simpleCirculationChip.SystemArteries.Volume)",
-      "description": "der(volume in ml)",
-      "valueReference": 1124073474,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.Pressure",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.UnstressedVolume",
-      "description": "Unstressed volume in ml",
-      "valueReference": 100663303,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.InitialVolume",
-      "valueReference": 16777253,
-      "causality": "parameter",
-      "variability": "fixed",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 352.050411917973
-    },
-    {
-      "name": "simpleCirculationChip.SystemArteries.StressedVolume",
-      "description": "Stressed volume in ml",
-      "valueReference": 1174405171,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405164,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405165,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 100663297,
-      "causality": "local",
-      "variability": "constant",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405164,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_SR.BloodFlowPerMin",
-      "valueReference": 1711276078,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405164,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405165,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 1174405167,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405164,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TotalSystemicResistance.BloodResistance",
-      "valueReference": 100663311,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.bloodFlow.Q",
-      "description": "blood flow ml/sec",
-      "valueReference": 1124073475,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.bloodFlow.Pressure",
-      "description": "blood pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.Compliance",
-      "description": "ml/torr",
-      "valueReference": 100663312,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.Volume",
-      "description": "volume in ml",
-      "valueReference": 33554435,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "der(simpleCirculationChip.SystemVeins.Volume)",
-      "description": "der(volume in ml)",
-      "valueReference": 1124073475,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.Pressure",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.UnstressedVolume",
-      "description": "Unstressed volume in ml",
-      "valueReference": 100663304,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.InitialVolume",
-      "valueReference": 16777254,
-      "causality": "parameter",
-      "variability": "fixed",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 2049.2486663882014
-    },
-    {
-      "name": "simpleCirculationChip.SystemVeins.StressedVolume",
-      "description": "Stressed volume in ml",
-      "valueReference": 1174405172,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.Inflow.Q",
-      "description": "blood inflow in ml/sec",
-      "valueReference": 1174405153,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.Inflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.Outflow.Q",
-      "description": "blood flow outflow in ml/sec",
-      "valueReference": 1174405154,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.Outflow.Pressure",
-      "description": "Pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.PressureDrop",
-      "description": "Pressure in torr",
-      "valueReference": 100663298,
-      "causality": "local",
-      "variability": "constant",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": [],
-      "start": 0
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.BloodFlow",
-      "description": "ml/sec",
-      "valueReference": 1174405153,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.bloodFlowMeter.BloodFlowPerMin",
-      "valueReference": 1711276086,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.u",
-      "valueReference": 33554432,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.u1",
-      "valueReference": 33554433,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.u2",
-      "valueReference": 33554434,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.u3",
-      "valueReference": 1174405156,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.bloodFlowConnector.Q",
-      "description": "blood flow ml/sec",
-      "valueReference": 1174405168,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.bloodFlowConnector.Pressure",
-      "description": "blood pressure in torr",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.BloodVolume",
-      "valueReference": 1174405146,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.DesiredBloodVolume",
-      "valueReference": 100663316,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.totalBloodVolume.totalBloodVolume",
-      "valueReference": 1174405146,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LH_StarlingSlope",
-      "valueReference": 100663309,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PA_Compliance",
-      "valueReference": 100663314,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PA_StressedVolume",
-      "valueReference": 1174405169,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PA_UnstressedVolume",
-      "valueReference": 100663300,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PA_Volume",
-      "valueReference": 33554432,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PV_Compliance",
-      "valueReference": 100663310,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PV_StressedVolume",
-      "valueReference": 1174405170,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PV_UnstressedVolume",
-      "valueReference": 100663302,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PV_Volume",
-      "valueReference": 33554433,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RH_StarlingSlope",
-      "valueReference": 100663313,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_Compliance",
-      "valueReference": 100663307,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_StressedVolume",
-      "valueReference": 1174405171,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_UnstressedVolume",
-      "valueReference": 100663303,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_Volume",
-      "valueReference": 33554434,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SV_Compliance",
-      "valueReference": 100663312,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SV_StressedVolume",
-      "valueReference": 1174405172,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SV_UnstressedVolume",
-      "valueReference": 100663304,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SV_Volume",
-      "valueReference": 1174405156,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TPR_BloodResistance",
-      "valueReference": 100663308,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TSR_BloodResistance",
-      "valueReference": 100663311,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.LH_BloodFlowPerMin",
-      "valueReference": 1711276061,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TBV_BloodVolume",
-      "valueReference": 1174405146,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.TBV_DesiredBloodVolume",
-      "valueReference": 100663316,
-      "causality": "local",
-      "variability": "tunable",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PA_Pressure",
-      "valueReference": 1174405173,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.RH_BloodFlowPerMin",
-      "valueReference": 1711276086,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SV_Pressure",
-      "valueReference": 1174405175,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.SA_Pressure",
-      "valueReference": 1174405176,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
-    },
-    {
-      "name": "simpleCirculationChip.PV_Pressure",
-      "valueReference": 1174405151,
-      "causality": "local",
-      "variability": "continuous",
-      "type": "real",
-      "displayFactor": 1,
-      "displayOffset": 0,
-      "unitOptions": []
+      "start": 1
     },
     {
       "name": "TotalStressedVolume.nin",
       "description": "Number of inputs",
-      "valueReference": 100663299,
+      "valueReference": 100663296,
       "causality": "local",
       "variability": "constant",
       "type": "integer",
@@ -2667,9 +693,9 @@
     {
       "name": "TotalStressedVolume.u[1]",
       "description": "Connector of Real input signals",
-      "valueReference": 1174405169,
+      "valueReference": 100663308,
       "causality": "local",
-      "variability": "continuous",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2678,9 +704,9 @@
     {
       "name": "TotalStressedVolume.u[2]",
       "description": "Connector of Real input signals",
-      "valueReference": 1174405172,
+      "valueReference": 100663309,
       "causality": "local",
-      "variability": "continuous",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2689,9 +715,9 @@
     {
       "name": "TotalStressedVolume.u[3]",
       "description": "Connector of Real input signals",
-      "valueReference": 1174405171,
+      "valueReference": 100663310,
       "causality": "local",
-      "variability": "continuous",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2700,9 +726,9 @@
     {
       "name": "TotalStressedVolume.u[4]",
       "description": "Connector of Real input signals",
-      "valueReference": 1174405170,
+      "valueReference": 100663311,
       "causality": "local",
-      "variability": "continuous",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2711,9 +737,9 @@
     {
       "name": "TotalStressedVolume.y",
       "description": "Connector of Real output signal",
-      "valueReference": 1711276059,
+      "valueReference": 100663312,
       "causality": "local",
-      "variability": "continuous",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2722,9 +748,9 @@
     {
       "name": "TotalStressedVolume.k[1]",
       "description": "Optional: sum coefficients",
-      "valueReference": 16777255,
+      "valueReference": 16777234,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2734,9 +760,9 @@
     {
       "name": "TotalStressedVolume.k[2]",
       "description": "Optional: sum coefficients",
-      "valueReference": 16777256,
+      "valueReference": 16777235,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2746,9 +772,9 @@
     {
       "name": "TotalStressedVolume.k[3]",
       "description": "Optional: sum coefficients",
-      "valueReference": 16777257,
+      "valueReference": 16777236,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
@@ -2758,14 +784,503 @@
     {
       "name": "TotalStressedVolume.k[4]",
       "description": "Optional: sum coefficients",
-      "valueReference": 16777258,
+      "valueReference": 16777237,
       "causality": "parameter",
-      "variability": "tunable",
+      "variability": "fixed",
       "type": "real",
       "displayFactor": 1,
       "displayOffset": 0,
       "unitOptions": [],
       "start": 1
+    },
+    {
+      "name": "simpleCirculationChip.LH_StarlingSlope",
+      "description": "ml/(torr.s)",
+      "valueReference": 100663313,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.RH_StarlingSlope",
+      "description": "ml/(torr.s)",
+      "valueReference": 100663314,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PA_Compliance",
+      "description": "ml/torr",
+      "valueReference": 100663315,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PV_Compliance",
+      "description": "ml/torr",
+      "valueReference": 100663316,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.SA_Compliance",
+      "description": "ml/torr",
+      "valueReference": 100663317,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.SV_Compliance",
+      "description": "ml/torr",
+      "valueReference": 100663318,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PA_UnstressedVolume",
+      "description": "ml",
+      "valueReference": 100663300,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.PV_UnstressedVolume",
+      "description": "ml",
+      "valueReference": 100663302,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SA_UnstressedVolume",
+      "description": "ml",
+      "valueReference": 100663303,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SV_UnstressedVolume",
+      "description": "ml",
+      "valueReference": 100663304,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.TPR_BloodResistance",
+      "description": "torr.s/ml",
+      "valueReference": 100663319,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.TSR_BloodResistance",
+      "description": "torr.s/ml",
+      "valueReference": 100663320,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.TBV_DesiredBloodVolume",
+      "description": "ml",
+      "valueReference": 100663321,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PA_Pressure",
+      "description": "torr",
+      "valueReference": 100663322,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PV_Pressure",
+      "description": "torr",
+      "valueReference": 100663323,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.SA_Pressure",
+      "description": "torr",
+      "valueReference": 100663324,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.SV_Pressure",
+      "description": "torr",
+      "valueReference": 100663325,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.PA_Volume",
+      "description": "ml",
+      "valueReference": 100663326,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.PV_Volume",
+      "description": "ml",
+      "valueReference": 100663327,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SA_Volume",
+      "description": "ml",
+      "valueReference": 100663328,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SV_Volume",
+      "description": "ml",
+      "valueReference": 100663329,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.PA_StressedVolume",
+      "description": "ml",
+      "valueReference": 100663308,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.PV_StressedVolume",
+      "description": "ml",
+      "valueReference": 100663311,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SA_StressedVolume",
+      "description": "ml",
+      "valueReference": 100663310,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.SV_StressedVolume",
+      "description": "ml",
+      "valueReference": 100663309,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.LH_BloodFlowPerMin",
+      "description": "ml/min",
+      "valueReference": 100663305,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.RH_BloodFlowPerMin",
+      "description": "ml/min",
+      "valueReference": 100663330,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": []
+    },
+    {
+      "name": "simpleCirculationChip.TBV_BloodVolume",
+      "description": "ml",
+      "valueReference": 100663331,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.BloodFlow",
+      "description": "the one flow that goes round the loop",
+      "valueReference": 100663332,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml/s",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml/s",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.fill",
+      "description": "how full the unstressed volumes are: 1 unless the blood runs out",
+      "valueReference": 100663333,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "1",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "1",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.unstressedTotal",
+      "description": "the blood that does not push, over all four compartments",
+      "valueReference": 100663334,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "simpleCirculationChip.stressedTotal",
+      "description": "the blood that does -- what the whole circulation runs on",
+      "valueReference": 100663335,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "normalV0",
+      "description": "the unstressed volume a body of this surface would have",
+      "valueReference": 100663336,
+      "causality": "local",
+      "variability": "fixed",
+      "type": "real",
+      "unit": "ml",
+      "displayFactor": 1,
+      "displayOffset": 0,
+      "unitOptions": [
+        {
+          "unit": "ml",
+          "displayFactor": 1,
+          "displayOffset": 0
+        }
+      ]
     }
   ]
 }
