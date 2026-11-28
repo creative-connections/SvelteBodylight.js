@@ -29,7 +29,7 @@ Sestavit experiment nad hotovým modelem — bez instalace, bez serveru, bez př
 | Vytápění místnosti | `metadata/room-heating.json` | 9 |
 | Vytápění místnosti (varianta) | `metadata/room-heating-variant.json` | 9 |
 | Samoobslužná myčka (OPM, kvalitativní) | `metadata/self-service-car-wash.json` | 54 |
-| Nejjednodušší model oběhu | `metadata/simple-circulation.json` | 103 |
+| Nejjednodušší model oběhu | `metadata/simple-circulation.json` | 119 |
 | Jednoduchá respirace | `metadata/simple-respiration.json` | 527 |
 | Jednoduchá respirace (z OPM diagramu) | `metadata/simple-respiration-opm.json` | 281 |
 | Aktivace uživatele (OPM, kvalitativní) | `metadata/user-activation-process.json` | 31 |
